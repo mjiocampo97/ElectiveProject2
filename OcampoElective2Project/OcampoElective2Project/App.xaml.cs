@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using OcampoElective2Project.Helpers;
+using OcampoElective2Project.Repository;
 using OcampoElective2Project.Repository.LocalRepository;
 using OcampoElective2Project.Views;
 using SQLite;
@@ -16,6 +17,7 @@ namespace OcampoElective2Project
         public static ViewModelLocator Locator;
 	    private readonly InitializeData InitializeData;
 	    private readonly InitializeNavigation initNavigation;
+	  //public IDataService<T> IDataService;
         public App ()
 		{        
 		    

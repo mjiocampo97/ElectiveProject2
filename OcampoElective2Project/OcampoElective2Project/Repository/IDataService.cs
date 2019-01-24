@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace OcampoElective2Project.Repository
@@ -14,5 +15,8 @@ namespace OcampoElective2Project.Repository
 
         int Delete();
 
+        List<T> GetAll();
+
+        List<T> GetRange(Expression<Func<T, bool>> condition);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq.Expressions;
 using System.Text;
 using SQLite;
 
@@ -16,14 +17,22 @@ namespace OcampoElective2Project.Repository.LocalRepository
         public void Add(T record)
         {
             var db = new SQLiteAsyncConnection(dbPath);
-            db.CreateTableAsync<T>();
+           // db.CreateTableAsync<T>();
             db.InsertAsync(record);
         }
 
         public T Get()
         {
+            var db = new SQLiteAsyncConnection(dbPath);
+            var table = db.Table<T>();
+
+            foreach (var VARIABLE in tab)
+            {
+                
+            }
             throw new NotImplementedException();
         } 
+
 
         public int Update()
         {
@@ -31,6 +40,16 @@ namespace OcampoElective2Project.Repository.LocalRepository
         }
 
         public int Delete()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<T> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<T> GetRange(Expression<Func<T,bool>> condition)
         {
             throw new NotImplementedException();
         }
