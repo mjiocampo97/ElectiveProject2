@@ -26,10 +26,10 @@ namespace OcampoElective2Project.Repository.LocalRepository
             var db = new SQLiteAsyncConnection(dbPath);
             var table = db.Table<T>();
 
-            foreach (var VARIABLE in tab)
-            {
+            //foreach (var VARIABLE in tab)
+            //{
                 
-            }
+            //}
             throw new NotImplementedException();
         } 
 
