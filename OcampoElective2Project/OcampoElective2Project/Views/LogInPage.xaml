@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OcampoElective2Project.Views.LogInPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                 
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout HorizontalOptions="Center">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Username" HorizontalOptions=" Center" VerticalOptions="Center"></Label>
+                        <Entry WidthRequest="200" Text="{Binding Username}"></Entry>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Password" HorizontalOptions=" Center" VerticalOptions="Center"></Label>
+                        <Entry WidthRequest="200" IsPassword="True" Text="{Binding Password}"></Entry>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Dont have account?"></Label>
+                        <Button Text="Sign Up" Command="{Binding RegisterCommand}"></Button>
+                        <Button Text="Log In" Command="{Binding LogInCommand}"></Button>
+
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

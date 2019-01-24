@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OcampoElective2Project.App">
+	<Application.Resources>
+	    <ResourceDictionary>
+	        <Color x:Key="Red">#f44336</Color>
+	        <Color x:Key="RedOrange">#f46004</Color>
+	        <Color x:Key="Orange">#f47404</Color>
+	        <Color x:Key="YellowOrange">#ffae42</Color>
+	        <Color x:Key="Yellow">#f9e000</Color>
+	        <Color x:Key="YellowGreen">#c1e50d</Color>
+	        <Color x:Key="Green">#15ff00</Color>
+	    </ResourceDictionary>
+    </Application.Resources>
+</Application>

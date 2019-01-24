@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OcampoElective2Project.Views.MenuPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#eff3f4">
+            <Button Text="Home" Command="{Binding GoToHomePageCommand}" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Button Text="Clothes" Command="{Binding GoToClothesPageCommand}" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Button Text="Food" Command="{Binding GoToFoodPageCommand}" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Button Text="Transportation" Command="{Binding GoToTransportationPageCommand}" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Button Text="Others" Command="{Binding GoToOthersPageCommand }" VerticalOptions="Center" HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
