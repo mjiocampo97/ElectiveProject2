@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Views;
 using OcampoElective2Project.Helpers;
 using OcampoElective2Project.Models;
+using OcampoElective2Project.Services;
 using Xamarin.Forms;
 
 namespace OcampoElective2Project.ViewModels
 {
    public class MenuViewModel : OcampoElective2ProjectViewModel
     {
+        public MenuViewModel(INavigationService navigationService)
+        {
+            if (navigationService == null) throw new ArgumentNullException("navigationService");
+            NavigationService = (NavigationService)navigationService;
+        }
         private UserAccount _user;
         public UserAccount User
         {

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using OcampoElective2Project.Helpers;
 using OcampoElective2Project.Models;
+using Xamarin.Forms;
 
 namespace OcampoElective2Project.ViewModels
 {
     public class HomeViewModel : OcampoElective2ProjectViewModel
     {
+       
         private UserAccount _user;
         public UserAccount User
         {
@@ -18,7 +20,8 @@ namespace OcampoElective2Project.ViewModels
                 RaisePropertyChanged(nameof(User));
             }
         }
-        
+
+       
         
         
 

@@ -9,6 +9,7 @@
             <Button Text="Food" Command="{Binding GoToFoodPageCommand}" VerticalOptions="Center" HorizontalOptions="Center" />
             <Button Text="Transportation" Command="{Binding GoToTransportationPageCommand}" VerticalOptions="Center" HorizontalOptions="Center" />
             <Button Text="Others" Command="{Binding GoToOthersPageCommand }" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Button Text="Log Out" Command="{Binding LogoutCommand }" VerticalOptions="Center" HorizontalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

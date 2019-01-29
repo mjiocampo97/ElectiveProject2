@@ -48,8 +48,8 @@ namespace OcampoElective2Project.Helpers
             var user = new UserAccount();
             if (SettingsImplementation.IsLoggedIn)
             {
-                var userJsonString = JToken.Parse(SettingsImplementation.User).ToString();
-                user = JsonConvert.DeserializeObject<UserAccount>(userJsonString);
+               // var userJsonString = JToken.Parse(SettingsImplementation.User).ToString();
+              //  user = JsonConvert.DeserializeObject<UserAccount>(userJsonString);
                 navigationPage = new NavigationPage(new HomePage(user));
                 isGestureEnabled = true;
             }
