@@ -48,8 +48,8 @@ namespace OcampoElective2Project.Helpers
             var user = new UserAccount();
             if (SettingsImplementation.IsLoggedIn)
             {
-               // var userJsonString = JToken.Parse(SettingsImplementation.User).ToString();
-              //  user = JsonConvert.DeserializeObject<UserAccount>(userJsonString);
+                // var userJsonString = JToken.Parse(SettingsImplementation.User).ToString();
+                //  user = JsonConvert.DeserializeObject<UserAccount>(userJsonString);
                 navigationPage = new NavigationPage(new HomePage(user));
                 isGestureEnabled = true;
             }
@@ -71,5 +71,27 @@ namespace OcampoElective2Project.Helpers
             return masterDetailPage;
 
         }
+        public NavigationPage Intropage()
+        {
+            bool isGestureEnabled;
+            var navigationPage = new NavigationPage();
+            var user = new UserAccount();
+            if (SettingsImplementation.IsLoggedIn)
+            {
+                // var userJsonString = JToken.Parse(SettingsImplementation.User).ToString();
+                //  user = JsonConvert.DeserializeObject<UserAccount>(userJsonString);
+                navigationPage = new NavigationPage(new HomePage(user));
+                isGestureEnabled = true;
+            }
+            else
+            {
+                navigationPage = new NavigationPage(new LogInPage());
+                isGestureEnabled = false;
+            }
+
+            var state = new NavigationPage();
+            return state;
+        }
+
     }
 }

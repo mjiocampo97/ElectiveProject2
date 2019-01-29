@@ -45,6 +45,7 @@ namespace OcampoElective2Project.ViewModels
             //HomePageService.Logout();
             SettingsImplementation.IsLoggedIn = false;
             NavigationService.NavigateTo(ViewModelLocator.LogInPage, null, true);
+            ((MasterDetailPage)App.Current.MainPage).IsGestureEnabled = false;
             ToggleMasterPageIsPresented();
         }
         public ICommand GoToHomePageCommand => new RelayCommand(GoToHomePageProc);
