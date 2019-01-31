@@ -9,11 +9,11 @@ namespace OcampoElective2Project.Repository
     {
         void Add(T record);
 
-        T Get();
+        T Get(Expression<Func<T, bool>> condition);
 
-        int Update();
+        void Update(Expression<Func<T, bool>> condition);
 
-        int Delete();
+        void Delete(Expression<Func<T, bool>> condition);
 
         List<T> GetAll();
 

@@ -16,7 +16,7 @@ namespace OcampoElective2Project.Services.LogInService
         public ObservableCollection<UserAccount> Users { get;} = new ObservableCollection<UserAccount>();
 
         //TODO:field dapat
-        public IDataService<UserAccount> DataService { get; }
+        private IDataService<UserAccount> _UserAccountDataService{ get; }
 
         public UserAccount Check(string username, string password)
         {

@@ -21,37 +21,46 @@ namespace OcampoElective2Project.Repository.LocalRepository
             db.InsertAsync(record);
         }
 
-        public T Get()
+        public T Get(Expression<Func<T, bool>> condition)
         {
-            var db = new SQLiteAsyncConnection(dbPath);
-            var table = db.Table<T>();
-
-            //foreach (var VARIABLE in tab)
-            //{
-                
-            //}
-            throw new NotImplementedException();
-        } 
-
-
-        public int Update()
-        {
-            throw new NotImplementedException();
+            using (var db = new SQLiteConnection(dbPath))
+            {
+               return db.Get<T>(condition);
+            }
         }
 
-        public int Delete()
+        public void Update(Expression<Func<T, bool>> condition)
         {
-            throw new NotImplementedException();
+            //Todo:: implement this
+            using (var db = new SQLiteConnection(dbPath))
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public void Delete(Expression<Func<T, bool>> condition)
+        {//Todo:: implement this
+            using (var db = new SQLiteConnection(dbPath))
+            {
+                throw new NotImplementedException();
+
+            }
         }
 
         public List<T> GetAll()
         {
-            throw new NotImplementedException();
+            using (var db = new SQLiteConnection(dbPath))
+            {
+                return db.Table<T>().ToList();
+            }
         }
 
         public List<T> GetRange(Expression<Func<T,bool>> condition)
         {
-            throw new NotImplementedException();
+            using (var db = new SQLiteConnection(dbPath))
+            {
+                return db.Table<T>().Where(condition).ToList();
+            }
         }
     }
 }

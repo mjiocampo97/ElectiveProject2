@@ -12,20 +12,21 @@ namespace OcampoElective2Project.Repository.OnlineRepository
             throw new NotImplementedException();
         }
 
-        public T Get()
+        public T Get(Expression<Func<T, bool>> condition)
         {
             throw new NotImplementedException();
         }
 
-        public int Update()
+        public void Update(Expression<Func<T, bool>> condition)
         {
             throw new NotImplementedException();
         }
 
-        public int Delete()
+        public void Delete(Expression<Func<T, bool>> condition)
         {
             throw new NotImplementedException();
         }
+
 
         public List<T> GetAll()
         {
