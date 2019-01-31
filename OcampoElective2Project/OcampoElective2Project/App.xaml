@@ -11,6 +11,7 @@
 	        <Color x:Key="Yellow">#f9e000</Color>
 	        <Color x:Key="YellowGreen">#c1e50d</Color>
 	        <Color x:Key="Green">#15ff00</Color>
+            <Color x:Key="SignUp">#5248BB</Color>
 	    </ResourceDictionary>
     </Application.Resources>
 </Application>

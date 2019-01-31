@@ -52,14 +52,14 @@ namespace OcampoElective2Project.Helpers
                 //  user = JsonConvert.DeserializeObject<UserAccount>(userJsonString);
                 navigationPage = new NavigationPage(new HomePage(user));
                 isGestureEnabled = true;
+
             }
             else
             {
                 navigationPage = new NavigationPage(new LogInPage());
                 isGestureEnabled = false;
+                
             }
-
-
             var masterDetailPage = new MasterDetailPage
             {
                 Detail = navigationPage,
@@ -67,6 +67,8 @@ namespace OcampoElective2Project.Helpers
             };
             navigationService.Initialize(navigationPage);
             masterDetailPage.IsGestureEnabled = isGestureEnabled;
+
+
 
             return masterDetailPage;
 

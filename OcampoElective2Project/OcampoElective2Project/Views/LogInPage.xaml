@@ -14,17 +14,18 @@
                 </Grid.RowDefinitions>
                 <StackLayout HorizontalOptions="Center">
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Username" HorizontalOptions=" Center" VerticalOptions="Center"></Label>
-                        <Entry WidthRequest="200" Text="{Binding Username}"></Entry>
+                        <Label Text="Username" HorizontalOptions=" Center" VerticalOptions="Center" FontSize="18" Margin="2"></Label>
+                        <Entry WidthRequest="200" Text="{Binding Username}" FontSize="18" Margin="2"></Entry>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Password" HorizontalOptions=" Center" VerticalOptions="Center"></Label>
-                        <Entry WidthRequest="200" IsPassword="True" Text="{Binding Password}"></Entry>
+                        <Label Text="Password" HorizontalOptions=" Center" VerticalOptions="Center" FontSize="18" Margin="2"></Label>
+                        <Entry WidthRequest="200" IsPassword="True" Text="{Binding Password}" FontSize="18" Margin="2"></Entry>
                     </StackLayout>
                     <StackLayout>
-                        <Label Text="Dont have account?"></Label>
-                        <Button Text="Sign Up" Command="{Binding RegisterCommand}"></Button>
-                        <Button Text="Log In" Command="{Binding LogInCommand}"></Button>
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="Dont have account? Sign Up" Command="{Binding RegisterCommand}" BorderColor="Transparent" BackgroundColor="Transparent" TextColor="{StaticResource SignUp}" HorizontalOptions="Center" VerticalOptions="Center" Margin="5" FontSize="18"></Button>
+                        </StackLayout>
+                        <Button Text="Log In" Command="{Binding LogInCommand}" FontSize="18"></Button>
 
                     </StackLayout>
                 </StackLayout>

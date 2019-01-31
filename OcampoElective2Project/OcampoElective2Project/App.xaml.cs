@@ -3,6 +3,7 @@ using System.IO;
 using OcampoElective2Project.Helpers;
 using OcampoElective2Project.Repository;
 using OcampoElective2Project.Repository.LocalRepository;
+using OcampoElective2Project.Services;
 using OcampoElective2Project.Views;
 using SQLite;
 using Xamarin.Forms;
@@ -15,9 +16,11 @@ namespace OcampoElective2Project
 	{
 	 
         public static ViewModelLocator Locator;
-	    private readonly InitializeData InitializeData;
+	    private static ViewModelLocator _locator;
+        private readonly InitializeData InitializeData;
 	    private readonly InitializeNavigation initNavigation;
-	  //public IDataService<T> IDataService;
+	    public static NavigationService NavigationService { get; set; }
+        //public IDataService<T> IDataService;
         public App ()
 		{        
 		    
@@ -27,11 +30,12 @@ namespace OcampoElective2Project
 		    {
 		        initNavigation = new InitializeNavigation();
 		    }
-		    Locator = new ViewModelLocator();
-            InitializeData = new InitializeData();
-		    //NavigationService  = initNavigation.nav
-		    var firstPage = new NavigationPage(new LogInPage());
-		    initNavigation.navigationService.Initialize(firstPage);
+		    Locator = _locator ??new ViewModelLocator();
+          //  InitializeData = new InitializeData();
+		    NavigationService = initNavigation.navigationService;
+           // initNavigation.SetPages();
+		   // var firstPage = new NavigationPage(new LogInPage());
+		   // initNavigation.navigationService.Initialize(firstPage);
 		  //  MainPage = firstPage;
 		    MainPage = initNavigation.SetMasterDetailMainPage();
 		}

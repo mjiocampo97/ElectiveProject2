@@ -17,6 +17,7 @@ namespace OcampoElective2Project.Views
 		public LogInPage ()
 		{
 			InitializeComponent ();
+
 		   BindingContext = App.Locator.LogInViewModel;
 		}
         protected override void OnAppearing()

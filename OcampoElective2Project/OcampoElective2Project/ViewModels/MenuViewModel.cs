@@ -47,6 +47,7 @@ namespace OcampoElective2Project.ViewModels
             NavigationService.NavigateTo(ViewModelLocator.LogInPage, null, true);
             ((MasterDetailPage)App.Current.MainPage).IsGestureEnabled = false;
             ToggleMasterPageIsPresented();
+            Application.Current.MainPage.DisplayAlert("Alert Message","You have logout successfully", "Close");
         }
         public ICommand GoToHomePageCommand => new RelayCommand(GoToHomePageProc);
         private void GoToHomePageProc()

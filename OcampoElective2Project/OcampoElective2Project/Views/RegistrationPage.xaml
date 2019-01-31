@@ -3,31 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OcampoElective2Project.Views.RegistrationPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="AliceBlue" HorizontalOptions="FillAndExpand">
             <StackLayout Orientation="Horizontal">
-                <Label Text="First Name" Margin="2,0"></Label>
-                <Entry WidthRequest="150"></Entry>
+                <Label Text="First Name" Margin="2" FontSize= "18" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                <Entry WidthRequest="150" FontSize="18" Margin="2" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"></Entry>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Last Name" Margin="2,0"></Label>
-                <Entry WidthRequest="150"></Entry>
+                <Label Text="Last Name" Margin="2,0" FontSize= "18" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"></Entry>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Birthday" Margin="2,0"></Label>
-                <DatePicker></DatePicker>
+                <Label Text="Birthday" Margin="2,0" FontSize= "18" HorizontalOptions="Center" VerticalOptions="Center"> </Label>
+                <DatePicker FontSize= "18" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"></DatePicker>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Email AdDRESS"></Label>
-                <Entry WidthRequest="150"></Entry>
+                <Label Text="Email Address" FontSize= "18" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"></Entry>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Password"></Label>
-                <Entry WidthRequest="150"></Entry>
+                <Label Text="Password" FontSize= "18" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"></Entry>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Retype Password"></Label>
-                <Entry WidthRequest="150"></Entry>
+                <Label Text="Retype Password" FontSize= "18" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"></Entry>
             </StackLayout>
+            <Button Text="Register" FontSize="18"></Button>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
