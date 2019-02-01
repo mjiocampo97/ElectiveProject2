@@ -36,9 +36,13 @@ namespace OcampoElective2Project.Helpers
             navigationService.Configure(ViewModelLocator.OthersPage, typeof(OthersPage));
             navigationService.Configure(ViewModelLocator.RegistrationPage, typeof(RegistrationPage));
             navigationService.Configure(ViewModelLocator.TransportationPage, typeof(TransportationPage));
+            navigationService.Configure(ViewModelLocator.AddClothespPage, typeof(AddClothesPage));
+            navigationService.Configure(ViewModelLocator.AddFoodPage, typeof(AddFoodPage));
+            navigationService.Configure(ViewModelLocator.AddOthersPage, typeof(AddOthersPage));
+            navigationService.Configure(ViewModelLocator.AddTransportationPage, typeof(AddTransportationPage));
 
 
-        
+
         }
 
         public MasterDetailPage SetMasterDetailMainPage()
@@ -73,27 +77,27 @@ namespace OcampoElective2Project.Helpers
             return masterDetailPage;
 
         }
-        public NavigationPage Intropage()
-        {
-            bool isGestureEnabled;
-            var navigationPage = new NavigationPage();
-            var user = new UserAccount();
-            if (SettingsImplementation.IsLoggedIn)
-            {
-                // var userJsonString = JToken.Parse(SettingsImplementation.User).ToString();
-                //  user = JsonConvert.DeserializeObject<UserAccount>(userJsonString);
-                navigationPage = new NavigationPage(new HomePage(user));
-                isGestureEnabled = true;
-            }
-            else
-            {
-                navigationPage = new NavigationPage(new LogInPage());
-                isGestureEnabled = false;
-            }
+        //public NavigationPage Intropage()
+        //{
+        //    bool isGestureEnabled;
+        //    var navigationPage = new NavigationPage();
+        //    var user = new UserAccount();
+        //    if (SettingsImplementation.IsLoggedIn)
+        //    {
+        //        // var userJsonString = JToken.Parse(SettingsImplementation.User).ToString();
+        //        //  user = JsonConvert.DeserializeObject<UserAccount>(userJsonString);
+        //        navigationPage = new NavigationPage(new HomePage(user));
+        //        isGestureEnabled = true;
+        //    }
+        //    else
+        //    {
+        //        navigationPage = new NavigationPage(new LogInPage());
+        //        isGestureEnabled = false;
+        //    }
 
-            var state = new NavigationPage();
-            return state;
-        }
+        //    var state = new NavigationPage();
+        //    return state;
+        //}
 
     }
 }

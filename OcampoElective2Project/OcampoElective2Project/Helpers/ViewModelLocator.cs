@@ -19,6 +19,10 @@ namespace OcampoElective2Project.Helpers
         public const string OthersPage = "OthersPage";
         public const string RegistrationPage = "RegistrationPage";
         public const string TransportationPage = "TransportationPage";
+        public const string AddClothespPage = "AddClothesPage";
+        public const string AddFoodPage = "AddFoodPage";
+        public const string AddTransportationPage = "AddTransportationPage";
+        public const string AddOthersPage = "AddOthersPage";
 
         public bool IsTestMode { get; set; }
 
@@ -35,6 +39,10 @@ namespace OcampoElective2Project.Helpers
             SimpleIoc.Default.Register<OthersViewModel>();
             SimpleIoc.Default.Register<RegistrationViewModel>();
             SimpleIoc.Default.Register<TransportationViewModel>();
+            SimpleIoc.Default.Register<AddClothesViewModel>();
+            SimpleIoc.Default.Register<AddFoodViewModel>();
+            SimpleIoc.Default.Register<AddOthersViewModel>();
+            SimpleIoc.Default.Register<AddTransportationViewModel>();
 
             if (IsTestMode == true)
             {
@@ -58,6 +66,10 @@ namespace OcampoElective2Project.Helpers
         public OthersViewModel OthersViewModel => ServiceLocator.Current.GetInstance<OthersViewModel>();
         public RegistrationViewModel RegistrationViewModel => ServiceLocator.Current.GetInstance<RegistrationViewModel>();
         public TransportationViewModel TransportationViewModel =>  ServiceLocator.Current.GetInstance<TransportationViewModel>();
+        public AddClothesViewModel AddClothesViewModel => ServiceLocator.Current.GetInstance<AddClothesViewModel>();
+        public AddFoodViewModel AddFoodViewModel => ServiceLocator.Current.GetInstance<AddFoodViewModel>();
+        public AddOthersViewModel AddOthersViewModel => ServiceLocator.Current.GetInstance<AddOthersViewModel>();
+        public AddTransportationViewModel AddTransportationViewModel => ServiceLocator.Current.GetInstance<AddTransportationViewModel>();
 
 
 
