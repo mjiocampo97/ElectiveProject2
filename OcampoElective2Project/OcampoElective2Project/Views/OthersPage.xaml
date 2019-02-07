@@ -3,10 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OcampoElective2Project.Views.OthersPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Others Page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+            <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All">
+                <ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Aqua" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Text="Name of Clothes"></Label>
+                                    <Label Text="Price"/>
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Text="Add Others" AbsoluteLayout.LayoutBounds=".5,1,1,.1" AbsoluteLayout.LayoutFlags="All" ></Button>
+            </StackLayout>
+
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
