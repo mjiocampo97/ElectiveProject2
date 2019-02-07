@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight.Views;
 using OcampoElective2Project.Helpers;
 using OcampoElective2Project.Models;
 using OcampoElective2Project.Services;
+using OcampoElective2Project.Services.ClothesService;
 using Xamarin.Forms;
 
 namespace OcampoElective2Project.ViewModels
@@ -59,7 +60,7 @@ namespace OcampoElective2Project.ViewModels
 
         private void GoToClothesPageProc()
         {
-            NavigationService.NavigateTo(ViewModelLocator.ClothesPage, null, true);
+            NavigationService.NavigateTo(ViewModelLocator.ClothesPage, User, true);
             ToggleMasterPageIsPresented();
         }
 

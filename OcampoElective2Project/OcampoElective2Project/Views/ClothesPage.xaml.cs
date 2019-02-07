@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using CommonServiceLocator;
 using OcampoElective2Project;
 using GalaSoft.MvvmLight.Views;
+using OcampoElective2Project.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,13 +21,13 @@ namespace OcampoElective2Project.Views
 			InitializeComponent ();
 		    this.BindingContext = App.Locator.ClothesViewModel;
 		}
-	    protected override void OnAppearing()
+	
+
+	    public ClothesPage(UserAccount user)
 	    {
-	        base.OnAppearing();
-	        var currentPageKeyString = ServiceLocator.Current
-	            .GetInstance<INavigationService>()
-	            .CurrentPageKey;
-	        Debug.WriteLine("Current page key: " + currentPageKeyString);
+	        InitializeComponent();
+	        App.Locator.ClothesViewModel.User = user;
+	        this.BindingContext = App.Locator.ClothesViewModel;
 	    }
     }
 }

@@ -1,18 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Views;
 using OcampoElective2Project.Helpers;
+using OcampoElective2Project.Models;
+using OcampoElective2Project.Services;
+using OcampoElective2Project.Services.ClothesService;
 
 namespace OcampoElective2Project.ViewModels
 {
     public class ClothesViewModel : OcampoElective2ProjectViewModel
     {
-        public RelayCommand AddClothesCommdand => new RelayCommand(AddClothesProc);
+        private UserAccount _user;
+        public UserAccount User
+        {
+            get => _user;
+            set
+            {
+                _user = value;
+                RaisePropertyChanged(nameof(User));
+            }
+        }
+        public IClothesService ClothesService { get; set; }
+        public ClothesViewModel(INavigationService navigationService, IClothesService clothesService)
+        {
+            if (navigationService == null) throw new ArgumentNullException("navigationService");
+            NavigationService = (NavigationService)navigationService;
+            ClothesService = clothesService;
+
+        }
+       
+        public ICommand AddClothesCommand => new RelayCommand(AddClothesProc);
 
         private void AddClothesProc()
         {
-            throw new NotImplementedException();
+            NavigationService.NavigateTo(ViewModelLocator.AddClothesPage, User, false);
+            
         }
     }
 }

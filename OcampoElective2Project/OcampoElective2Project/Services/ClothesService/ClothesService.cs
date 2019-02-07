@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OcampoElective2Project.Services.ClothesService
 {
-    public class ClothesService
+    public class ClothesService : IClothesService
     {
     }
 }

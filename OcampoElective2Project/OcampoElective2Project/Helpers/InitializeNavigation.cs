@@ -36,7 +36,7 @@ namespace OcampoElective2Project.Helpers
             navigationService.Configure(ViewModelLocator.OthersPage, typeof(OthersPage));
             navigationService.Configure(ViewModelLocator.RegistrationPage, typeof(RegistrationPage));
             navigationService.Configure(ViewModelLocator.TransportationPage, typeof(TransportationPage));
-            navigationService.Configure(ViewModelLocator.AddClothespPage, typeof(AddClothesPage));
+            navigationService.Configure(ViewModelLocator.AddClothesPage, typeof(AddClothesPage));
             navigationService.Configure(ViewModelLocator.AddFoodPage, typeof(AddFoodPage));
             navigationService.Configure(ViewModelLocator.AddOthersPage, typeof(AddOthersPage));
             navigationService.Configure(ViewModelLocator.AddTransportationPage, typeof(AddTransportationPage));
@@ -52,8 +52,8 @@ namespace OcampoElective2Project.Helpers
             var user = new UserAccount();
             if (SettingsImplementation.IsLoggedIn)
             {
-                // var userJsonString = JToken.Parse(SettingsImplementation.User).ToString();
-                //  user = JsonConvert.DeserializeObject<UserAccount>(userJsonString);
+                var userJsonString = JToken.Parse(SettingsImplementation.User).ToString();
+                user = JsonConvert.DeserializeObject<UserAccount>(userJsonString);
                 navigationPage = new NavigationPage(new HomePage(user));
                 isGestureEnabled = true;
 

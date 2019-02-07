@@ -33,7 +33,7 @@ namespace OcampoElective2Project.Views
 	        InitializeComponent();
 
 	        App.Locator.HomeViewModel.User = user;
-	        this.BindingContext = App.Locator.HomeViewModel;
+	        this.BindingContext = App.Locator.AddOthersViewModel;
 	    }
     }
 }
