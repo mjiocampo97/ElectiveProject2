@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OcampoElective2Project.Services.TransportationService
 {
-    public class MockTransportationService
+    public class MockTransportationService : ITransportationService
     {
     }
 }

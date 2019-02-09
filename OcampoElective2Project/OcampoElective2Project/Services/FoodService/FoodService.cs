@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OcampoElective2Project.Services.FoodService
 {
-    public class FoodService
+    public class FoodService : IFoodService
     {
     }
 }

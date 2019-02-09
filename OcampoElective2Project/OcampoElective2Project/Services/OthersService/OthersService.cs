@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OcampoElective2Project.Services.OthersService
 {
-    class OthersService
+    public class OthersService : IOthersService
     {
     }
 }
