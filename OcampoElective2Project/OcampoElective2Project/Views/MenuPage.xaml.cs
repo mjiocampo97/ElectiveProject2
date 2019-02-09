@@ -25,5 +25,6 @@ namespace OcampoElective2Project.Views
 	        BindingContext = vm;
 
 	    }
+
     }
 }

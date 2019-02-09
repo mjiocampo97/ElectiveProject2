@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 using GalaSoft.MvvmLight.CommandWpf;
 using OcampoElective2Project.Helpers;
 
@@ -8,11 +9,11 @@ namespace OcampoElective2Project.ViewModels
 {
     public class TransportationViewModel : OcampoElective2ProjectViewModel
     {
-        public RelayCommand AddTransportationCommdand => new RelayCommand(AddTransportationProc);
+        public ICommand AddTransportationCommand => new RelayCommand(AddTransportationProc);
 
         private void AddTransportationProc()
         {
-            throw new NotImplementedException();
+            NavigationService.NavigateTo(ViewModelLocator.AddTransportationPage);
         }
     }
 }

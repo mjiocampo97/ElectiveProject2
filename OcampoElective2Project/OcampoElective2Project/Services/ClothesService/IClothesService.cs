@@ -5,7 +5,7 @@ using OcampoElective2Project.Models;
 
 namespace OcampoElective2Project.Services.ClothesService
 {
-    public interface IClothesService
+    public interface IClothesService 
     {
         UserAccount GetClothesDataBase<T>(T user);
 

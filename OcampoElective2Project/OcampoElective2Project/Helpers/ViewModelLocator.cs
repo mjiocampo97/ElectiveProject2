@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using CommonServiceLocator;
 using GalaSoft.MvvmLight.Ioc;
+using OcampoElective2Project.Services.ClothesService;
 using OcampoElective2Project.Services.LogInService;
 using OcampoElective2Project.Services.RegisterService;
 using OcampoElective2Project.ViewModels;
@@ -19,7 +20,7 @@ namespace OcampoElective2Project.Helpers
         public const string OthersPage = "OthersPage";
         public const string RegistrationPage = "RegistrationPage";
         public const string TransportationPage = "TransportationPage";
-        public const string AddClothespPage = "AddClothesPage";
+        public const string AddClothesPage = "AddClothesPage";
         public const string AddFoodPage = "AddFoodPage";
         public const string AddTransportationPage = "AddTransportationPage";
         public const string AddOthersPage = "AddOthersPage";
@@ -48,6 +49,7 @@ namespace OcampoElective2Project.Helpers
             {
                 SimpleIoc.Default.Register<ILogInService, MockLogInService>();
                 SimpleIoc.Default.Register<IRegisterService, MockRegisterService>();
+                SimpleIoc.Default.Register<IClothesService, MockClothesService>();
 
             }
 
@@ -55,6 +57,7 @@ namespace OcampoElective2Project.Helpers
             {
                 SimpleIoc.Default.Register<ILogInService, LogInService>();
                 SimpleIoc.Default.Register<IRegisterService, RegisterService>();
+                SimpleIoc.Default.Register<IClothesService, ClothesService>();
             }
 
         }
