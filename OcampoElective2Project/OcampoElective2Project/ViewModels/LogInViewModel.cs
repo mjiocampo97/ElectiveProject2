@@ -62,7 +62,7 @@ namespace OcampoElective2Project.ViewModels
             }
 
         }
-        public ICommand RegisterCommand =>new Command(RegisterProc);
+        public ICommand RegisterCommand =>new RelayCommand(RegisterProc);
 
         public void RegisterProc()
         {

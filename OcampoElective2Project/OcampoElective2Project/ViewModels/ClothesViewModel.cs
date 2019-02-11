@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
-using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 using OcampoElective2Project.Helpers;
 using OcampoElective2Project.Models;
@@ -24,6 +25,7 @@ namespace OcampoElective2Project.ViewModels
             }
         }
         public IClothesService ClothesService { get; set; }
+        public ObservableCollection<Clothes> ClothesList = new ObservableCollection<Clothes>();
         public ClothesViewModel(INavigationService navigationService, IClothesService clothesService)
         {
             if (navigationService == null) throw new ArgumentNullException("navigationService");
@@ -31,7 +33,18 @@ namespace OcampoElective2Project.ViewModels
             ClothesService = clothesService;
 
         }
-       
+
+        public void LoadClothes()
+        {
+            ClothesList.Clear();
+            foreach (var clothes in ClothesService.GetClothesUser(User))
+            {
+                ClothesList.Add(clothes);
+            }
+        }
+
+
+
         public ICommand AddClothesCommand => new RelayCommand(AddClothesProc);
 
         private void AddClothesProc()

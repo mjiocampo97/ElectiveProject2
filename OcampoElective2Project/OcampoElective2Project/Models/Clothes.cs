@@ -7,6 +7,7 @@ using SQLite;
 
 namespace OcampoElective2Project.Models
 {
+    [Table("Clothes")]
     public class Clothes : OcampoElective2ProjectViewModel
     {
         public ObservableCollection<Clothes> ClothesList = new ObservableCollection<Clothes>();
@@ -14,7 +15,7 @@ namespace OcampoElective2Project.Models
         public double Price { get; set; }
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
-
+        public int UserId { get; set; }
 
     }
 }

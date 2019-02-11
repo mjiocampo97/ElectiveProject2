@@ -22,6 +22,7 @@ namespace OcampoElective2Project.Views
         }
 	    protected override void OnAppearing()
 	    {
+            
 	        base.OnAppearing();
 	        var currentPageKeyString = ServiceLocator.Current
 	            .GetInstance<INavigationService>()

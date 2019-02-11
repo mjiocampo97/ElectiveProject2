@@ -7,7 +7,8 @@ namespace OcampoElective2Project.Services.ClothesService
 {
     public interface IClothesService 
     {
-        UserAccount GetClothesDataBase<T>(T user);
+        Clothes GetClothesDataBase<T>(T user);
+        List<Clothes> GetClothesUser(UserAccount clothesUnderUser);
 
     }
 }

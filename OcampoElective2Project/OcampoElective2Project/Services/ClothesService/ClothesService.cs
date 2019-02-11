@@ -7,9 +7,16 @@ namespace OcampoElective2Project.Services.ClothesService
 {
     public class ClothesService : IClothesService
     {
-        public UserAccount GetClothesDataBase<T>(T user)
+        public Clothes GetClothesDataBase<T>(T user)
         {
             throw new NotImplementedException();
         }
+
+        public List<Clothes> GetClothesUser(UserAccount clothesUnderUser)
+        {
+            throw new NotImplementedException();
+        }
+
+      
     }
 }

@@ -17,7 +17,7 @@ namespace OcampoElective2Project
 	 
         public static ViewModelLocator Locator;
 	    private static ViewModelLocator _locator;
-     //   private readonly InitializeData InitializeData;
+    //    private readonly InitializeData InitializeData;
 	    private readonly InitializeNavigation initNavigation;
 	    public static NavigationService NavigationService { get; set; }
         //public IDataService<T> IDataService;
@@ -29,10 +29,12 @@ namespace OcampoElective2Project
 		    if (initNavigation == null)
 		    {
 		        initNavigation = new InitializeNavigation();
+                //InitializeData = new InitializeData();
 		    }
 		    Locator = _locator ??new ViewModelLocator();
           //  InitializeData = new InitializeData();
 		    NavigationService = initNavigation.navigationService;
+            
            // initNavigation.SetPages();
 		   // var firstPage = new NavigationPage(new LogInPage());
 		   // initNavigation.navigationService.Initialize(firstPage);

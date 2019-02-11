@@ -5,5 +5,6 @@ using System.Text;
 namespace OcampoElective2Project.Services.FoodService
 {
     public class MockFoodService : IFoodService
+    { 
     }
 }

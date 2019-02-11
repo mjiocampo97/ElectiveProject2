@@ -26,7 +26,7 @@ namespace OcampoElective2Project.Services.LogInService
 
         public void CreateFakeUserAccount()
         {
-            Users.Add(new UserAccount("Mark","Ocampo",new DateTime(1997,6,18),123123,123,"1","1","mjiocampo@addu.edu.ph" ));
+            Users.Add(new UserAccount(0,"Mark","Ocampo",new DateTime(1997,6,18),123123,123,"1","1","mjiocampo@addu.edu.ph" ));
         }
 
         public void GetFromDatabaseUseraccount<T>(T user)

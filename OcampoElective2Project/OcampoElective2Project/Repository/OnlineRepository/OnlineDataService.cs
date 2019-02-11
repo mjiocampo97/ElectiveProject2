@@ -17,6 +17,11 @@ namespace OcampoElective2Project.Repository.OnlineRepository
             throw new NotImplementedException();
         }
 
+        public void Update(Expression<Func<T, bool>> condition, T newObject)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Expression<Func<T, bool>> condition)
         {
             throw new NotImplementedException();

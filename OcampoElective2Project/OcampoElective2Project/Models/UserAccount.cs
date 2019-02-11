@@ -7,14 +7,15 @@ using SQLite;
 
 namespace OcampoElective2Project.Models
 {
-   public class UserAccount : OcampoElective2ProjectViewModel
+    [Table("UserAccount")]
+    public class UserAccount : OcampoElective2ProjectViewModel
     {
             
-        public ObservableCollection<object> ListOfExpenses = new ObservableCollection<object>();
-        public ObservableCollection<Food> ListOfFoodExpenses = new ObservableCollection<Food>();
-        public ObservableCollection<Clothes> ListOfClothesExpenses = new ObservableCollection<Clothes>();
-        public ObservableCollection<Others> ListOfOthersExpenses = new ObservableCollection<Others>();
-        public ObservableCollection<Transportation> ListOfTransportationExpenses = new ObservableCollection<Transportation>();
+     ///   public ObservableCollection<object> ListOfExpenses = new ObservableCollection<object>();
+     //   public ObservableCollection<Food> ListOfFoodExpenses { get; set; }= new ObservableCollection<Food>();
+     //   public ObservableCollection<Clothes> ListOfClothesExpenses { get; set; }= new ObservableCollection<Clothes>();
+     //   public ObservableCollection<Others> ListOfOthersExpenses = new ObservableCollection<Others>();
+   //     public ObservableCollection<Transportation> ListOfTransportationExpenses = new ObservableCollection<Transportation>();
 
         private int _id;
         private string _firstName;
@@ -28,7 +29,7 @@ namespace OcampoElective2Project.Models
         private string _emailAddress;
 
         [PrimaryKey, AutoIncrement, Column("_id")]
-        public int Id
+        public int AccountId
         {
             get => _id;
             set => _id = value;
@@ -89,8 +90,9 @@ namespace OcampoElective2Project.Models
         }
 
 
-        public UserAccount(string firstName, string lastName, DateTime birthDate, double money, double income,string username ,string password, string emailAddress)
+        public UserAccount(int id,string firstName, string lastName, DateTime birthDate, double money, double income,string username ,string password, string emailAddress)
         {
+            AccountId = id;
             FirstName = firstName;
             LastName = lastName;
             BirthDate = birthDate;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
@@ -9,6 +10,7 @@ using OcampoElective2Project.Models;
 using OcampoElective2Project.Services;
 using OcampoElective2Project.ViewModels;
 using OcampoElective2Project.Views;
+using SQLite;
 using Xamarin.Forms;
 
 namespace OcampoElective2Project.Helpers
@@ -17,14 +19,67 @@ namespace OcampoElective2Project.Helpers
     public class InitializeNavigation
     {
         public NavigationService navigationService { get; }
+      
         public InitializeNavigation()
         {
             navigationService = new NavigationService();
             SimpleIoc.Default.Reset();
             SetPages();
+        
             SimpleIoc.Default.Register<INavigationService>(() => navigationService);
+            InitializeData();
+
+
 
         }
+
+         public void InitializeData()
+        {
+            //  if (IsTestMode == true)
+
+            var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "Storage.db3");
+            
+            {
+                using (var connection = new SQLiteConnection(dbPath))
+                {
+                //connection.CreateTable<UserAccount>();
+                //connection.CreateTable<Clothes>();
+                //connection.CreateTable<Food>();
+                //connection.CreateTable<Others>();
+                //connection.CreateTable<Transportation>();
+              
+
+                //var food= connection.Table<Food>();
+                //var listOfFood = food.ToList();
+
+                //var others= connection.Table<Others>();
+                //var listOfOthers = others.ToList();
+
+                //var clothes = connection.Table<Clothes>();
+                //var listOfClothes = clothes.ToList();
+
+                //var transportation = connection.Table<Transportation>();
+                //var listOfTransportation = transportation.ToList();
+
+                //var user = connection.Table<UserAccount>();
+                //var listOfUser = user.ToList();
+                }
+
+            }
+
+        }
+         private void CreateMockDataSQL(SQLiteConnection connection)
+         {
+             for (int i = 0; i < 3; i++)
+             {
+                 connection.Insert(new Clothes()
+                 {
+                     Name = $" Clothes {i}",
+                     Price = i * 100,
+                     UserId = 0
+                 });
+             }
+         }
 
         public void SetPages()
         {

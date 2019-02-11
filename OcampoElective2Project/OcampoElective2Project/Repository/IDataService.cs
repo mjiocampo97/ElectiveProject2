@@ -11,7 +11,7 @@ namespace OcampoElective2Project.Repository
 
         T Get(Expression<Func<T, bool>> condition);
 
-        void Update(Expression<Func<T, bool>> condition);
+        void Update(Expression<Func<T, bool>> condition, T newObject);
 
         void Delete(Expression<Func<T, bool>> condition);
 

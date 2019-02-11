@@ -8,10 +8,11 @@ using Xamarin.Forms;
 
 namespace OcampoElective2Project.Models
 {
+    [Table("Others")]
     public class Others : OcampoElective2ProjectViewModel
     {
 
-        public ObservableCollection<Others> OthersList = new ObservableCollection<Others>();
+    //    public ObservableCollection<Others> OthersList = new ObservableCollection<Others>();
         
         public string Name { get; set; }
 
@@ -19,6 +20,6 @@ namespace OcampoElective2Project.Models
 
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
-        
+        public int UserId { get; set; }
     }
 }

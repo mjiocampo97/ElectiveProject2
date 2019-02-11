@@ -29,20 +29,22 @@ namespace OcampoElective2Project.Repository.LocalRepository
             }
         }
 
-        public void Update(Expression<Func<T, bool>> condition)
+        public void Update(Expression<Func<T, bool>> condition, T newObject)
         {
-            //Todo:: implement this
+            
             using (var db = new SQLiteConnection(dbPath))
             {
-                throw new NotImplementedException();
+                var objectUpdate = newObject;
+                db.Update(objectUpdate);
             }
         }
 
         public void Delete(Expression<Func<T, bool>> condition)
-        {//Todo:: implement this
+        {
             using (var db = new SQLiteConnection(dbPath))
             {
-                throw new NotImplementedException();
+                var objectToDelete = db.Table<T>().FirstOrDefault(condition);
+                db.Delete(objectToDelete);
 
             }
         }
