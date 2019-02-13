@@ -31,10 +31,10 @@ namespace OcampoElective2Project.ViewModels
             if (navigationService == null) throw new ArgumentNullException("navigationService");
             NavigationService = (NavigationService)navigationService;
             ClothesService = clothesService;
-
+           
         }
 
-        public void LoadClothes()
+        public void LoadClothes(UserAccount user)
         {
             ClothesList.Clear();
             foreach (var clothes in ClothesService.GetClothesUser(User))

@@ -8,7 +8,7 @@ using SQLite;
 namespace OcampoElective2Project.Models
 {
     [Table("UserAccount")]
-    public class UserAccount : OcampoElective2ProjectViewModel
+    public class UserAccount
     {
             
      ///   public ObservableCollection<object> ListOfExpenses = new ObservableCollection<object>();

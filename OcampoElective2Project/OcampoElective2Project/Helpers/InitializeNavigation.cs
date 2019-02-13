@@ -18,6 +18,8 @@ namespace OcampoElective2Project.Helpers
 
     public class InitializeNavigation
     {
+        private static string dbPath =
+            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "OcampoElective.db3");
         public NavigationService navigationService { get; }
       
         public InitializeNavigation()
@@ -28,7 +30,7 @@ namespace OcampoElective2Project.Helpers
         
             SimpleIoc.Default.Register<INavigationService>(() => navigationService);
             InitializeData();
-
+            
 
 
         }
@@ -37,46 +39,60 @@ namespace OcampoElective2Project.Helpers
         {
             //  if (IsTestMode == true)
 
-            var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Storage.db3");
+      
             
             {
-                var connection = new SQLiteConnection(dbPath);
-                {
-                    connection.CreateTable<UserAccount>();
-                    connection.CreateTable<Clothes>();
-                    connection.CreateTable<Food>();
-                    connection.CreateTable<Others>();
-                    connection.CreateTable<Transportation>();
+                var connection = new SQLiteAsyncConnection(dbPath);
 
 
-                    var food = connection.Table<Food>();
-                    var listOfFood = food.ToList();
+                connection.CreateTableAsync<UserAccount>();
+                connection.CreateTableAsync<Clothes>();
+                    //connection.CreateTable<Food>();
+                    //connection.CreateTable<Others>();
+                    //connection.CreateTable<Transportation>();
 
-                    var others = connection.Table<Others>();
-                    var listOfOthers = others.ToList();
+
+                    //var food= connection.Table<Food>();
+                    //var listOfFood = food.ToList();
+
+                    var others= connection.Table<Others>();
+                    var listOfOthers = others.ToListAsync();
 
                     var clothes = connection.Table<Clothes>();
-                    var listOfClothes = clothes.ToList();
+                    var listOfClothes = clothes.ToListAsync();
 
-                    var transportation = connection.Table<Transportation>();
-                    var listOfTransportation = transportation.ToList();
-
-                    var user = connection.Table<UserAccount>();
-                    var listOfUser = user.ToList();
-                }
+                    //var transportation = connection.Table<Transportation>();
+                    //var listOfTransportation = transportation.ToList();
+                    CreateMockDataSQL(connection);
+                    //var user = connection.Table<UserAccount>();
+                    //var listOfUser = user.ToList();
+                
 
             }
 
         }
-         private void CreateMockDataSQL(SQLiteConnection connection)
+         private void CreateMockDataSQL(SQLiteAsyncConnection connection)
          {
              for (int i = 0; i < 3; i++)
              {
-                 connection.Insert(new Clothes()
+                 connection.InsertAsync(new Clothes()
                  {
                      Name = $" Clothes {i}",
                      Price = i * 100,
                      UserId = 0
+                 });
+             }
+
+             for (int i = 0; i < 3; i++)
+             {
+                 connection.InsertAsync(new UserAccount()
+                 {
+                     FirstName = "ata",
+                     AccountId = 1,
+                     Username = $"{i+2}",
+                     Password = $"{i+2}"
+                        
+                     
                  });
              }
          }

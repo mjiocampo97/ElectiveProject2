@@ -12,7 +12,7 @@ namespace OcampoElective2Project.Services.ClothesService
 {
     public class MockClothesService : IClothesService
     {
-        private static string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "Storage.db3");
+        private static string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "OcampoElective.db3");
 
         private IRepository _repository;
         public MockClothesService()
