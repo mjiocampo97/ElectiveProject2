@@ -32,13 +32,9 @@ namespace OcampoElective2Project
                 //InitializeData = new InitializeData();
 		    }
 		    Locator = _locator ??new ViewModelLocator();
-          //  InitializeData = new InitializeData();
-		    NavigationService = initNavigation.navigationService;
-            
-           // initNavigation.SetPages();
-		   // var firstPage = new NavigationPage(new LogInPage());
-		   // initNavigation.navigationService.Initialize(firstPage);
-		  //  MainPage = firstPage;
+            var firstPage = new NavigationPage(new LogInPage());
+            //  InitializeData = new InitializeData();
+          initNavigation.navigationService.Initialize(firstPage);
 		    MainPage = initNavigation.SetMasterDetailMainPage();
 		}
 

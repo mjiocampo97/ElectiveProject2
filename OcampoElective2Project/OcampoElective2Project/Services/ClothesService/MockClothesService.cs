@@ -6,6 +6,7 @@ using System.Text;
 using OcampoElective2Project.Models;
 using OcampoElective2Project.Repository;
 using OcampoElective2Project.Repository.LocalRepository;
+using SQLite;
 
 namespace OcampoElective2Project.Services.ClothesService
 {
@@ -25,7 +26,7 @@ namespace OcampoElective2Project.Services.ClothesService
 
         public List<Clothes> GetClothesUser(UserAccount clothesUnderUser)
         {
-        
+         
             var clothes = _repository.Clothes.GetAll();
             var clothesForUser = new List<Clothes>();
            

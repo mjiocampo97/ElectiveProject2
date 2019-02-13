@@ -37,32 +37,32 @@ namespace OcampoElective2Project.Helpers
         {
             //  if (IsTestMode == true)
 
-            var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "Storage.db3");
+            var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Storage.db3");
             
             {
-                using (var connection = new SQLiteConnection(dbPath))
+                var connection = new SQLiteConnection(dbPath);
                 {
-                //connection.CreateTable<UserAccount>();
-                //connection.CreateTable<Clothes>();
-                //connection.CreateTable<Food>();
-                //connection.CreateTable<Others>();
-                //connection.CreateTable<Transportation>();
-              
+                    connection.CreateTable<UserAccount>();
+                    connection.CreateTable<Clothes>();
+                    connection.CreateTable<Food>();
+                    connection.CreateTable<Others>();
+                    connection.CreateTable<Transportation>();
 
-                //var food= connection.Table<Food>();
-                //var listOfFood = food.ToList();
 
-                //var others= connection.Table<Others>();
-                //var listOfOthers = others.ToList();
+                    var food = connection.Table<Food>();
+                    var listOfFood = food.ToList();
 
-                //var clothes = connection.Table<Clothes>();
-                //var listOfClothes = clothes.ToList();
+                    var others = connection.Table<Others>();
+                    var listOfOthers = others.ToList();
 
-                //var transportation = connection.Table<Transportation>();
-                //var listOfTransportation = transportation.ToList();
+                    var clothes = connection.Table<Clothes>();
+                    var listOfClothes = clothes.ToList();
 
-                //var user = connection.Table<UserAccount>();
-                //var listOfUser = user.ToList();
+                    var transportation = connection.Table<Transportation>();
+                    var listOfTransportation = transportation.ToList();
+
+                    var user = connection.Table<UserAccount>();
+                    var listOfUser = user.ToList();
                 }
 
             }

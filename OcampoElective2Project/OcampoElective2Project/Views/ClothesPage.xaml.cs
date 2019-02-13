@@ -35,7 +35,7 @@ namespace OcampoElective2Project.Views
         }
         protected override void OnAppearing()
         {
-        //   vm.LoadClothes();
+           vm.LoadClothes();
 
         }
     }

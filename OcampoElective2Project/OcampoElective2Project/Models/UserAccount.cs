@@ -21,7 +21,7 @@ namespace OcampoElective2Project.Models
         private string _firstName;
         private string _lastName;
         private int _age;
-        private DateTime _birthDate;
+        private string _birthDate;
         private double _money;
         private double _income;
         private string _username;
@@ -53,7 +53,7 @@ namespace OcampoElective2Project.Models
             set => _age = value;
         }
 
-        public DateTime BirthDate
+        public string BirthDate
         {
             get => _birthDate;
             set => _birthDate = value;
@@ -90,7 +90,7 @@ namespace OcampoElective2Project.Models
         }
 
 
-        public UserAccount(int id,string firstName, string lastName, DateTime birthDate, double money, double income,string username ,string password, string emailAddress)
+        public UserAccount(int id,string firstName, string lastName, string birthDate, double money, double income,string username ,string password, string emailAddress)
         {
             AccountId = id;
             FirstName = firstName;

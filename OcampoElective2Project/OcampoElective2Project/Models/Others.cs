@@ -9,7 +9,7 @@ using Xamarin.Forms;
 namespace OcampoElective2Project.Models
 {
     [Table("Others")]
-    public class Others : OcampoElective2ProjectViewModel
+    public class Others
     {
 
     //    public ObservableCollection<Others> OthersList = new ObservableCollection<Others>();
