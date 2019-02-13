@@ -9,7 +9,7 @@ namespace OcampoElective2Project.Repository.LocalRepository
 {
     public class LocalDataService<T> : IDataService<T> where T : class, new()
     {
-        private static string dbPath= Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "Storage.db3");
+        private static string dbPath= Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "OcampoElective.db3");
        // private SQLiteAsyncConnection db = new SQLiteAsyncConnection(dbPath);
    
 

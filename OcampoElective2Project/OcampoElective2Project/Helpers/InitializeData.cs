@@ -10,7 +10,7 @@ namespace OcampoElective2Project.Helpers
     public class InitializeData
     {
         private static string dbPath =
-            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "Storage.db3");
+            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "OcampoElective.db3");
 
         public bool IsTestMode;
         
