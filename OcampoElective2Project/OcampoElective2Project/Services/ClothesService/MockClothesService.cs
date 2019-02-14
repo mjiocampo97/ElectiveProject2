@@ -27,7 +27,8 @@ namespace OcampoElective2Project.Services.ClothesService
         public List<Clothes> GetClothesUser(UserAccount clothesUnderUser)
         {
          
-            var clothes = _repository.Clothes.GetAll();
+            var clothes = _repository.Clothes.GetRange(c=>c.UserId== clothesUnderUser.AccountId);
+            return clothes;
             var clothesForUser = new List<Clothes>();
            
                clothesForUser.AddRange(clothes.Where(c=> c.UserId == clothesUnderUser.AccountId)); 

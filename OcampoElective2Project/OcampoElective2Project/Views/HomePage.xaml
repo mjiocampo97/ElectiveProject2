@@ -10,14 +10,18 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition AbsoluteLayout.LayoutBounds="1,1,1.35"/>
+                <RowDefinition/>
                 <RowDefinition/>
              </Grid.RowDefinitions>
-            <StackLayout Orientation="Horizontal" Grid.Row="1">
+            <StackLayout>
+            <StackLayout Orientation="Horizontal">
                 <Label Text="Name: "></Label>
-                <Label Text="{Binding UserAccount.FirstName}"></Label>
-                <Label Text=", "></Label>
-                <Label Text="{Binding UserAccount.LastName}"></Label>
+                <Label Text="{Binding User.FirstName}"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="LastName "></Label>
+                <Label Text="{Binding User.LastName}"></Label>
+            </StackLayout>
             </StackLayout>
             </Grid>
         </AbsoluteLayout>

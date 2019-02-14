@@ -50,7 +50,7 @@ namespace OcampoElective2Project.Helpers
                     //connection.CreateTable<Food>();
                     //connection.CreateTable<Others>();
                     //connection.CreateTable<Transportation>();
-
+                    connection.DeleteAllAsync<Clothes>();
 
                     //var food= connection.Table<Food>();
                     //var listOfFood = food.ToList();
@@ -79,23 +79,23 @@ namespace OcampoElective2Project.Helpers
                  {
                      Name = $" Clothes {i}",
                      Price = i * 100,
-                     UserId = 0
+                     UserId = 0+i
                  });
              }
 
-             for (int i = 0; i < 3; i++)
-             {
-                 connection.InsertAsync(new UserAccount()
-                 {
-                     FirstName = "ata",
-                     AccountId = 1,
-                     Username = $"{i+2}",
-                     Password = $"{i+2}"
-                        
-                     
-                 });
-             }
-         }
+            for (int i = 0; i < 3; i++)
+            {
+                connection.InsertAsync(new UserAccount()
+                {
+                    FirstName = "ata",
+                    AccountId = 1,
+                    Username = $"{i + 2}",
+                    Password = $"{i + 2}"
+
+
+                });
+            }
+        }
 
         public void SetPages()
         {
