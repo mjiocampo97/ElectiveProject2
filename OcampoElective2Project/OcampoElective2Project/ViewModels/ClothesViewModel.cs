@@ -25,7 +25,8 @@ namespace OcampoElective2Project.ViewModels
             }
         }
         public IClothesService ClothesService { get; set; }
-        public ObservableCollection<Clothes> ClothesList = new ObservableCollection<Clothes>();
+        public ObservableCollection<Clothes> ClothesList { get; set; }= new ObservableCollection<Clothes>();
+        public Clothes SelectedClothes { get; set; }
         public ClothesViewModel(INavigationService navigationService, IClothesService clothesService)
         {
             if (navigationService == null) throw new ArgumentNullException("navigationService");
