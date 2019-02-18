@@ -5,13 +5,13 @@
     <ContentPage.Content>
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
             <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All">
-                <ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Aqua" >
+                <ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  BackgroundColor="AntiqueWhite"  ItemsSource="{Binding OthersList}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout>
-                                    <Label Text="Name of Clothes"></Label>
-                                    <Label Text="Price"/>
+                                    <Label Text="{Binding Name}"/>
+                                    <Label Text="{Binding Price}"/>
 
                                 </StackLayout>
                             </ViewCell>

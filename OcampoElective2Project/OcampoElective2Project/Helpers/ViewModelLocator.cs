@@ -4,8 +4,11 @@ using System.Text;
 using CommonServiceLocator;
 using GalaSoft.MvvmLight.Ioc;
 using OcampoElective2Project.Services.ClothesService;
+using OcampoElective2Project.Services.FoodService;
 using OcampoElective2Project.Services.LogInService;
+using OcampoElective2Project.Services.OthersService;
 using OcampoElective2Project.Services.RegisterService;
+using OcampoElective2Project.Services.TransportationService;
 using OcampoElective2Project.ViewModels;
 
 namespace OcampoElective2Project.Helpers
@@ -50,7 +53,9 @@ namespace OcampoElective2Project.Helpers
                 SimpleIoc.Default.Register<ILogInService, MockLogInService>();
                 SimpleIoc.Default.Register<IRegisterService, MockRegisterService>();
                 SimpleIoc.Default.Register<IClothesService, MockClothesService>();
-
+                SimpleIoc.Default.Register<IFoodService, MockFoodService>();
+                SimpleIoc.Default.Register<IOthersService, MockOthersService>();
+                SimpleIoc.Default.Register<ITransportationService,MockTransportationService>();
             }
 
             else
@@ -58,6 +63,9 @@ namespace OcampoElective2Project.Helpers
                 SimpleIoc.Default.Register<ILogInService, LogInService>();
                 SimpleIoc.Default.Register<IRegisterService, RegisterService>();
                 SimpleIoc.Default.Register<IClothesService, ClothesService>();
+                SimpleIoc.Default.Register<IFoodService, FoodService>();
+                SimpleIoc.Default.Register<IOthersService, OthersService>();
+                SimpleIoc.Default.Register<ITransportationService, TransportationService>();
             }
 
         }

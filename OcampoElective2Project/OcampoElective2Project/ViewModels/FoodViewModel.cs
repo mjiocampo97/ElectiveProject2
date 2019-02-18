@@ -37,9 +37,13 @@ namespace OcampoElective2Project.ViewModels
           
         }
 
-        public void LoadFood()
+        public void LoadFood(UserAccount user)
         {
             FoodList.Clear();
+            foreach (var v in FoodService.GetFoodUser(User))
+            {
+                FoodList.Add(v);
+            }
         }
 
         public ICommand AddFoodCommand => new RelayCommand(AddFoodProc);

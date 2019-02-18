@@ -27,5 +27,11 @@ namespace OcampoElective2Project.Views
             vm.User = user;
             BindingContext = vm;
         }
+
+        protected override void OnAppearing()
+        {
+            vm.LoadFood(vm.User);
+
+        }
     }
 }

@@ -47,26 +47,34 @@ namespace OcampoElective2Project.Helpers
 
                 connection.CreateTableAsync<UserAccount>();
                 connection.CreateTableAsync<Clothes>();
-                    //connection.CreateTable<Food>();
-                    //connection.CreateTable<Others>();
-                    //connection.CreateTable<Transportation>();
-                    connection.DeleteAllAsync<Clothes>();
+                connection.CreateTableAsync<Food>();
+                connection.CreateTableAsync<Others>();
+                connection.CreateTableAsync<Transportation>();
 
-                    //var food= connection.Table<Food>();
-                    //var listOfFood = food.ToList();
+                connection.DeleteAllAsync<Clothes>();
+                connection.DeleteAllAsync<Food>();
+                connection.DeleteAllAsync<Others>();
+                connection.DeleteAllAsync<Transportation>();
 
-                    var others= connection.Table<Others>();
-                    var listOfOthers = others.ToListAsync();
 
-                    var clothes = connection.Table<Clothes>();
-                    var listOfClothes = clothes.ToListAsync();
 
-                    //var transportation = connection.Table<Transportation>();
-                    //var listOfTransportation = transportation.ToList();
-                    CreateMockDataSQL(connection);
-                    //var user = connection.Table<UserAccount>();
-                    //var listOfUser = user.ToList();
-                
+                var food= connection.Table<Food>();
+                var clothes = connection.Table<Clothes>();
+                var others = connection.Table<Others>();
+                var transportation = connection.Table<Transportation>();
+
+
+                var listOfFood = food.ToListAsync();
+                var listOfOthers = others.ToListAsync();
+                var listOfClothes = clothes.ToListAsync();
+                var listOfTransportation = transportation.ToListAsync();
+
+                CreateMockDataSQL(connection);
+
+
+                //var user = connection.Table<UserAccount>();
+                //var listOfUser = user.ToList();
+
 
             }
 
@@ -83,15 +91,46 @@ namespace OcampoElective2Project.Helpers
                  });
              }
 
+
+             for (int i = 0; i < 3; i++)
+             {
+                 connection.InsertAsync(new Food()
+                 {
+                     NameOfFood= $" Food {i}",
+                     Price = i * 100,
+                     UserId = 0 + i
+                 });
+             }
+
+             for (int i = 0; i < 3; i++)
+             {
+                 connection.InsertAsync(new Others()
+                 {
+                     Name = $" Other {i}",
+                     Price = i * 100,
+                     UserId = 0 + i
+                 });
+             }
+
+             for (int i = 0; i < 3; i++)
+             {
+                 connection.InsertAsync(new Transportation()
+                 {
+                     Name = $" Transportation {i}",
+                     Price = i * 100,
+                     UserId = 0 + i
+                 });
+             }
+
             for (int i = 0; i < 3; i++)
             {
                 connection.InsertAsync(new UserAccount()
                 {
                     FirstName = "ata",
-                    AccountId = 1,
+                    AccountId = i,
                     Username = $"{i + 2}",
-                    Password = $"{i + 2}"
-
+                    Password = $"{i + 2}",
+                    
 
                 });
             }

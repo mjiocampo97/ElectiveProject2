@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.CommandWpf;
@@ -26,6 +27,7 @@ namespace OcampoElective2Project.ViewModels
         }
 
         public ITransportationService TransportationService { get; set; }
+        public ObservableCollection<Transportation> TransportationList { get; set; } = new ObservableCollection<Transportation>();
         public TransportationViewModel(INavigationService navigationService, ITransportationService transportationService)
         {
             if (navigationService == null) throw new ArgumentNullException("navigationService");
