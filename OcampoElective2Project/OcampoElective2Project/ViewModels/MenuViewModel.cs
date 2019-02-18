@@ -68,7 +68,7 @@ namespace OcampoElective2Project.ViewModels
 
         private void GoToFoodPageProc()
         {
-            NavigationService.NavigateTo(ViewModelLocator.FoodPage, null, true);
+            NavigationService.NavigateTo(ViewModelLocator.FoodPage, User, true);
             ToggleMasterPageIsPresented();
         }
         public ICommand GoToTransportationPageCommand => new RelayCommand(GoToTransportationPageProc);
@@ -82,7 +82,7 @@ namespace OcampoElective2Project.ViewModels
         public ICommand GoToOthersPageCommand => new RelayCommand(GoToOthersPageProc);
         private void GoToOthersPageProc()
         {
-            NavigationService.NavigateTo(ViewModelLocator.OthersPage, null, true);
+            NavigationService.NavigateTo(ViewModelLocator.OthersPage, User, true);
             ToggleMasterPageIsPresented();
         }
     }
