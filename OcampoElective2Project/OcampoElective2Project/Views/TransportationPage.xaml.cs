@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using CommonServiceLocator;
 using GalaSoft.MvvmLight.Views;
+using OcampoElective2Project.Models;
+using OcampoElective2Project.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,7 +15,9 @@ namespace OcampoElective2Project.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TransportationPage : ContentPage
-	{
+    {
+
+        public TransportationViewModel vm;
 		public TransportationPage ()
 		{
 			InitializeComponent ();
@@ -27,6 +31,12 @@ namespace OcampoElective2Project.Views
 	            .CurrentPageKey;
 	        Debug.WriteLine("Current page key: " + currentPageKeyString);
 	    }
-
+        public TransportationPage(UserAccount user)
+        {
+            InitializeComponent();
+            vm = App.Locator.TransportationViewModel;
+            vm.User = user;
+            BindingContext = vm;
+        }
     }
 }

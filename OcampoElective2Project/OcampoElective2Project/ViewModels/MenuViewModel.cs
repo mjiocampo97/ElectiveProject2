@@ -75,7 +75,7 @@ namespace OcampoElective2Project.ViewModels
 
         private void GoToTransportationPageProc()
         {
-            NavigationService.NavigateTo(ViewModelLocator.TransportationPage, null, true);
+            NavigationService.NavigateTo(ViewModelLocator.TransportationPage, User, true);
             ToggleMasterPageIsPresented();
         }
 
