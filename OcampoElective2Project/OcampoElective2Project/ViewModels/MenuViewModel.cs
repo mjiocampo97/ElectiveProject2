@@ -20,15 +20,7 @@ namespace OcampoElective2Project.ViewModels
             NavigationService = (NavigationService)navigationService;
         }
         private UserAccount _user;
-        public UserAccount User
-        {
-            get => _user;
-            set
-            {
-                _user = value;
-                RaisePropertyChanged(nameof(User));
-            }
-        }
+       public UserAccount User { get; set; }
         private void ToggleMasterPageIsPresented()
         {
             if (((MasterDetailPage)(App.Current.MainPage)).IsPresented)
@@ -44,6 +36,7 @@ namespace OcampoElective2Project.ViewModels
         public void LogoutProc()
         {
             //HomePageService.Logout();
+            SettingsImplementation.User = "";
             SettingsImplementation.IsLoggedIn = false;
             NavigationService.NavigateTo(ViewModelLocator.LogInPage, null, true);
             ((MasterDetailPage)App.Current.MainPage).IsGestureEnabled = false;

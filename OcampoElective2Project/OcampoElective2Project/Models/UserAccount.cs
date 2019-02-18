@@ -29,18 +29,13 @@ namespace OcampoElective2Project.Models
         private string _emailAddress;
 
         [PrimaryKey, AutoIncrement, Column("_id")]
-        public int AccountId
-        {
-            get => _id;
-            set => _id = value;
-        }
-
+        public int AccountId { get; set; }
         public string FirstName
         {
             get => _firstName;
             set => _firstName = value;
         }
-
+       
         public string LastName
         {
             get => _lastName;
@@ -90,18 +85,18 @@ namespace OcampoElective2Project.Models
         }
 
 
-        public UserAccount(int id,string firstName, string lastName, string birthDate, double money, double income,string username ,string password, string emailAddress)
-        {
-            AccountId = id;
-            FirstName = firstName;
-            LastName = lastName;
-            BirthDate = birthDate;
-            Money = money;
-            Income = income;
-            Username = username;
-            Password = password;
-            EmailAddress = emailAddress;
-        }
+        //public UserAccount(int accountid,string firstName, string lastName, string birthDate, double money, double income,string username ,string password, string emailAddress)
+        //{
+        //    AccountId = accountid;
+        //    FirstName = firstName;
+        //    LastName = lastName;
+        //    BirthDate = birthDate;
+        //    Money = money;
+        //    Income = income;
+        //    Username = username;
+        //    Password = password;
+        //    EmailAddress = emailAddress;
+        //}
 
         public UserAccount()
         {

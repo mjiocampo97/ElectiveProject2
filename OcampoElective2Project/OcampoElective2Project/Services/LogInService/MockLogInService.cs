@@ -36,7 +36,7 @@ namespace OcampoElective2Project.Services.LogInService
 
         public void CreateFakeUserAccount()
         {
-            Users.Add(new UserAccount(0,"Mark","Ocampo","1997",123123,123,"1","1","mjiocampo@addu.edu.ph" ));
+           // Users.Add(new UserAccount(0,"Mark","Ocampo","1997",123123,123,"1","1","mjiocampo@addu.edu.ph" ));
             foreach (var VARIABLE in _repository.UserAccount.GetAll())
             {
                 Users.Add(VARIABLE);

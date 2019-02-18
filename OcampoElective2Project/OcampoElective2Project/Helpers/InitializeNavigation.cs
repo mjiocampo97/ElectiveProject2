@@ -51,25 +51,26 @@ namespace OcampoElective2Project.Helpers
                 connection.CreateTableAsync<Others>();
                 connection.CreateTableAsync<Transportation>();
 
-                connection.DeleteAllAsync<Clothes>();
-                connection.DeleteAllAsync<Food>();
-                connection.DeleteAllAsync<Others>();
-                connection.DeleteAllAsync<Transportation>();
-
+                //connection.DeleteAllAsync<Clothes>();
+                //connection.DeleteAllAsync<Food>();
+                //connection.DeleteAllAsync<Others>();
+                //connection.DeleteAllAsync<Transportation>();
+                //connection.DeleteAllAsync<UserAccount>();
 
 
                 var food= connection.Table<Food>();
                 var clothes = connection.Table<Clothes>();
                 var others = connection.Table<Others>();
                 var transportation = connection.Table<Transportation>();
+                var useraccount = connection.Table<UserAccount>();
 
-
+                var listofaccount = useraccount.ToListAsync();
                 var listOfFood = food.ToListAsync();
                 var listOfOthers = others.ToListAsync();
                 var listOfClothes = clothes.ToListAsync();
                 var listOfTransportation = transportation.ToListAsync();
 
-                CreateMockDataSQL(connection);
+              //  CreateMockDataSQL(connection);
 
 
                 //var user = connection.Table<UserAccount>();
@@ -81,7 +82,7 @@ namespace OcampoElective2Project.Helpers
         }
          private void CreateMockDataSQL(SQLiteAsyncConnection connection)
          {
-             for (int i = 0; i < 3; i++)
+             for (int i = 0; i < 5; i++)
              {
                  connection.InsertAsync(new Clothes()
                  {
@@ -126,15 +127,22 @@ namespace OcampoElective2Project.Helpers
             {
                 connection.InsertAsync(new UserAccount()
                 {
-                    FirstName = "ata",
-                    AccountId = i,
+                    FirstName = $"ata {i}",
+                   // AccountId = i + 2,
                     Username = $"{i + 2}",
                     Password = $"{i + 2}",
                     
 
                 });
             }
-        }
+
+            connection.InsertAsync(new Clothes()
+            {
+                UserId = 75,
+                Name = "Clothes ni 75",
+                Price = 1000
+            });
+         }
 
         public void SetPages()
         {

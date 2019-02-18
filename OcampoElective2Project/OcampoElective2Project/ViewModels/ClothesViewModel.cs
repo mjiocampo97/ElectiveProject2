@@ -33,6 +33,7 @@ namespace OcampoElective2Project.ViewModels
             NavigationService = (NavigationService)navigationService;
             ClothesService = clothesService;
     //       LoadClothes(User);
+
         }
 
         public void LoadClothes(UserAccount user)

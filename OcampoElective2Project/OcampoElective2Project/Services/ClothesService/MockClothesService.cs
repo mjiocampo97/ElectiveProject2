@@ -27,11 +27,30 @@ namespace OcampoElective2Project.Services.ClothesService
         public List<Clothes> GetClothesUser(UserAccount clothesUnderUser)
         {
          
-            var clothes = _repository.Clothes.GetRange(c=>c.UserId== clothesUnderUser.AccountId);
+            var clothes = _repository.Clothes.GetRange(c=>c.UserId == clothesUnderUser.AccountId);
             return clothes;
+            var clothes2 = _repository.Clothes.GetAll();
+            clothes2.Add(new Clothes()
+            {
+                UserId = 81,
+                Name =  "81 shirt",
+                Price = 91000
+            });
+          //  return clothes;
+         //   var listclothes
             var clothesForUser = new List<Clothes>();
+            foreach (var v in clothes2)
+            {
+                if(v.UserId == clothesUnderUser.AccountId)
+               clothesForUser.Add(v);
+                else
+                {
+                    
+                }
+            }
+        
            
-               clothesForUser.AddRange(clothes.Where(c=> c.UserId == clothesUnderUser.AccountId)); 
+             
             
 
             return clothesForUser;

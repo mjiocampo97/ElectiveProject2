@@ -22,6 +22,9 @@
                 <Label Text="LastName "></Label>
                 <Label Text="{Binding User.LastName}"></Label>
             </StackLayout>
+                <StackLayout>
+                    <Label Text="{Binding User.AccountId}"></Label>
+                </StackLayout>
             </StackLayout>
             </Grid>
         </AbsoluteLayout>
