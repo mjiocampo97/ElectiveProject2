@@ -13,6 +13,9 @@ namespace OcampoElective2Project.ViewModels
 {
     public class AddClothesViewModel : OcampoElective2ProjectViewModel
     {
+        public ClothesViewModel UserClothesViewModel { get; set; }
+
+
         private UserAccount _user;
         public UserAccount User
         {
@@ -31,12 +34,12 @@ namespace OcampoElective2Project.ViewModels
             ClothesService = clothesService;
 
         }
-
+        
         public ICommand SaveClothesCommand => new RelayCommand(SaveClothesProc);
 
         private void SaveClothesProc()
         {
-            throw new NotImplementedException();
+            UserClothesViewModel.ClothesList.Add();
         }
 
     }
