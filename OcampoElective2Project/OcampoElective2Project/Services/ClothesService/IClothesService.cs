@@ -11,6 +11,6 @@ namespace OcampoElective2Project.Services.ClothesService
         List<Clothes> GetClothesUser(UserAccount clothesUnderUser);
         void AddClothes(Clothes clothes);
         void DeleteClothes(Clothes clothes);
-
+        void UpdateClothes(Clothes oldClothes, Clothes newClothes);
     }
 }

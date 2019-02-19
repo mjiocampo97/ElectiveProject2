@@ -9,6 +9,7 @@ using OcampoElective2Project.Helpers;
 using OcampoElective2Project.Models;
 using OcampoElective2Project.Services;
 using OcampoElective2Project.Services.ClothesService;
+using Xamarin.Forms;
 
 namespace OcampoElective2Project.ViewModels
 {
@@ -84,11 +85,24 @@ namespace OcampoElective2Project.ViewModels
             
         }
 
-        public ICommand UpdateCommand => new RelayCommand(UpdateClothesProc);
+        public bool isUpdate { get; set; }
+        public ICommand UpdateClothesCommand => new RelayCommand(UpdateClothesProc);
 
         private void UpdateClothesProc()
         {
+            if(SelectedClothes !=null)
+            { 
+            isUpdate = true;
             NavigationService.NavigateTo(ViewModelLocator.AddClothesPage, User, false);
+
+            }
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Error", "Please Select a clothe that you want to be updated", "Cancel");
+            }
+                
+            return;
+
         }
     }
 }

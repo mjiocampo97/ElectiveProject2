@@ -31,13 +31,14 @@ namespace OcampoElective2Project.Repository.LocalRepository
 
         public void Update(Expression<Func<T, bool>> condition, T newObject)
         {
-            
             using (var db = new SQLiteConnection(dbPath))
             {
                 var objectUpdate = newObject;
                 db.Update(objectUpdate);
             }
+            
         }
+
 
         public void Delete(Expression<Func<T, bool>> condition)
         {

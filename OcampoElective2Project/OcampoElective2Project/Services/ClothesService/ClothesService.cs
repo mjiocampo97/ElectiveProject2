@@ -26,5 +26,15 @@ namespace OcampoElective2Project.Services.ClothesService
         {
             throw new NotImplementedException();
         }
+
+        public void UpdateClothes(Clothes clothes)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateClothes(Clothes oldClothes, Clothes newClothes)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

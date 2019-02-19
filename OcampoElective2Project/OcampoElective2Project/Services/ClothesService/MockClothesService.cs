@@ -66,6 +66,16 @@ namespace OcampoElective2Project.Services.ClothesService
             _repository.Clothes.Delete(c=>c.Id == clothes.Id);
         }
 
+        public void UpdateClothes(Clothes clothes)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateClothes(Clothes oldClothes, Clothes newClothes)
+        {
+            _repository.Clothes.Update(c=> c.Id == oldClothes.Id, newClothes);
+        }
+
         //public List<Clothes> GetClothesOfUser()
         //{
         //    Clothes clothesu 

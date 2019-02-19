@@ -43,9 +43,20 @@ namespace OcampoElective2Project.ViewModels
         private void SaveClothesProc()
         {
             ClothesToAdd.UserId = User.AccountId;
-            ClothesService.AddClothes(ClothesToAdd);
-            NavigationService.NavigateTo(ViewModelLocator.ClothesPage,User,true);
-            
+            if (App.Locator.ClothesViewModel.isUpdate == true)
+            {
+                ClothesToAdd.Id = App.Locator.ClothesViewModel.SelectedClothes.Id;
+                ClothesService.UpdateClothes(App.Locator.ClothesViewModel.SelectedClothes, ClothesToAdd);
+                NavigationService.NavigateTo(ViewModelLocator.ClothesPage, User, true);
+            }
+            else
+            {
+               
+                ClothesService.AddClothes(ClothesToAdd);
+                NavigationService.NavigateTo(ViewModelLocator.ClothesPage, User, true);
+            }
+
+            App.Locator.ClothesViewModel.isUpdate = false;
         }
 
     }

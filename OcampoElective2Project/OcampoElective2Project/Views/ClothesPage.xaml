@@ -21,7 +21,8 @@
                 <StackLayout Orientation="Horizontal">
                 <Button Text="Add Clothes" AbsoluteLayout.LayoutBounds=".25,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding AddClothesCommand}" ></Button>
                 <Button Text="Delete Clothes"  AbsoluteLayout.LayoutBounds=".75,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding DeleteClothesCommand}"/>
-                </StackLayout>
+                <Button Text="Update" Command="{Binding UpdateClothesCommand}"></Button>
+                </StackLayout> 
             </StackLayout>
 
         </AbsoluteLayout>
