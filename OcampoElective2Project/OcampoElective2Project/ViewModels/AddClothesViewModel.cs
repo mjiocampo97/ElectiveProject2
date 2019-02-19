@@ -14,7 +14,7 @@ namespace OcampoElective2Project.ViewModels
 {
     public class AddClothesViewModel : OcampoElective2ProjectViewModel
     {
-        public ClothesViewModel UserClothesViewModel { get; set; }
+      //  public ClothesViewModel UserClothesViewModel { get; set; }
 
 
         private UserAccount _user;

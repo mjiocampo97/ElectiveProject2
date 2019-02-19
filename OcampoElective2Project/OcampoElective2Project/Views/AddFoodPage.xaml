@@ -9,11 +9,11 @@
                     <StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Name" FontSize="28" VerticalOptions="Center" HorizontalOptions="Center"></Label>
-                            <Entry Text="{Binding Path=ClothesToAdd.Name}"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  FontSize="28" x:Name="NameEntry"></Entry>
+                            <Entry Text="{Binding Path=FoodToAdd.Name}"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  FontSize="28" x:Name="NameEntry"></Entry>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" >
                             <Label Text="Price" FontSize="28" VerticalOptions="Center" HorizontalOptions="Center"></Label>
-                            <Entry Text="{Binding Path=ClothesToAdd.Price}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" FontSize="28" x:Name="NamePrice"></Entry>
+                            <Entry Text="{Binding Path=FoodToAdd.Price}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" FontSize="28" x:Name="NamePrice"></Entry>
                         </StackLayout>
                     </StackLayout>
                 </Grid>
