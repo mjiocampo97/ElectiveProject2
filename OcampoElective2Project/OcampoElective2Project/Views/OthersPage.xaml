@@ -18,7 +18,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Button Text="Add Others" AbsoluteLayout.LayoutBounds=".5,1,1,.1" AbsoluteLayout.LayoutFlags="All" ></Button>
+                <Button Text="Add Others" AbsoluteLayout.LayoutBounds=".5,1,1,.1" AbsoluteLayout.LayoutFlags="All" BindingContext="{Binding AddOthersCommand}" ></Button>
             </StackLayout>
 
         </AbsoluteLayout>

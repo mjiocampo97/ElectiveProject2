@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
-using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 using OcampoElective2Project.Helpers;
 using OcampoElective2Project.Models;
@@ -50,7 +51,7 @@ namespace OcampoElective2Project.ViewModels
 
         private void AddFoodProc()
         {
-            NavigationService.NavigateTo(ViewModelLocator.AddFoodPage);
+            NavigationService.NavigateTo(ViewModelLocator.AddFoodPage,User,false);
         }
 
 

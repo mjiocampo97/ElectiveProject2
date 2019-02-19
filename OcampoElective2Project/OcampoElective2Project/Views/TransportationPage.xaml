@@ -18,7 +18,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Button Text="Add Transportation" AbsoluteLayout.LayoutBounds=".5,1,1,.1" AbsoluteLayout.LayoutFlags="All" ></Button>
+                <Button Text="Add Transportation" AbsoluteLayout.LayoutBounds=".5,1,1,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding AddTransportationCommand}" ></Button>
             </StackLayout>
             
         </AbsoluteLayout>

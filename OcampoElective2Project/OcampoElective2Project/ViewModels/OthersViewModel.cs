@@ -46,7 +46,7 @@ namespace OcampoElective2Project.ViewModels
 
         private void AddOthersProc()
         {
-            NavigationService.NavigateTo(ViewModelLocator.AddOthersPage);
+            NavigationService.NavigateTo(ViewModelLocator.AddOthersPage,User,false);
         }
 
     }
