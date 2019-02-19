@@ -9,6 +9,7 @@ namespace OcampoElective2Project.Services.ClothesService
     {
         Clothes GetClothesDataBase<T>(T user);
         List<Clothes> GetClothesUser(UserAccount clothesUnderUser);
+        void AddClothes(Clothes clothes);
 
     }
 }

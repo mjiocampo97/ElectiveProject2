@@ -9,16 +9,16 @@
             <StackLayout>
            <StackLayout Orientation="Horizontal">
               <Label Text="Name" FontSize="28" VerticalOptions="Center" HorizontalOptions="Center"></Label>
-              <Entry VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  FontSize="28"></Entry>
+              <Entry Text="{Binding Path=ClothesToAdd.Name}"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  FontSize="28" x:Name="NameEntry"></Entry>
             </StackLayout>
            <StackLayout Orientation="Horizontal" >
               <Label Text="Price" FontSize="28" VerticalOptions="Center" HorizontalOptions="Center"></Label>
-              <Entry VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" FontSize="28"></Entry>
+              <Entry Text="{Binding Path=ClothesToAdd.Price}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" FontSize="28" x:Name="NamePrice"></Entry>
            </StackLayout>
             </StackLayout>
              </Grid>
 
-                <Button Text="Save" AbsoluteLayout.LayoutBounds=".5,1,1,.1" AbsoluteLayout.LayoutFlags="All"></Button>
+                <Button Text="Save" Command="{Binding SaveClothesCommand}" AbsoluteLayout.LayoutBounds=".5,1,1,.1" AbsoluteLayout.LayoutFlags="All"></Button>
             </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>

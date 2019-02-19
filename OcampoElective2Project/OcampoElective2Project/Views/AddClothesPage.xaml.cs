@@ -28,7 +28,9 @@ namespace OcampoElective2Project.Views
 	            .GetInstance<INavigationService>()
 	            .CurrentPageKey;
 	        Debug.WriteLine("Current page key: " + currentPageKeyString);
-	    }
+            NamePrice.Text = "";
+            NameEntry.Text = "";
+        }
 	    public AddClothesPage(UserAccount user)
 	    {
 	        InitializeComponent();

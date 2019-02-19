@@ -6,6 +6,7 @@ using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 using Newtonsoft.Json;
 using OcampoElective2Project.Helpers;
+using OcampoElective2Project.Models;
 using OcampoElective2Project.Services;
 using OcampoElective2Project.Services.LogInService;
 using Xamarin.Forms;
@@ -35,10 +36,11 @@ namespace OcampoElective2Project.ViewModels
             if (navigationService == null) throw new ArgumentNullException("navigationService");
             NavigationService = (NavigationService)navigationService;
             LogInService = logInService;
+            UserToRegister = new UserAccount();
 
         }
         public ICommand LogInCommand => new RelayCommand(LoginProc);
-        
+        public UserAccount UserToRegister { get; set; }
         public void LoginProc()
         {
             var user = LogInService.Check(Username, Password);

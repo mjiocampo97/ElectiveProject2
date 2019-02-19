@@ -8,6 +8,7 @@ using OcampoElective2Project.Helpers;
 using OcampoElective2Project.Models;
 using OcampoElective2Project.Services;
 using OcampoElective2Project.Services.ClothesService;
+using Xamarin.Forms;
 
 namespace OcampoElective2Project.ViewModels
 {
@@ -27,11 +28,13 @@ namespace OcampoElective2Project.ViewModels
             }
         }
         public IClothesService ClothesService { get; set; }
+        public Clothes ClothesToAdd { get; set; }
         public AddClothesViewModel(INavigationService navigationService, IClothesService clothesService)
         {
             if (navigationService == null) throw new ArgumentNullException("navigationService");
             NavigationService = (NavigationService)navigationService;
             ClothesService = clothesService;
+            ClothesToAdd = new Clothes();
 
         }
         
@@ -39,7 +42,10 @@ namespace OcampoElective2Project.ViewModels
 
         private void SaveClothesProc()
         {
-            UserClothesViewModel.ClothesList.Add();
+            ClothesToAdd.UserId = User.AccountId;
+            ClothesService.AddClothes(ClothesToAdd);
+            NavigationService.NavigateTo(ViewModelLocator.ClothesPage,User,true);
+            
         }
 
     }

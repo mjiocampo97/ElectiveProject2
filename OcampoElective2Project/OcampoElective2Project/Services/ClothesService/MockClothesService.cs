@@ -56,6 +56,11 @@ namespace OcampoElective2Project.Services.ClothesService
             return clothesForUser;
         }
 
+        public void AddClothes(Clothes clothes)
+        {
+            _repository.Clothes.Add(clothes);
+        }
+
         //public List<Clothes> GetClothesOfUser()
         //{
         //    Clothes clothesu 
