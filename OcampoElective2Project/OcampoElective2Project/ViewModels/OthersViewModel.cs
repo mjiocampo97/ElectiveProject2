@@ -17,6 +17,8 @@ namespace OcampoElective2Project.ViewModels
 
     {
         private UserAccount _user;
+        private Others _selectedOthers;
+
         public UserAccount User
         {
             get => _user;
@@ -29,6 +31,17 @@ namespace OcampoElective2Project.ViewModels
 
         public IOthersService OthersService { get; set; }
         public ObservableCollection<Others> OthersList { get; set; } = new ObservableCollection<Others>();
+
+        public Others SelectedOthers
+        {
+            get => _selectedOthers;
+            set
+            {
+                _selectedOthers = value;
+                RaisePropertyChanged(nameof(SelectedOthers));
+            }
+        }
+
         public OthersViewModel(INavigationService navigationService, IOthersService othersService)
         {
             if (navigationService == null) throw new ArgumentNullException("navigationService");

@@ -18,6 +18,8 @@ namespace OcampoElective2Project.ViewModels
     {
 
         private UserAccount _user;
+        private Food _selectedFood;
+
         public UserAccount User
         {
             get => _user;
@@ -30,6 +32,17 @@ namespace OcampoElective2Project.ViewModels
 
         public IFoodService FoodService { get; set; }
         public ObservableCollection<Food> FoodList { get; set; } = new ObservableCollection<Food>();
+
+        public Food SelectedFood
+        {
+            get => _selectedFood;
+            set
+            {
+                _selectedFood = value;
+                RaisePropertyChanged(nameof(SelectedFood));
+            }
+        }
+
         public FoodViewModel(INavigationService navigationService, IFoodService foodService)
         {
             if (navigationService == null) throw new ArgumentNullException("navigationService");

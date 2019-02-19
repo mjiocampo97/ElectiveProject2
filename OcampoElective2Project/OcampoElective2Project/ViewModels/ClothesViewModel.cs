@@ -15,6 +15,8 @@ namespace OcampoElective2Project.ViewModels
     public class ClothesViewModel : OcampoElective2ProjectViewModel
     {
         private UserAccount _user;
+        private Clothes _selectedClothes;
+
         public UserAccount User
         {
             get => _user;
@@ -26,7 +28,17 @@ namespace OcampoElective2Project.ViewModels
         }
         public IClothesService ClothesService { get; set; }
         public ObservableCollection<Clothes> ClothesList { get; set; }= new ObservableCollection<Clothes>();
-        public Clothes SelectedClothes { get; set; }
+
+        public Clothes SelectedClothes
+        {
+            get => _selectedClothes;
+            set
+            {
+                _selectedClothes = value;
+                RaisePropertyChanged(nameof(SelectedClothes);
+            }
+        }
+
         public ClothesViewModel(INavigationService navigationService, IClothesService clothesService)
         {
             if (navigationService == null) throw new ArgumentNullException("navigationService");

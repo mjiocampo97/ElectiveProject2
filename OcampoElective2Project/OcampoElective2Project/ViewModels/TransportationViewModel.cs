@@ -16,6 +16,8 @@ namespace OcampoElective2Project.ViewModels
     public class TransportationViewModel : OcampoElective2ProjectViewModel
     {
         private UserAccount _user;
+        private Transportation _selectedTransportation;
+
         public UserAccount User
         {
             get => _user;
@@ -28,6 +30,17 @@ namespace OcampoElective2Project.ViewModels
 
         public ITransportationService TransportationService { get; set; }
         public ObservableCollection<Transportation> TransportationList { get; set; } = new ObservableCollection<Transportation>();
+
+        public Transportation SelectedTransportation
+        {
+            get => _selectedTransportation;
+            set
+            {
+                _selectedTransportation = value;
+                RaisePropertyChanged(nameof(SelectedTransportation));
+            }
+        }
+
         public TransportationViewModel(INavigationService navigationService, ITransportationService transportationService)
         {
             if (navigationService == null) throw new ArgumentNullException("navigationService");
