@@ -35,7 +35,7 @@ namespace OcampoElective2Project.ViewModels
             set
             {
                 _selectedClothes = value;
-                RaisePropertyChanged(nameof(SelectedClothes);
+                RaisePropertyChanged(nameof(SelectedClothes));
             }
         }
 
@@ -57,6 +57,23 @@ namespace OcampoElective2Project.ViewModels
             }
         }
 
+        public ICommand DeleteClothesCommand => new RelayCommand(DeleteClothesProc);
+
+        public void DeleteClothesProc()
+        {
+            ClothesService.DeleteClothes(SelectedClothes);
+            Refresh();
+            
+        }
+
+        public void Refresh()
+        {
+            ClothesList.Clear();
+            foreach (var clothes in ClothesService.GetClothesUser(User))
+            {
+                ClothesList.Add(clothes);
+            }
+        }
 
 
         public ICommand AddClothesCommand => new RelayCommand(AddClothesProc);
@@ -65,6 +82,13 @@ namespace OcampoElective2Project.ViewModels
         {
             NavigationService.NavigateTo(ViewModelLocator.AddClothesPage, User, false);
             
+        }
+
+        public ICommand UpdateCommand => new RelayCommand(UpdateClothesProc);
+
+        private void UpdateClothesProc()
+        {
+            NavigationService.NavigateTo(ViewModelLocator.AddClothesPage, User, false);
         }
     }
 }

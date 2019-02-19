@@ -61,6 +61,11 @@ namespace OcampoElective2Project.Services.ClothesService
             _repository.Clothes.Add(clothes);
         }
 
+        public void DeleteClothes(Clothes clothes)
+        {
+            _repository.Clothes.Delete(c=>c.Id == clothes.Id);
+        }
+
         //public List<Clothes> GetClothesOfUser()
         //{
         //    Clothes clothesu 

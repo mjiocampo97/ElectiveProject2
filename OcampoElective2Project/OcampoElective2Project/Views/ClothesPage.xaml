@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
             <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All">
-                <ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="AntiqueWhite"  ItemsSource="{Binding ClothesList}">
+                <ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="AntiqueWhite"  ItemsSource="{Binding ClothesList}" SelectedItem="{Binding SelectedClothes}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -18,7 +18,10 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Button Text="Add Clothes" AbsoluteLayout.LayoutBounds=".5,1,1,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding AddClothesCommand}" ></Button>
+                <StackLayout Orientation="Horizontal">
+                <Button Text="Add Clothes" AbsoluteLayout.LayoutBounds=".25,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding AddClothesCommand}" ></Button>
+                <Button Text="Delete Clothes"  AbsoluteLayout.LayoutBounds=".75,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding DeleteClothesCommand}"/>
+                </StackLayout>
             </StackLayout>
 
         </AbsoluteLayout>
