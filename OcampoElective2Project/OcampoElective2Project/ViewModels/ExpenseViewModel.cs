@@ -147,8 +147,28 @@ namespace OcampoElective2Project.ViewModels
         {
             NavigationService.NavigateTo(ViewModelLocator.AddFoodPage, User, false);
         }
+        public ICommand DeleteFoodCommand => new RelayCommand(DeleteFoodProc);
+        public void DeleteFoodProc()
+        {
+            if (SelectedFood!= null)
+            {
+               FoodService.DeleteFood(SelectedFood);
+               RefreshFood();
+            }
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Error", "Please Select a food that you want to be deleted", "Cancel");
+            }
 
-
+        }
+        public void RefreshFood()
+        {
+            FoodList.Clear();
+            foreach (var food in FoodService.GetFoodUser(User))
+            {
+                FoodList.Add(food);
+            }
+        }
     }
 }
 
