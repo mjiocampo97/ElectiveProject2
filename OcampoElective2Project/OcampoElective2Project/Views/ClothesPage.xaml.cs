@@ -18,6 +18,7 @@ namespace OcampoElective2Project.Views
 	public partial class ClothesPage : ContentPage
     {
         private ClothesViewModel vm;
+        private ExpenseViewModel ExpenseViewModel;
 		public ClothesPage ()
 		{
 			InitializeComponent ();
@@ -35,7 +36,7 @@ namespace OcampoElective2Project.Views
         }
         protected override void OnAppearing()
         {
-          vm.LoadClothes(vm.User);
+        // vm.LoadClothes(ExpenseViewModel.User);
 
         }
     }

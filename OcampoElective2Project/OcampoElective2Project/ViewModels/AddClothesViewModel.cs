@@ -53,7 +53,7 @@ namespace OcampoElective2Project.ViewModels
             {
                
                 ClothesService.AddClothes(ClothesToAdd);
-                NavigationService.NavigateTo(ViewModelLocator.ClothesPage, User, true);
+                NavigationService.GoBack();
             }
 
             App.Locator.ClothesViewModel.isUpdate = false;

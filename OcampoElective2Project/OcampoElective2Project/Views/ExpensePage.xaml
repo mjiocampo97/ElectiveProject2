@@ -5,10 +5,10 @@
              xmlns:viewModels="clr-namespace:OcampoElective2Project.ViewModels;assembly=OcampoElective2Project"
              x:Class="OcampoElective2Project.Views.ExpensePage">
 
-
-    <!--<views:ClothesPage></views:ClothesPage>
+   
+    <views:ClothesPage></views:ClothesPage>
     <views:FoodPage></views:FoodPage>
     <views:TransportationPage></views:TransportationPage>
-    <views:OthersPage></views:OthersPage>-->
+    <views:OthersPage></views:OthersPage>
 
 </TabbedPage>

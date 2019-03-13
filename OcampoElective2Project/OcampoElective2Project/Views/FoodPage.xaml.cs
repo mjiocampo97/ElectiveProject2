@@ -30,7 +30,7 @@ namespace OcampoElective2Project.Views
 
         protected override void OnAppearing()
         {
-            vm.LoadFood(vm.User);
+            //vm.LoadFood(vm.User);
 
         }
     }

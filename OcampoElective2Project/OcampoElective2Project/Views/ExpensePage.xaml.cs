@@ -18,11 +18,15 @@ namespace OcampoElective2Project.Views
         private FoodViewModel FoodViewModel = App.Locator.FoodViewModel;
         private TransportationViewModel TransportationViewModel = App.Locator.TransportationViewModel;
         private OthersViewModel OthersViewModel = App.Locator.OthersViewModel;
+
         public ExpensePage()
         {
             InitializeComponent();
             ExpenseViewModel = App.Locator.ExpenseViewModel;
-   
+            var test1= new ExpensePage();
+            Children.Add(test1);
+        }
+
         public ExpensePage(UserAccount user)
         {
             InitializeComponent();
@@ -31,7 +35,11 @@ namespace OcampoElective2Project.Views
             BindingContext = ExpenseViewModel;
         }
 
-       
+        protected override void OnAppearing()
+        {
+         ExpenseViewModel.LoadClothes(ExpenseViewModel.User);
+
+        }
 
     }
 }
