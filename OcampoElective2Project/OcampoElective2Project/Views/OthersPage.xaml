@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
             <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All">
-                <ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  BackgroundColor="AntiqueWhite"  ItemsSource="{Binding OthersList}">
+                <ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  BackgroundColor="AntiqueWhite"  ItemsSource="{Binding OthersList}" SelectedItem="{Binding SelectedOthers}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

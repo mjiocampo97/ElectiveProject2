@@ -18,7 +18,7 @@
                     </StackLayout>
                 </Grid>
 
-                <Button Text="Save" Command="{Binding SaveClothesCommand}" AbsoluteLayout.LayoutBounds=".5,1,1,.1" AbsoluteLayout.LayoutFlags="All"></Button>
+                <Button Text="Save" Command="{Binding SaveOthersCommand}" AbsoluteLayout.LayoutBounds=".5,1,1,.1" AbsoluteLayout.LayoutFlags="All"></Button>
             </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>

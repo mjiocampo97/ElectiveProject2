@@ -39,7 +39,37 @@ namespace OcampoElective2Project.ViewModels
 
         private void SaveOthersProc()
         {
-            throw new NotImplementedException();
+            OthersToAdd.UserId = User.AccountId;
+            if (App.Locator.ExpenseViewModel.isUpdate == true)
+            {
+                OthersToAdd.Id = App.Locator.ExpenseViewModel.SelectedOthers.Id;
+                OthersService.UpdateOthers(App.Locator.ExpenseViewModel.SelectedOthers, OthersToAdd);
+  
+            }
+            else
+            {
+
+                OthersService.AddOthers(OthersToAdd);
+               
+            }
+            NavigationService.GoBack();
+            App.Locator.ExpenseViewModel.isUpdate = false;
         }
+
+        //ClothesToAdd.UserId = User.AccountId;
+        //if (App.Locator.ClothesViewModel.isUpdate == true)
+        //{
+        //    ClothesToAdd.Id = App.Locator.ClothesViewModel.SelectedClothes.Id;
+        //    ClothesService.UpdateClothes(App.Locator.ClothesViewModel.SelectedClothes, ClothesToAdd);
+        //    NavigationService.NavigateTo(ViewModelLocator.ClothesPage, User, true);
+        //}
+        //else
+        //{
+
+        //    ClothesService.AddClothes(ClothesToAdd);
+        //    NavigationService.GoBack();
+        //}
+
+        //App.Locator.ClothesViewModel.isUpdate = false;
     }
 }

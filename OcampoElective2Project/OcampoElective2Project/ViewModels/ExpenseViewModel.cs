@@ -203,6 +203,22 @@ namespace OcampoElective2Project.ViewModels
                 RaisePropertyChanged(nameof(SelectedOthers));
             }
         }
+        public void LoadOthers(UserAccount user)
+        {
+            OthersList.Clear();
+            foreach (var others in OthersService.GetOthersUser(User))
+            {
+                OthersList.Add(others);
+            }
+        }
+        public void RefreshOthers()
+        {
+            OthersList.Clear();
+            foreach (var others in OthersService.GetOthersUser(User))
+            {
+                OthersList.Add(others);
+            }
+        }
 
         public ICommand AddOthersCommand => new RelayCommand(AddOthersProc);
 
@@ -212,8 +228,38 @@ namespace OcampoElective2Project.ViewModels
 
         }
 
+        public ICommand DeleteOthersCommand => new RelayCommand(DeleteOthersProc);
+        public void DeleteOthersProc()
+        {
+            if (SelectedOthers != null)
+            {
+                OthersService.DeleteOthers(SelectedOthers);
+                RefreshOthers();
+            }
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Error", "Please Select an Others that you want to be deleted", "Cancel");
+            }
 
+        }
 
+        public ICommand UpdateOthersCommand => new RelayCommand(UpdateOthersProc);
+        private void UpdateOthersProc()
+        {
+            if (SelectedOthers != null)
+            {
+                isUpdate = true;
+                NavigationService.NavigateTo(ViewModelLocator.AddOthersPage, User, false);
+
+            }
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Error", "Please Select an Others that you want to be updated", "Cancel");
+            }
+
+            return;
+
+        }
 
 
     }

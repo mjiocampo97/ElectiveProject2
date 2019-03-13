@@ -22,14 +22,7 @@ namespace OcampoElective2Project.Views
 			InitializeComponent ();
 		    BindingContext = App.Locator.ExpenseViewModel;
         }
-	    protected override void OnAppearing()
-	    {
-	        base.OnAppearing();
-	        var currentPageKeyString = ServiceLocator.Current
-	            .GetInstance<INavigationService>()
-	            .CurrentPageKey;
-	        Debug.WriteLine("Current page key: " + currentPageKeyString);
-	    }
+	
         public OthersPage(UserAccount user)
         {
             InitializeComponent();
