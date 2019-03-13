@@ -7,22 +7,22 @@ namespace OcampoElective2Project.Services.OthersService
 {
     public class OthersService : IOthersService
     {
-        public List<Others> GetOthersUser(UserAccount foodUnderUser)
+        public List<Others> GetOthersUser(UserAccount othersUnderUser)
         {
             throw new NotImplementedException();
         }
 
-        public void AddOthers(Others food)
+        public void AddOthers(Others Others)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteOthers(Others food)
+        public void DeleteOthers(Others Others)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateOthers(Others oldOthers, Food newOthers)
+        public void UpdateOthers(Others oldOthers, Others newOthers)
         {
             throw new NotImplementedException();
         }

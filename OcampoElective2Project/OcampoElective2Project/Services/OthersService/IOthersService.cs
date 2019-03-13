@@ -7,9 +7,9 @@ namespace OcampoElective2Project.Services.OthersService
 {
     public interface IOthersService
     {
-        List<Others> GetOthersUser(UserAccount foodUnderUser);
-        void AddOthers(Others food);
-        void DeleteOthers(Others food);
-        void UpdateOthers(Others oldOthers, Food newOthers);
+        List<Others> GetOthersUser(UserAccount othersUnderUser);
+        void AddOthers(Others Others);
+        void DeleteOthers(Others Others);
+        void UpdateOthers(Others oldOthers, Others newOthers);
     }
 }

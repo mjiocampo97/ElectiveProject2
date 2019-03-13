@@ -19,24 +19,30 @@ namespace OcampoElective2Project.Services.OthersService
             _repository = new LocalRepository();
         }
 
-        public List<Others> GetOthersUser(UserAccount foodUnderUser)
+      
+
+        public List<Others> GetOthersUser(UserAccount othersUnderUser)
         {
-            throw new NotImplementedException();
+            var others = _repository.Others.GetRange(c => c.UserId == othersUnderUser.AccountId);
+            return others;
         }
 
-        public void AddOthers(Others food)
+        public void AddOthers(Others others)
         {
-            throw new NotImplementedException();
+            _repository.Others.Add(others);
         }
 
-        public void DeleteOthers(Others food)
+        public void DeleteOthers(Others others)
         {
-            throw new NotImplementedException();
+            _repository.Others.Delete(c => c.Id == others.Id);
         }
 
-        public void UpdateOthers(Others oldOthers, Food newOthers)
+        public void UpdateOthers(Others oldOthers, Others newOthers)
         {
-            throw new NotImplementedException();
+            _repository.Others.Update(c => c.Id == oldOthers.Id, newOthers);
         }
+
+
+       
     }
 }

@@ -33,6 +33,8 @@ namespace OcampoElective2Project.ViewModels
         }
         public ObservableCollection<Clothes> ClothesList { get; set; } = new ObservableCollection<Clothes>();
         public ObservableCollection<Food> FoodList { get; set; } = new ObservableCollection<Food>();
+        public ObservableCollection<Others> OthersList { get; set; } = new ObservableCollection<Others>();
+        public ObservableCollection<Transportation> TransportationList { get; set; } = new ObservableCollection<Transportation>();
 
         public Clothes SelectedClothes
         {
@@ -188,6 +190,32 @@ namespace OcampoElective2Project.ViewModels
             return;
 
         }
+
+        /////////////////////////////
+        /// Others                         ///////////////////////////
+        private Others _selectedOthers;
+        public Others SelectedOthers
+        {
+            get => _selectedOthers;
+            set
+            {
+                _selectedOthers = value;
+                RaisePropertyChanged(nameof(SelectedOthers));
+            }
+        }
+
+        public ICommand AddOthersCommand => new RelayCommand(AddOthersProc);
+
+        private void AddOthersProc()
+        {
+            NavigationService.NavigateTo(ViewModelLocator.AddOthersPage, User, false);
+
+        }
+
+
+
+
+
     }
 }
 

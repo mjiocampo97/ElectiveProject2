@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using OcampoElective2Project.Models;
 using OcampoElective2Project.Repository;
 using OcampoElective2Project.Repository.LocalRepository;
 
@@ -16,6 +17,30 @@ namespace OcampoElective2Project.Services.TransportationService
         public MockTransportationService()
         {
             _repository = new LocalRepository();
+        }
+
+
+        public List<Food> GetFoodUser(UserAccount foodUnderUser)
+        {
+
+            var foods = _repository.Food.GetRange(c => c.UserId == foodUnderUser.AccountId);
+            return foods;
+
+        }
+
+        public void AddFood(Food food)
+        {
+            _repository.Food.Add(food);
+        }
+
+        public void DeleteFood(Food food)
+        {
+            _repository.Food.Delete(c => c.Id == food.Id);
+        }
+
+        public void UpdateFood(Food oldFood, Food newFood)
+        {
+            _repository.Food.Update(c => c.Id == oldFood.Id, newFood);
         }
     }
 }
