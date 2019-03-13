@@ -8,5 +8,8 @@ namespace OcampoElective2Project.Services.FoodService
     public interface IFoodService
     {
         List<Food> GetFoodUser(UserAccount clothesUnderUser);
+        void AddFood(Food food);
+        void DeleteFood(Food food);
+        void UpdateFood(Food oldFood, Food newFood);
     }
 }

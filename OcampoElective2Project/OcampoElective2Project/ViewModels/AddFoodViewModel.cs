@@ -41,7 +41,23 @@ namespace OcampoElective2Project.ViewModels
         public ICommand SaveFoodCommand => new RelayCommand(SaveFoodProc);
         private void SaveFoodProc()
         {
-            throw new NotImplementedException();
+         //  FoodService.
         }
+
+        //ClothesToAdd.UserId = User.AccountId;
+        //if (App.Locator.ClothesViewModel.isUpdate == true)
+        //{
+        //    ClothesToAdd.Id = App.Locator.ClothesViewModel.SelectedClothes.Id;
+        //    ClothesService.UpdateClothes(App.Locator.ClothesViewModel.SelectedClothes, ClothesToAdd);
+        //    NavigationService.NavigateTo(ViewModelLocator.ClothesPage, User, true);
+        //}
+        //else
+        //{
+
+        //    ClothesService.AddClothes(ClothesToAdd);
+        //    NavigationService.GoBack();
+        //}
+
+        //App.Locator.ClothesViewModel.isUpdate = false;
     }
 }

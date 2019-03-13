@@ -20,6 +20,7 @@ namespace OcampoElective2Project.ViewModels
     {
         private UserAccount _user;
         private Clothes _selectedClothes;
+        private Food _selectedFood;
 
         public UserAccount User
         {
@@ -31,6 +32,7 @@ namespace OcampoElective2Project.ViewModels
             }
         }
         public ObservableCollection<Clothes> ClothesList { get; set; } = new ObservableCollection<Clothes>();
+        public ObservableCollection<Food> FoodList { get; set; } = new ObservableCollection<Food>();
 
         public Clothes SelectedClothes
         {
@@ -118,6 +120,36 @@ namespace OcampoElective2Project.ViewModels
             return;
 
         }
+        public Food SelectedFood
+        {
+            get => _selectedFood;
+            set
+            {
+                _selectedFood = value;
+                RaisePropertyChanged(nameof(SelectedFood));
+            }
+        }
+
+      
+
+        public void LoadFood(UserAccount user)
+        {
+            FoodList.Clear();
+            foreach (var v in FoodService.GetFoodUser(User))
+            {
+                FoodList.Add(v);
+            }
+        }
+
+        public ICommand AddFoodCommand => new RelayCommand(AddFoodProc);
+
+        private void AddFoodProc()
+        {
+            NavigationService.NavigateTo(ViewModelLocator.AddFoodPage, User, false);
+        }
+
+
     }
+}
 }
 

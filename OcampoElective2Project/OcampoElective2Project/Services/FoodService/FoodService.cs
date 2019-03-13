@@ -11,5 +11,20 @@ namespace OcampoElective2Project.Services.FoodService
         {
             throw new NotImplementedException();
         }
+
+        public void AddFood(Food food)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteFood(Food food)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateFood(Food oldFood, Food newFood)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
