@@ -158,6 +158,9 @@ namespace OcampoElective2Project.Helpers
             navigationService.Configure(ViewModelLocator.AddFoodPage, typeof(AddFoodPage));
             navigationService.Configure(ViewModelLocator.AddOthersPage, typeof(AddOthersPage));
             navigationService.Configure(ViewModelLocator.AddTransportationPage, typeof(AddTransportationPage));
+            navigationService.Configure(ViewModelLocator.ExpensePage, typeof(ExpensePage));;
+            navigationService.Configure(ViewModelLocator.IncomePage, typeof(IncomePage));
+
 
 
 
