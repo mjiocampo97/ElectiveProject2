@@ -19,7 +19,11 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Button Text="Add Others" AbsoluteLayout.LayoutBounds=".5,1,1,.1" AbsoluteLayout.LayoutFlags="All" BindingContext="{Binding AddOthersCommand}" ></Button>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Add" AbsoluteLayout.LayoutBounds=".25,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding AddOthersCommand}" ></Button>
+                    <Button Text="Delete"  AbsoluteLayout.LayoutBounds=".75,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding DeleteOthersCommand}"/>
+                    <Button Text="Update" Command="{Binding UpdateOthersCommand}"></Button>
+                </StackLayout>
             </StackLayout>
 
         </AbsoluteLayout>

@@ -169,6 +169,25 @@ namespace OcampoElective2Project.ViewModels
                 FoodList.Add(food);
             }
         }
+
+        public ICommand UpdateFoodCommand => new RelayCommand(UpdateFoodProc);
+
+        private void UpdateFoodProc()
+        {
+            if (SelectedFood != null)
+            {
+                isUpdate = true;
+                NavigationService.NavigateTo(ViewModelLocator.AddFoodPage, User, false);
+
+            }
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Error", "Please Select a food that you want to be updated", "Cancel");
+            }
+
+            return;
+
+        }
     }
 }
 

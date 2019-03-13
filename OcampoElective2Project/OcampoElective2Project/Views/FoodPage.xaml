@@ -22,7 +22,7 @@
                 <StackLayout Orientation="Horizontal">
                     <Button Text="Add Food" AbsoluteLayout.LayoutBounds=".25,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding AddFoodCommand}" ></Button>
                     <Button Text="Delete Food"  AbsoluteLayout.LayoutBounds=".75,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding DeleteFoodCommand}"/>
-                    <Button Text="Update" Command="{Binding UpdateClothesCommand}"></Button>
+                    <Button Text="Update" Command="{Binding UpdateFoodCommand}"></Button>
                 </StackLayout>
             </StackLayout>
 

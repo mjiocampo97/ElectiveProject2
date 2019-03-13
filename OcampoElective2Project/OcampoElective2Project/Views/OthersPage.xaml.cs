@@ -16,11 +16,11 @@ namespace OcampoElective2Project.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class OthersPage : ContentPage
     {
-        public OthersViewModel vm;
+        public ExpenseViewModel vm;
 		public OthersPage ()
 		{
 			InitializeComponent ();
-		    BindingContext = App.Locator.OthersViewModel;
+		    BindingContext = App.Locator.ExpenseViewModel;
         }
 	    protected override void OnAppearing()
 	    {
@@ -33,7 +33,7 @@ namespace OcampoElective2Project.Views
         public OthersPage(UserAccount user)
         {
             InitializeComponent();
-            vm = App.Locator.OthersViewModel;
+            vm = App.Locator.ExpenseViewModel;
             vm.User = user;
             BindingContext = vm;
         }
