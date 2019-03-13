@@ -2,10 +2,13 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:OcampoElective2Project.Views;assembly=OcampoElective2Project"
+             xmlns:viewModels="clr-namespace:OcampoElective2Project.ViewModels;assembly=OcampoElective2Project"
              x:Class="OcampoElective2Project.Views.ExpensePage">
-    <views:ClothesPage></views:ClothesPage>
+
+
+    <!--<views:ClothesPage></views:ClothesPage>
     <views:FoodPage></views:FoodPage>
     <views:TransportationPage></views:TransportationPage>
-    <views:OthersPage></views:OthersPage>
+    <views:OthersPage></views:OthersPage>-->
 
 </TabbedPage>

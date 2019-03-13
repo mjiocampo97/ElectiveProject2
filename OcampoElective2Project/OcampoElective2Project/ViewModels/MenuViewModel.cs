@@ -8,6 +8,7 @@ using OcampoElective2Project.Helpers;
 using OcampoElective2Project.Models;
 using OcampoElective2Project.Services;
 using OcampoElective2Project.Services.ClothesService;
+using OcampoElective2Project.Views;
 using Xamarin.Forms;
 
 namespace OcampoElective2Project.ViewModels
@@ -76,6 +77,14 @@ namespace OcampoElective2Project.ViewModels
         private void GoToOthersPageProc()
         {
             NavigationService.NavigateTo(ViewModelLocator.OthersPage, User, true);
+            ToggleMasterPageIsPresented();
+        }
+
+        public ICommand GoToExpensePageCommand => new  RelayCommand(GoToExpensePageProc);
+
+        private void GoToExpensePageProc()
+        {
+            NavigationService.NavigateTo(ViewModelLocator.ExpensePage,User,true);
             ToggleMasterPageIsPresented();
         }
     }

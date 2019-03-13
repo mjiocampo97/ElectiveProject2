@@ -40,6 +40,7 @@ namespace OcampoElective2Project.ViewModels
             }
         }
 
+        
         public ClothesViewModel(INavigationService navigationService, IClothesService clothesService)
         {
             if (navigationService == null) throw new ArgumentNullException("navigationService");

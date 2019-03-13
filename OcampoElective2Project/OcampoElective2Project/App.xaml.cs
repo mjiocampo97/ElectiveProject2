@@ -36,6 +36,10 @@ namespace OcampoElective2Project
             //  InitializeData = new InitializeData();
           initNavigation.navigationService.Initialize(firstPage);
 		    MainPage = initNavigation.SetMasterDetailMainPage();
+
+           
+
+
 		}
 
 		protected override void OnStart ()
