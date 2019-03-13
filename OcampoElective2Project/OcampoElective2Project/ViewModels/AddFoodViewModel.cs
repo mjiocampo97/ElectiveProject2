@@ -41,7 +41,21 @@ namespace OcampoElective2Project.ViewModels
         public ICommand SaveFoodCommand => new RelayCommand(SaveFoodProc);
         private void SaveFoodProc()
         {
-         //  FoodService.
+            FoodToAdd.UserId = User.AccountId;
+            if (App.Locator.ExpenseViewModel.isUpdate == true)
+            {
+                FoodToAdd.Id = App.Locator.ExpenseViewModel.SelectedFood.Id;
+                FoodService.UpdateFood(App.Locator.ExpenseViewModel.SelectedFood, FoodToAdd);
+               
+            }
+            else
+            {
+                
+                FoodService.AddFood(FoodToAdd);
+               
+            }
+            NavigationService.GoBack();
+            App.Locator.ExpenseViewModel.isUpdate = false;
         }
 
         //ClothesToAdd.UserId = User.AccountId;

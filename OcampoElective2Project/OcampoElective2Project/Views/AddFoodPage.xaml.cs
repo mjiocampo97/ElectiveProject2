@@ -15,6 +15,7 @@ namespace OcampoElective2Project.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddFoodPage : ContentPage
 	{
+
 		public AddFoodPage ()
 		{
 			InitializeComponent ();
@@ -32,7 +33,7 @@ namespace OcampoElective2Project.Views
 	    {
 	        InitializeComponent();
 
-	        App.Locator.HomeViewModel.User = user;
+	        App.Locator.AddFoodViewModel.User = user;
 	        this.BindingContext = App.Locator.AddFoodViewModel;
 	    }
     }

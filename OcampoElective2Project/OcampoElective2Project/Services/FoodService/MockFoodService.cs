@@ -20,27 +20,27 @@ namespace OcampoElective2Project.Services.FoodService
             _repository = new LocalRepository();
         }
 
-        public List<Food> GetFoodUser(UserAccount clothesUnderUser)
+        public List<Food> GetFoodUser(UserAccount foodUnderUser)
         {
 
-            var foods = _repository.Food.GetRange(c => c.UserId == clothesUnderUser.AccountId);
+            var foods = _repository.Food.GetRange(c => c.UserId == foodUnderUser.AccountId);
             return foods;
            
         }
 
         public void AddFood(Food food)
         {
-            throw new NotImplementedException();
+            _repository.Food.Add(food);
         }
 
         public void DeleteFood(Food food)
         {
-            throw new NotImplementedException();
+            _repository.Food.Delete(c => c.Id == food.Id);
         }
 
         public void UpdateFood(Food oldFood, Food newFood)
         {
-            throw new NotImplementedException();
+            _repository.Food.Update(c => c.Id == oldFood.Id, newFood);
         }
     }
 }

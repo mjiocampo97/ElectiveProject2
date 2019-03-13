@@ -9,7 +9,7 @@
                     <StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Name" FontSize="28" VerticalOptions="Center" HorizontalOptions="Center"></Label>
-                            <Entry Text="{Binding Path=FoodToAdd.Name}"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  FontSize="28" x:Name="NameEntry"></Entry>
+                            <Entry Text="{Binding Path=FoodToAdd.NameOfFood}"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  FontSize="28" x:Name="NameEntry"></Entry>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" >
                             <Label Text="Price" FontSize="28" VerticalOptions="Center" HorizontalOptions="Center"></Label>
@@ -18,7 +18,7 @@
                     </StackLayout>
                 </Grid>
 
-                <Button Text="Save" Command="{Binding SaveClothesCommand}" AbsoluteLayout.LayoutBounds=".5,1,1,.1" AbsoluteLayout.LayoutFlags="All"></Button>
+                <Button Text="Save" Command="{Binding SaveFoodCommand}" AbsoluteLayout.LayoutBounds=".5,1,1,.1" AbsoluteLayout.LayoutFlags="All"></Button>
             </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>

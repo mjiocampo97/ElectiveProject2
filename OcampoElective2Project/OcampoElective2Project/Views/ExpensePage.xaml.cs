@@ -38,7 +38,7 @@ namespace OcampoElective2Project.Views
         protected override void OnAppearing()
         {
          ExpenseViewModel.LoadClothes(ExpenseViewModel.User);
-
+         ExpenseViewModel.LoadFood(ExpenseViewModel.User);
         }
 
     }
