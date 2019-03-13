@@ -45,16 +45,16 @@ namespace OcampoElective2Project.ViewModels
         {
             TransportationToAdd.UserId = User.AccountId;
         
-            if (App.Locator.ClothesViewModel.isUpdate == true)
+            if (App.Locator.ExpenseViewModel.isUpdate == true)
             {
-                TransportationToAdd.Id = App.Locator.ExpenseViewModel.SelectedClothes.Id;
-              // TransportationService.(App.Locator.ClothesViewModel.SelectedClothes, ClothesToAdd);
+                TransportationToAdd.Id = App.Locator.ExpenseViewModel.SelectedTransportation.Id;
+               TransportationService.UpdateTransportation(App.Locator.ExpenseViewModel.SelectedTransportation, TransportationToAdd);
             
             }
             else
             {
 
-               // ClothesService.AddClothes(ClothesToAdd);
+               TransportationService.AddTransportation(TransportationToAdd);
                
             }
             NavigationService.GoBack();
@@ -62,20 +62,6 @@ namespace OcampoElective2Project.ViewModels
         }
 
 
-        //ClothesToAdd.UserId = User.AccountId;
-        //if (App.Locator.ClothesViewModel.isUpdate == true)
-        //{
-        //    ClothesToAdd.Id = App.Locator.ClothesViewModel.SelectedClothes.Id;
-        //    ClothesService.UpdateClothes(App.Locator.ClothesViewModel.SelectedClothes, ClothesToAdd);
-        //    NavigationService.NavigateTo(ViewModelLocator.ClothesPage, User, true);
-        //}
-        //else
-        //{
-
-        //    ClothesService.AddClothes(ClothesToAdd);
-        //    NavigationService.GoBack();
-        //}
-
-        //App.Locator.ClothesViewModel.isUpdate = false;
+       
     }
 }

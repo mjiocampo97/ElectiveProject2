@@ -40,7 +40,8 @@ namespace OcampoElective2Project.Views
          ExpenseViewModel.LoadClothes(ExpenseViewModel.User);
          ExpenseViewModel.LoadFood(ExpenseViewModel.User);
          ExpenseViewModel.LoadOthers(ExpenseViewModel.User);
-         
+       //  ExpenseViewModel.RefreshTransportation();
+         ExpenseViewModel.LoadTransportation(ExpenseViewModel.User);
         }
 
     }

@@ -19,28 +19,25 @@ namespace OcampoElective2Project.Services.TransportationService
             _repository = new LocalRepository();
         }
 
-
-        public List<Food> GetFoodUser(UserAccount foodUnderUser)
+        public List<Transportation> GetTransportationUser(UserAccount transporatationUnderUser)
         {
-
-            var foods = _repository.Food.GetRange(c => c.UserId == foodUnderUser.AccountId);
-            return foods;
-
+            var transportation= _repository.Transportation.GetRange(c => c.UserId == transporatationUnderUser.AccountId);
+            return transportation;
         }
 
-        public void AddFood(Food food)
+        public void AddTransportation(Transportation transportation)
         {
-            _repository.Food.Add(food);
+            _repository.Transportation.Add(transportation);
         }
 
-        public void DeleteFood(Food food)
+        public void DeleteTransportation(Transportation transportation)
         {
-            _repository.Food.Delete(c => c.Id == food.Id);
+            _repository.Transportation.Delete(c => c.Id == transportation.Id);
         }
 
-        public void UpdateFood(Food oldFood, Food newFood)
+        public void UpdateTransportation(Transportation oldTransportation, Transportation newTransportation)
         {
-            _repository.Food.Update(c => c.Id == oldFood.Id, newFood);
+            _repository.Transportation.Update(c => c.Id == oldTransportation.Id, newTransportation);
         }
     }
 }

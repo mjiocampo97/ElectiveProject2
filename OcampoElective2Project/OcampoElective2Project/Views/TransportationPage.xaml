@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
             <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All">
-                <ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  BackgroundColor="AntiqueWhite"  ItemsSource="{Binding TransportationList}" >
+                <ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  BackgroundColor="AntiqueWhite"  ItemsSource="{Binding TransportationList}" SelectedItem="{Binding SelectedTransportation}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -19,7 +19,11 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Button Text="Add Transportation" AbsoluteLayout.LayoutBounds=".5,1,1,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding AddTransportationCommand}" ></Button>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Add" AbsoluteLayout.LayoutBounds=".25,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding AddTransportationCommand}" ></Button>
+                    <Button Text="Delete"  AbsoluteLayout.LayoutBounds=".75,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding DeleteTransportationCommand}"/>
+                    <Button Text="Update" Command="{Binding UpdateTransportationCommand}"></Button>
+                </StackLayout>
             </StackLayout>
             
         </AbsoluteLayout>

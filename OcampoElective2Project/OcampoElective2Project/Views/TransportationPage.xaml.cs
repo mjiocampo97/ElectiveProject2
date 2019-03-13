@@ -17,11 +17,11 @@ namespace OcampoElective2Project.Views
 	public partial class TransportationPage : ContentPage
     {
 
-        public TransportationViewModel vm;
+        public ExpenseViewModel vm;
 		public TransportationPage ()
 		{
 			InitializeComponent ();
-		    BindingContext = App.Locator.TransportationViewModel;
+		    BindingContext = App.Locator.ExpenseViewModel;
         }
 	    protected override void OnAppearing()
 	    {
@@ -34,7 +34,7 @@ namespace OcampoElective2Project.Views
         public TransportationPage(UserAccount user)
         {
             InitializeComponent();
-            vm = App.Locator.TransportationViewModel;
+            vm = App.Locator.ExpenseViewModel;
             vm.User = user;
             BindingContext = vm;
         }

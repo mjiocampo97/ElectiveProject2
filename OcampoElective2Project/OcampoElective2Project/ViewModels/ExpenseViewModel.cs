@@ -260,7 +260,81 @@ namespace OcampoElective2Project.ViewModels
             return;
 
         }
+        /////////////////////////////
+        ////////////////////////////// Transportation
+        ///
+        private Transportation _selectedTransportation;
+        public Transportation SelectedTransportation
+        {
+            get => _selectedTransportation;
+            set
+            {
+                _selectedTransportation = value;
+                RaisePropertyChanged(nameof(SelectedTransportation));
+            }
+        }
 
+        public void LoadTransportation(UserAccount user)
+        {
+            TransportationList.Clear();
+            foreach (var transportation in TransportationService.GetTransportationUser(User))
+            {
+                TransportationList.Add(transportation);
+            }
+        }
+        public void RefreshTransportation()
+        {
+            TransportationList.Clear();
+            foreach (var transportation in TransportationService.GetTransportationUser(User))
+            {
+                TransportationList.Add(transportation);
+            }
+        }
+
+     
+        
+    public ICommand AddTransportationCommand => new RelayCommand(AddTransportationProc);
+
+        private void AddTransportationProc()
+        {
+            NavigationService.NavigateTo(ViewModelLocator.AddTransportationPage, User, false);
+
+        }
+
+        public ICommand DeleteTransportationCommand => new RelayCommand(DeleteTransportationProc);
+
+        public void DeleteTransportationProc()
+        {
+            if (SelectedTransportation != null)
+            {
+                TransportationService.DeleteTransportation(SelectedTransportation);
+                RefreshTransportation();
+            }
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Error", "Please Select a Transportation that you want to be deleted", "Cancel");
+            }
+
+        }
+
+        public ICommand UpdateTransportationCommand => new RelayCommand(UpdateTransportationProc);
+
+        private void UpdateTransportationProc()
+        {
+            if (SelectedTransportation != null)
+            {
+                isUpdate = true;
+                NavigationService.NavigateTo(ViewModelLocator.AddTransportationPage, User, false);
+
+            }
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Error", "Please Select a Transportation that you want to be updated", "Cancel");
+            }
+
+            return;
+
+        }
 
     }
 }
