@@ -24,9 +24,9 @@
          
                     
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
-                        <Label Text="{Binding User.FirstName}"></Label>
-                        <Label Text="  "></Label>
-                        <Label Text="{Binding User.LastName}"></Label>
+                        <Label Text="{Binding User.FirstName}" FontSize="18" FontAttributes="Bold"></Label>
+                        <Label Text="  " FontSize="18"></Label>
+                        <Label Text="{Binding User.LastName}" FontSize="18" FontAttributes="Bold"></Label>
                     </StackLayout>
 
                 <StackLayout>
