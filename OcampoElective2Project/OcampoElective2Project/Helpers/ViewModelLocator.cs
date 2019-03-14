@@ -31,6 +31,7 @@ namespace OcampoElective2Project.Helpers
         public const string ExpensePage = "ExpensePage";
         public const string IncomePage = "IncomePage";
         public const string ViewExpenseTabbedPage = "ViewExpenseTabbedPage";
+        public const string AddIncomePage = "AddIncomePage";
         public bool IsTestMode { get; set; }
 
         public ViewModelLocator()
@@ -52,6 +53,7 @@ namespace OcampoElective2Project.Helpers
             SimpleIoc.Default.Register<AddTransportationViewModel>();
             SimpleIoc.Default.Register<IncomeViewModel>();
             SimpleIoc.Default.Register<ExpenseViewModel>();
+            SimpleIoc.Default.Register<AddIncomeViewModel>();
 
             if (IsTestMode == true)
             {
@@ -90,6 +92,7 @@ namespace OcampoElective2Project.Helpers
         public AddTransportationViewModel AddTransportationViewModel => ServiceLocator.Current.GetInstance<AddTransportationViewModel>();
         public IncomeViewModel IncomeViewModel => ServiceLocator.Current.GetInstance<IncomeViewModel>();
         public ExpenseViewModel ExpenseViewModel => ServiceLocator.Current.GetInstance<ExpenseViewModel>();
+        public AddIncomeViewModel AddIncomeViewModel => ServiceLocator.Current.GetInstance<AddIncomeViewModel>();
 
 
 
