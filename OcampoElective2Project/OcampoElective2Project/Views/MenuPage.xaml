@@ -11,6 +11,7 @@
             <Button Text="Others" Command="{Binding GoToOthersPageCommand }" VerticalOptions="Center" HorizontalOptions="Center" />
             <Button Text="Log Out" Command="{Binding LogoutCommand }" VerticalOptions="Center" HorizontalOptions="Center" />
             <Button Text="Expenses"  Command="{Binding GoToExpensePageCommand }" VerticalOptions="Center" HorizontalOptions="Center" ></Button>
+            <Button Text="Income" Command="{Binding GoToIncomePageCommand}" VerticalOptions="Center" HorizontalOptions="Center" ></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

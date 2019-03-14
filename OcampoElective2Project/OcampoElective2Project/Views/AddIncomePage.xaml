@@ -3,10 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OcampoElective2Project.Views.AddIncomePage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Name" FontSize="28" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                            <Entry Text="{Binding Path=IncomeToAdd.Name}"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  FontSize="28" x:Name="NameEntry"></Entry>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" >
+                            <Label Text="Price" FontSize="28" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                            <Entry Text="{Binding Path=IncomeToAdd.IncomeMoney}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" FontSize="28" x:Name="NamePrice"></Entry>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+
+                <Button Text="Save" Command="{Binding SaveIncomeCommand}" AbsoluteLayout.LayoutBounds=".5,1,1,.1" AbsoluteLayout.LayoutFlags="All"></Button>
+            </StackLayout>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

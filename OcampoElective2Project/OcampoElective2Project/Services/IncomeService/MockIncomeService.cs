@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using OcampoElective2Project.Models;
 using OcampoElective2Project.Repository;
@@ -9,6 +10,7 @@ namespace OcampoElective2Project.Services.IncomeService
 {
     public class MockIncomeService : IIncomeService
     {
+        private static string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "OcampoElective.db3");
         private IRepository _repository;
 
         public MockIncomeService()

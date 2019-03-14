@@ -87,5 +87,14 @@ namespace OcampoElective2Project.ViewModels
             NavigationService.NavigateTo(ViewModelLocator.ExpensePage,User,true);
             ToggleMasterPageIsPresented();
         }
+
+
+        public ICommand GoToIncomePageCommand => new RelayCommand(GoToIncomePageProc);
+
+        private void GoToIncomePageProc()
+        {
+            NavigationService.NavigateTo(ViewModelLocator.IncomePage, User, true);
+            ToggleMasterPageIsPresented();
+        }
     }
 }

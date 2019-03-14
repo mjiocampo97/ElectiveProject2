@@ -50,6 +50,7 @@ namespace OcampoElective2Project.Helpers
                 connection.CreateTableAsync<Food>();
                 connection.CreateTableAsync<Others>();
                 connection.CreateTableAsync<Transportation>();
+                connection.CreateTableAsync<Income>();
 
                 //connection.DeleteAllAsync<Clothes>();
                 //connection.DeleteAllAsync<Food>();

@@ -29,6 +29,10 @@ namespace OcampoElective2Project.Views
             IncomeViewModel.User = user;
             BindingContext = IncomeViewModel;
         }
-        
+        protected override void OnAppearing()
+        {
+            IncomeViewModel.LoadIncome(IncomeViewModel.User);
+           
+        }
     }
 }
