@@ -4,17 +4,18 @@
              x:Class="OcampoElective2Project.Views.FoodPage"
              Icon="dine.png">
     <ContentPage.Content>
-        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" > 
             <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All">
-                <ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  BackgroundColor="AntiqueWhite"  ItemsSource="{Binding FoodList}"  SelectedItem="{Binding Path=SelectedFood}">
+                <ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  ItemsSource="{Binding FoodList}"  SelectedItem="{Binding Path=SelectedFood}"  HasUnevenRows="True" SeparatorColor="Transparent">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
-                                <StackLayout>
-                                    <Label Text="{Binding NameOfFood}"/>
-                                    <Label Text="{Binding Price}"/>
-
-                                </StackLayout>
+                            <ViewCell Height="55" >
+                                <Frame Padding="0" HeightRequest="55" Margin="5" BorderColor="SkyBlue" BackgroundColor="LightCyan " >
+                                    <StackLayout Orientation="Vertical" Padding="8,0"  HeightRequest="55">
+                                        <Label Text="{Binding NameOfFood}" HeightRequest="18"/>
+                                        <Label Text="{Binding Price, StringFormat=₱'{0:0}'}" HeightRequest="17"/>
+                                    </StackLayout>
+                                </Frame>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
