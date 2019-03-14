@@ -49,15 +49,17 @@ namespace OcampoElective2Project.ViewModels
             IncomeToAdd.UserId = User.AccountId;
             if (App.Locator.IncomeViewModel.isUpdate == true)
             {
+                
                 IncomeToAdd.Id = App.Locator.IncomeViewModel.SelectedIncome.Id;
                 IncomeService.UpdateIncome(App.Locator.IncomeViewModel.SelectedIncome, IncomeToAdd);
                 
+
             }
             else
             {
                 
                 IncomeService.AddIncome(IncomeToAdd);
-
+                User.Money += IncomeToAdd.IncomeMoney;
             }
             NavigationService.GoBack();
             App.Locator.ExpenseViewModel.isUpdate = false;

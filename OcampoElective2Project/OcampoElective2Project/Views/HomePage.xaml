@@ -20,19 +20,20 @@
                
                 <StackLayout Grid.Row="1">
                     <controls:CircleImage WidthRequest="150" HeightRequest="150"  HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Margin="0,-90,0,0" Source="profile.png" BorderColor="Black" BorderThickness="5" FillColor="White" Aspect="AspectFill"></controls:CircleImage>
-              
-         
-                    
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
                         <Label Text="{Binding User.FirstName}" FontSize="18" FontAttributes="Bold"></Label>
                         <Label Text="  " FontSize="18"></Label>
                         <Label Text="{Binding User.LastName}" FontSize="18" FontAttributes="Bold"></Label>
                     </StackLayout>
-
-                <StackLayout>
-                    <Label Text="{Binding User.AccountId}"></Label>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Balance:"></Label>
+                        <Label Text="{Binding User.Money, StringFormat=₱'{0:0}'}"></Label>
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
+           
+                   
+             
+
             </Grid>
         </AbsoluteLayout>
     </ContentPage.Content>
