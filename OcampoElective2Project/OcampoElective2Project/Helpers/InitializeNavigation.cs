@@ -63,14 +63,16 @@ namespace OcampoElective2Project.Helpers
                 var others = connection.Table<Others>();
                 var transportation = connection.Table<Transportation>();
                 var useraccount = connection.Table<UserAccount>();
+                var income = connection.Table<Income>();
 
                 var listofaccount = useraccount.ToListAsync();
                 var listOfFood = food.ToListAsync();
                 var listOfOthers = others.ToListAsync();
                 var listOfClothes = clothes.ToListAsync();
                 var listOfTransportation = transportation.ToListAsync();
+                var listOfIncome = income.ToListAsync();
 
-              //  CreateMockDataSQL(connection);
+                //  CreateMockDataSQL(connection);
 
 
                 //var user = connection.Table<UserAccount>();

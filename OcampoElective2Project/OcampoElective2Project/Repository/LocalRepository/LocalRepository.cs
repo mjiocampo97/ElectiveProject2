@@ -13,5 +13,6 @@ namespace OcampoElective2Project.Repository.LocalRepository
         public IDataService<Food> Food { get; }= new LocalDataService<Food>();
         public IDataService<Transportation> Transportation { get; } = new LocalDataService<Transportation>();
         public IDataService<Others> Others { get; } = new LocalDataService<Others>();
+        public IDataService<Income> Income { get; }
     }
 }

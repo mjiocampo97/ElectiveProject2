@@ -12,5 +12,6 @@ namespace OcampoElective2Project.Repository.OnlineRepository
         public IDataService<Food> Food { get; } = new OnlineDataService<Food>();
         public IDataService<Transportation> Transportation { get; } = new OnlineDataService<Transportation>();
         public  IDataService<Others> Others { get; } = new OnlineDataService<Others>();
+        public IDataService<Income> Income { get; }
     }
 }

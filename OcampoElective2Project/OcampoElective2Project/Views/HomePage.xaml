@@ -19,7 +19,7 @@
 
                
                 <StackLayout Grid.Row="1">
-                    <controls:CircleImage WidthRequest="125" HeightRequest="125"  HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Margin="0,-75,0,0" Source="profile.png" BorderColor="Black" BorderThickness="5" FillColor="White" Aspect="AspectFill"></controls:CircleImage>
+                    <controls:CircleImage WidthRequest="150" HeightRequest="150"  HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Margin="0,-90,0,0" Source="profile.png" BorderColor="Black" BorderThickness="5" FillColor="White" Aspect="AspectFill"></controls:CircleImage>
               
          
                     
