@@ -43,7 +43,7 @@ namespace OcampoElective2Project.Helpers
             
             {
                 var connection = new SQLiteAsyncConnection(dbPath);
-
+                
 
                 connection.CreateTableAsync<UserAccount>();
                 connection.CreateTableAsync<Clothes>();

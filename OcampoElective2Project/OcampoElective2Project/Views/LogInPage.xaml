@@ -2,22 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
-             x:Class="OcampoElective2Project.Views.LogInPage">
+             xmlns:ocampoElective2Project="clr-namespace:OcampoElective2Project;assembly=OcampoElective2Project"
+             x:Class="OcampoElective2Project.Views.LogInPage"
+             xmlns:local="clr-namespace:">
     <ContentPage.Content>
-        <StackLayout>
-            <Grid BackgroundColor="White">
+        <AbsoluteLayout>
+
+            <Grid BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All">
                 <Grid.ColumnDefinitions>
                  
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="200"></RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 
                 <StackLayout HorizontalOptions="Center">
-                    <abstractions:CircleImage WidthRequest="150" HeightRequest="150"  HorizontalOptions="Center" VerticalOptions="Center" Source="Blogo.png"  Aspect="AspectFill" BackgroundColor="Transparent" BorderThickness="0"></abstractions:CircleImage>
-
-                    <Label Text="Username" VerticalOptions="Center" FontSize="12" Margin="2" TextColor="Gray"></Label>
+                    <Image WidthRequest="150" HeightRequest="150"  HorizontalOptions="Center" VerticalOptions="Center" Source="Blogo.png"  Aspect="AspectFill" BackgroundColor="Transparent" ></Image>
+                </StackLayout>
+                <StackLayout Grid.Row="1">
+                <Label Text="Username" VerticalOptions="Center" FontSize="12" Margin="2" TextColor="Gray"></Label>
                     <Entry WidthRequest="260" Text="{Binding Username}" FontSize="18" Margin="2" ></Entry>
                     <Label Text="Password" VerticalOptions="Center" FontSize="12" Margin="2" TextColor="Gray"></Label>
                         <Entry WidthRequest="260" IsPassword="True" Text="{Binding Password}" FontSize="18" Margin="2"></Entry>
@@ -27,10 +31,13 @@
                             <Button Text="Dont have account? Sign Up" Command="{Binding RegisterCommand}" BorderColor="Transparent" BackgroundColor="Transparent" TextColor="{StaticResource SignUp}" HorizontalOptions="Center" VerticalOptions="Center" Margin="5" FontSize="18"></Button>
                         </StackLayout>
                         <Button Text="Log In" Command="{Binding LogInCommand}" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="280" Margin="0,5,0,0" CornerRadius="25" BackgroundColor="#08bce0"></Button>
-
+                   
                     </StackLayout>
                 </StackLayout>
+
+
             </Grid>
-        </StackLayout>
+        
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

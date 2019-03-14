@@ -26,6 +26,13 @@ namespace OcampoElective2Project.Services.IncomeService
         public void AddIncome(Income income)
         {
             _repository.Income.Add(income);
+           
+        }
+
+
+        public void AddIncomeUser(UserAccount user)
+        {
+            _repository.UserAccount.Update(c => c.AccountId == user.AccountId, user);
         }
 
         public void DeleteIncome(Income income)

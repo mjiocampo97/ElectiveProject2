@@ -26,5 +26,10 @@ namespace OcampoElective2Project.Services.IncomeService
         {
             throw new NotImplementedException();
         }
+
+        public void AddIncomeUser(UserAccount user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

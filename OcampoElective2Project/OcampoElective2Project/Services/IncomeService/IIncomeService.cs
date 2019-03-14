@@ -11,5 +11,7 @@ namespace OcampoElective2Project.Services.IncomeService
         void AddIncome(Income income);
         void DeleteIncome(Income income);
         void UpdateIncome(Income oldIncome, Income newIncome);
+        void AddIncomeUser(UserAccount user);
+
     }
 }

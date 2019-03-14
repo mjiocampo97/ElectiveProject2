@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
@@ -7,15 +8,19 @@ using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 using OcampoElective2Project.Helpers;
 using OcampoElective2Project.Models;
+using OcampoElective2Project.Repository;
+using OcampoElective2Project.Repository.LocalRepository;
 using OcampoElective2Project.Services;
 using OcampoElective2Project.Services.FoodService;
 using OcampoElective2Project.Services.IncomeService;
 using OcampoElective2Project.Views;
+using SQLite;
 
 namespace OcampoElective2Project.ViewModels
 {
     public class AddIncomeViewModel : OcampoElective2ProjectViewModel
     {
+        private static string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "OcampoElective.db3");
 
         private UserAccount _user;
         public UserAccount User
@@ -30,9 +35,14 @@ namespace OcampoElective2Project.ViewModels
 
         public IIncomeService IncomeService{ get; set; }
         public Income IncomeToAdd { get; set; }
+        public IRepository _Repository;
 
-  
-        
+        /// <summary>
+      
+        /// </summary>
+        /// <param name="navigationService"></param>
+        /// <param name="incomeService"></param>
+
 
         public AddIncomeViewModel(INavigationService navigationService, IIncomeService incomeService)
         {
@@ -40,7 +50,8 @@ namespace OcampoElective2Project.ViewModels
             NavigationService = (NavigationService)navigationService;
             IncomeService = incomeService;
             IncomeToAdd = new Income();
-            
+            _Repository = new LocalRepository();
+         
         }
 
         public ICommand SaveIncomeCommand => new RelayCommand(SaveIncomeProc);
@@ -60,9 +71,17 @@ namespace OcampoElective2Project.ViewModels
                 
                 IncomeService.AddIncome(IncomeToAdd);
                 User.Money += IncomeToAdd.IncomeMoney;
+                
+                
             }
             NavigationService.GoBack();
             App.Locator.ExpenseViewModel.isUpdate = false;
+        }
+
+        public void ChangeMoney(int userId, double money)
+        {
+            var user = new UserAccount() {AccountId = userId, Money = money};
+           
         }
     }
 }
