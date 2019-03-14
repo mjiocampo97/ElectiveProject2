@@ -10,6 +10,7 @@ using OcampoElective2Project.Models;
 using OcampoElective2Project.Services;
 using OcampoElective2Project.Services.FoodService;
 using OcampoElective2Project.Services.IncomeService;
+using OcampoElective2Project.Views;
 
 namespace OcampoElective2Project.ViewModels
 {
@@ -50,11 +51,11 @@ namespace OcampoElective2Project.ViewModels
             {
                 IncomeToAdd.Id = App.Locator.IncomeViewModel.SelectedIncome.Id;
                 IncomeService.UpdateIncome(App.Locator.IncomeViewModel.SelectedIncome, IncomeToAdd);
-
+                
             }
             else
             {
-
+                
                 IncomeService.AddIncome(IncomeToAdd);
 
             }

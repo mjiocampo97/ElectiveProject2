@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,11 +24,27 @@ namespace OcampoElective2Project.Views
 
         protected override void OnAppearing()
         {
+
             base.OnAppearing();
             var currentPageKeyString = ServiceLocator.Current
                 .GetInstance<INavigationService>()
                 .CurrentPageKey;
             Debug.WriteLine("Current page key: " + currentPageKeyString);
+
+
+
+            if (App.Locator.IncomeViewModel.isUpdate == true)
+            {
+                NamePrice.Text = App.Locator.IncomeViewModel.SelectedIncome.IncomeMoney.ToString(CultureInfo.InvariantCulture);
+                NameEntry.Text = App.Locator.IncomeViewModel.SelectedIncome.Name;
+
+            }
+            else
+            {
+                NamePrice.Text = "";
+                NameEntry.Text = "";
+            }
+
         }
 
 
@@ -38,7 +55,11 @@ namespace OcampoElective2Project.Views
             App.Locator.AddIncomeViewModel.User = user;
             this.BindingContext = App.Locator.AddIncomeViewModel;
         }
-
+        protected override bool OnBackButtonPressed()
+        {
+            App.Locator.IncomeViewModel.isUpdate = false;
+            return base.OnBackButtonPressed();
+        }
         //public AddFoodPage()
         //{
         //    InitializeComponent();

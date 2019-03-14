@@ -36,10 +36,10 @@ namespace OcampoElective2Project.Views
 
           
 
-            if (App.Locator.ClothesViewModel.isUpdate == true)
+            if (App.Locator.ExpenseViewModel.isUpdate == true)
             {
-                NamePrice.Text = App.Locator.ClothesViewModel.SelectedClothes.Price.ToString(CultureInfo.InvariantCulture);
-                NameEntry.Text = App.Locator.ClothesViewModel.SelectedClothes.Name;
+                NamePrice.Text = App.Locator.ExpenseViewModel.SelectedClothes.Price.ToString(CultureInfo.InvariantCulture);
+                NameEntry.Text = App.Locator.ExpenseViewModel.SelectedClothes.Name;
                 
             }
             else
@@ -58,5 +58,11 @@ namespace OcampoElective2Project.Views
 	        this.BindingContext = App.Locator.AddClothesViewModel;
            
 	    }
+
+        protected override bool OnBackButtonPressed()
+        {
+            App.Locator.ExpenseViewModel.isUpdate = false;
+            return base.OnBackButtonPressed();
+        }
     }
 }
