@@ -3,25 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OcampoElective2Project.Views.HomePage">
     <ContentPage.Content>
-        <AbsoluteLayout>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-             </Grid.RowDefinitions>
-            <StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Name: "></Label>
-                <Label Text="{Binding User.FirstName}"></Label>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="LastName "></Label>
-                <Label Text="{Binding User.LastName}"></Label>
-            </StackLayout>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150"  />
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" BackgroundColor="LightBlue" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All">
+                </Grid>
+
+
+               
+                <StackLayout Grid.Row="1">
+                    <Button CornerRadius="250" WidthRequest="125" HeightRequest="125"  HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Margin="0,-75,0,0" Image="profile2.png"  >
+                       
+                    </Button>
+                    
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                        <Label Text="{Binding User.FirstName}"></Label>
+                        <Label Text="  "></Label>
+                        <Label Text="{Binding User.LastName}"></Label>
+                    </StackLayout>
+
                 <StackLayout>
                     <Label Text="{Binding User.AccountId}"></Label>
                 </StackLayout>
