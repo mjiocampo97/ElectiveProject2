@@ -9,6 +9,7 @@ using OcampoElective2Project.Models;
 using OcampoElective2Project.Services;
 using OcampoElective2Project.Services.FoodService;
 using OcampoElective2Project.Services.TransportationService;
+using OcampoElective2Project.Services.UserAccountService;
 
 namespace OcampoElective2Project.ViewModels
 {
@@ -27,14 +28,15 @@ namespace OcampoElective2Project.ViewModels
         }
 
         public ITransportationService TransportationService { get; set; }
+        public IUserAccountService UserAccountService { get; set; }
         public Transportation TransportationToAdd { get; set; }
-        public AddTransportationViewModel(INavigationService navigationService, ITransportationService transportationService)
+        public AddTransportationViewModel(INavigationService navigationService, ITransportationService transportationService, IUserAccountService userAccountService)
         {
             if (navigationService == null) throw new ArgumentNullException("navigationService");
             NavigationService = (NavigationService)navigationService;
             TransportationService = transportationService;
             TransportationToAdd = new Transportation();
-
+            UserAccountService = userAccountService;
         }
 
 
@@ -55,7 +57,8 @@ namespace OcampoElective2Project.ViewModels
             {
 
                TransportationService.AddTransportation(TransportationToAdd);
-               
+               User.Money -= TransportationToAdd.Price;
+               UserAccountService.UpdateUser(User);
             }
             NavigationService.GoBack();
             App.Locator.ClothesViewModel.isUpdate = false;

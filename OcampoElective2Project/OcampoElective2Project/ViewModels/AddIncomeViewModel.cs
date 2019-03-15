@@ -54,6 +54,7 @@ namespace OcampoElective2Project.ViewModels
             IncomeToAdd = new Income();
             UserAccountService = userAccountService;
          
+
         }
 
         public ICommand SaveIncomeCommand => new RelayCommand(SaveIncomeProc);

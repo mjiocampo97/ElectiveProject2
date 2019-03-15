@@ -9,6 +9,7 @@ using OcampoElective2Project.Models;
 using OcampoElective2Project.Services;
 using OcampoElective2Project.Services.ClothesService;
 using OcampoElective2Project.Services.FoodService;
+using OcampoElective2Project.Services.UserAccountService;
 
 namespace OcampoElective2Project.ViewModels
 {
@@ -28,14 +29,15 @@ namespace OcampoElective2Project.ViewModels
         }
 
         public IFoodService FoodService { get; set; }
+        public IUserAccountService UserAccountService { get; set; }
         public Food FoodToAdd { get; set; }
-        public AddFoodViewModel(INavigationService navigationService, IFoodService foodService)
+        public AddFoodViewModel(INavigationService navigationService, IFoodService foodService, IUserAccountService userAccountService)
         {
             if (navigationService == null) throw new ArgumentNullException("navigationService");
             NavigationService = (NavigationService)navigationService;
             FoodService = foodService;
             FoodToAdd = new Food();
-
+            UserAccountService = userAccountService;
         }
 
         public ICommand SaveFoodCommand => new RelayCommand(SaveFoodProc);
@@ -52,7 +54,8 @@ namespace OcampoElective2Project.ViewModels
             {
                 
                 FoodService.AddFood(FoodToAdd);
-               
+                User.Money -= FoodToAdd.Price;
+                UserAccountService.UpdateUser(User);
             }
             NavigationService.GoBack();
             App.Locator.ExpenseViewModel.isUpdate = false;

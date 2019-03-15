@@ -8,6 +8,7 @@ using OcampoElective2Project.Helpers;
 using OcampoElective2Project.Models;
 using OcampoElective2Project.Services;
 using OcampoElective2Project.Services.ClothesService;
+using OcampoElective2Project.Services.UserAccountService;
 using Xamarin.Forms;
 
 namespace OcampoElective2Project.ViewModels
@@ -28,13 +29,16 @@ namespace OcampoElective2Project.ViewModels
             }
         }
         public IClothesService ClothesService { get; set; }
+        public IUserAccountService UserAccountService { get; set; }
         public Clothes ClothesToAdd { get; set; }
-        public AddClothesViewModel(INavigationService navigationService, IClothesService clothesService)
+
+        public AddClothesViewModel(INavigationService navigationService, IClothesService clothesService, IUserAccountService userAccountService)
         {
             if (navigationService == null) throw new ArgumentNullException("navigationService");
             NavigationService = (NavigationService)navigationService;
             ClothesService = clothesService;
             ClothesToAdd = new Clothes();
+            UserAccountService = userAccountService;
 
         }
         
@@ -53,7 +57,8 @@ namespace OcampoElective2Project.ViewModels
             {
                
                 ClothesService.AddClothes(ClothesToAdd);
-              
+                User.Money -= ClothesToAdd.Price;
+                UserAccountService.UpdateUser(User);
             }
             NavigationService.GoBack();
             App.Locator.ExpenseViewModel.isUpdate = false;
