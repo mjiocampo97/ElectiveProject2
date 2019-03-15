@@ -27,11 +27,7 @@ namespace OcampoElective2Project.ViewModels
         public UserAccount User
         {
             get => _user;
-            set
-            {
-                _user = value;
-                RaisePropertyChanged(nameof(User));
-            }
+            set { Set(ref _user, value); }
         }
 
         public IIncomeService IncomeService{ get; set; }
@@ -80,7 +76,7 @@ namespace OcampoElective2Project.ViewModels
                 
             }
             NavigationService.GoBack();
-            //UserAccountService.UpdateUser(User);
+            UserAccountService.UpdateUser(User);
             App.Locator.IncomeViewModel.isUpdate = false;
         }
 
