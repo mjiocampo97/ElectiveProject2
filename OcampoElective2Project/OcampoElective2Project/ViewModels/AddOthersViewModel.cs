@@ -53,9 +53,10 @@ namespace OcampoElective2Project.ViewModels
 
                 OthersService.AddOthers(OthersToAdd);
                 User.Money -= OthersToAdd.Price;
-                UserAccountService.UpdateUser(User);
+               
             }
             NavigationService.GoBack();
+            //UserAccountService.UpdateUser(User);
             App.Locator.ExpenseViewModel.isUpdate = false;
         }
 

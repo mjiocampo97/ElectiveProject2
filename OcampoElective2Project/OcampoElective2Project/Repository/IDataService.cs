@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace OcampoElective2Project.Repository
 {
     public interface IDataService<T> where T : class 
     {
-        void Add(T record);
+        Task Add(T record);
 
         T Get(Expression<Func<T, bool>> condition);
 

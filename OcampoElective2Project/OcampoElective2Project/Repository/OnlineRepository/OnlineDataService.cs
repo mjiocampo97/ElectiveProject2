@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace OcampoElective2Project.Repository.OnlineRepository
 {
     public class OnlineDataService<T> : IDataService<T> where T : class, new()
     {
-        public void Add(T record)
+        public Task Add(T record)
         {
             throw new NotImplementedException();
         }

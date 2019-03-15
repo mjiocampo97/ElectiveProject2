@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
@@ -41,12 +43,14 @@ namespace OcampoElective2Project.ViewModels
 
 
 
-        public ICommand SaveTransportationCommand => new RelayCommand(SaveTransportationProc);
-
-        private void SaveTransportationProc()
+        public ICommand SaveTransportationCommand => new RelayCommand(async() => await SaveTransportationProc());
+        //public ICommand SaveTransportationCommand => new RelayCommand( async () => SaveTransportationProc());
+        //private task async  SaveTransportationProc()
+        //private async task
+        private  async Task SaveTransportationProc()
         {
             TransportationToAdd.UserId = User.AccountId;
-        
+           
             if (App.Locator.ExpenseViewModel.isUpdate == true)
             {
                 TransportationToAdd.Id = App.Locator.ExpenseViewModel.SelectedTransportation.Id;
@@ -58,12 +62,18 @@ namespace OcampoElective2Project.ViewModels
 
                TransportationService.AddTransportation(TransportationToAdd);
                User.Money -= TransportationToAdd.Price;
-               UserAccountService.UpdateUser(User);
+            
             }
             NavigationService.GoBack();
+         //  UpdateIncome();
+            //UserAccountService.UpdateUser(User);
             App.Locator.ClothesViewModel.isUpdate = false;
         }
 
+        private void UpdateIncome()
+        {
+            UserAccountService.UpdateUser(User);
+        }
 
        
     }

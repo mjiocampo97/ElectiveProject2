@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 using SQLite;
 
 namespace OcampoElective2Project.Repository.LocalRepository
@@ -14,11 +15,11 @@ namespace OcampoElective2Project.Repository.LocalRepository
    
 
 
-        public void Add(T record)
+        public Task Add(T record)
         {
             var db = new SQLiteAsyncConnection(dbPath);
            // db.CreateTableAsync<T>();
-            db.InsertAsync(record);
+           return db.InsertAsync(record);
         }
 
         public T Get(Expression<Func<T, bool>> condition)

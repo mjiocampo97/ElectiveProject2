@@ -58,7 +58,7 @@ namespace OcampoElective2Project.ViewModels
         }
 
         public ICommand SaveIncomeCommand => new RelayCommand(SaveIncomeProc);
-        private void SaveIncomeProc()
+        private async void SaveIncomeProc()
         {
             IncomeToAdd.UserId = User.AccountId;
             if (App.Locator.IncomeViewModel.isUpdate == true)
@@ -74,13 +74,14 @@ namespace OcampoElective2Project.ViewModels
               
                 IncomeService.AddIncome(IncomeToAdd);
                 User.Money += IncomeToAdd.IncomeMoney;          
-                UserAccountService.UpdateUser(User);
-                
+               
+                ;
                
                 
             }
             NavigationService.GoBack();
-            App.Locator.ExpenseViewModel.isUpdate = false;
+            //UserAccountService.UpdateUser(User);
+            App.Locator.IncomeViewModel.isUpdate = false;
         }
 
         public void ChangeMoney(int userId, double money)
