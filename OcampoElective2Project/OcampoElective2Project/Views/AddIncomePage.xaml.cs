@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using CommonServiceLocator;
 using GalaSoft.MvvmLight.Views;
@@ -22,6 +23,13 @@ namespace OcampoElective2Project.Views
             BindingContext = App.Locator.AddIncomeViewModel;
         }
 
+        private static readonly Regex _regex = new Regex("[^0-9.-]+");
+        private static bool IsTextAllowed(string text)
+        {
+            return !_regex.IsMatch(text);
+        }
+
+
         protected override void OnAppearing()
         {
 
@@ -30,7 +38,6 @@ namespace OcampoElective2Project.Views
                 .GetInstance<INavigationService>()
                 .CurrentPageKey;
             Debug.WriteLine("Current page key: " + currentPageKeyString);
-
 
 
             if (App.Locator.IncomeViewModel.isUpdate == true)

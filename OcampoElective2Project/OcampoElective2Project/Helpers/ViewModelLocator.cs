@@ -10,6 +10,7 @@ using OcampoElective2Project.Services.LogInService;
 using OcampoElective2Project.Services.OthersService;
 using OcampoElective2Project.Services.RegisterService;
 using OcampoElective2Project.Services.TransportationService;
+using OcampoElective2Project.Services.UserAccountService;
 using OcampoElective2Project.ViewModels;
 
 namespace OcampoElective2Project.Helpers
@@ -54,6 +55,7 @@ namespace OcampoElective2Project.Helpers
             SimpleIoc.Default.Register<IncomeViewModel>();
             SimpleIoc.Default.Register<ExpenseViewModel>();
             SimpleIoc.Default.Register<AddIncomeViewModel>();
+           
 
             if (IsTestMode == true)
             {
@@ -64,6 +66,7 @@ namespace OcampoElective2Project.Helpers
                 SimpleIoc.Default.Register<IOthersService, MockOthersService>();
                 SimpleIoc.Default.Register<ITransportationService,MockTransportationService>();
                 SimpleIoc.Default.Register<IIncomeService, MockIncomeService>();
+                SimpleIoc.Default.Register<IUserAccountService, MockUserAccountService>();
             }
 
             else
@@ -75,6 +78,7 @@ namespace OcampoElective2Project.Helpers
                 SimpleIoc.Default.Register<IOthersService, OthersService>();
                 SimpleIoc.Default.Register<ITransportationService, TransportationService>();
                 SimpleIoc.Default.Register<IIncomeService, IncomeService>();
+                SimpleIoc.Default.Register<IUserAccountService, UserAccountService>();
             }
 
         }

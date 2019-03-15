@@ -11,5 +11,10 @@ namespace OcampoElective2Project.Services.UserAccountService
         {
             throw new NotImplementedException();
         }
+
+        public void UpdateUser(UserAccount newUser)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

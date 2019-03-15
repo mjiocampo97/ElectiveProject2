@@ -13,6 +13,7 @@ using OcampoElective2Project.Repository.LocalRepository;
 using OcampoElective2Project.Services;
 using OcampoElective2Project.Services.FoodService;
 using OcampoElective2Project.Services.IncomeService;
+using OcampoElective2Project.Services.UserAccountService;
 using OcampoElective2Project.Views;
 using SQLite;
 
@@ -35,7 +36,8 @@ namespace OcampoElective2Project.ViewModels
 
         public IIncomeService IncomeService{ get; set; }
         public Income IncomeToAdd { get; set; }
-        public IRepository _Repository;
+   
+        public IUserAccountService UserAccountService { get; set; }
 
         /// <summary>
       
@@ -44,13 +46,13 @@ namespace OcampoElective2Project.ViewModels
         /// <param name="incomeService"></param>
 
 
-        public AddIncomeViewModel(INavigationService navigationService, IIncomeService incomeService)
+        public AddIncomeViewModel(INavigationService navigationService, IIncomeService incomeService, IUserAccountService userAccountService)
         {
             if (navigationService == null) throw new ArgumentNullException("navigationService");
             NavigationService = (NavigationService)navigationService;
             IncomeService = incomeService;
             IncomeToAdd = new Income();
-            _Repository = new LocalRepository();
+            UserAccountService = userAccountService;
          
         }
 
@@ -68,10 +70,12 @@ namespace OcampoElective2Project.ViewModels
             }
             else
             {
-                
+              
                 IncomeService.AddIncome(IncomeToAdd);
-                User.Money += IncomeToAdd.IncomeMoney;
+                User.Money += IncomeToAdd.IncomeMoney;          
+                UserAccountService.UpdateUser(User);
                 
+               
                 
             }
             NavigationService.GoBack();

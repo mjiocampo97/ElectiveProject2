@@ -7,6 +7,6 @@ namespace OcampoElective2Project.Services.UserAccountService
 {
     public interface IUserAccountService
     {
-        void UpdateUser(UserAccount oldUser, UserAccount newUser);
+        void UpdateUser(UserAccount newUser);
     }
 }

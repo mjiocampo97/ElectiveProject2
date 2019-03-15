@@ -17,9 +17,11 @@ namespace OcampoElective2Project.Services.UserAccountService
         {
             _repository = new LocalRepository();
         }
-        public void UpdateUser(UserAccount oldUser, UserAccount newUser)
+      
+
+        public void UpdateUser(UserAccount newUser)
         {
-            _repository.UserAccount.Update(c => c.AccountId == oldUser.AccountId,newUser);
+            _repository.UserAccount.Update(c => c.AccountId == newUser.AccountId, newUser);
         }
     }
 }
