@@ -13,6 +13,7 @@ using OcampoElective2Project.Services.FoodService;
 using OcampoElective2Project.Services.IncomeService;
 using OcampoElective2Project.Services.OthersService;
 using OcampoElective2Project.Services.TransportationService;
+using OcampoElective2Project.Services.UserAccountService;
 using OcampoElective2Project.Views;
 using Xamarin.Forms;
 
@@ -38,6 +39,7 @@ namespace OcampoElective2Project.ViewModels
         public bool isUpdate { get; set; }
 
         public IIncomeService IncomeService { get; set; }
+        public IUserAccountService UserAccountService { get; set; }
         public ObservableCollection<Income> IncomeList { get; set; } = new ObservableCollection<Income>();
 
         public Income SelectedIncome
@@ -51,11 +53,12 @@ namespace OcampoElective2Project.ViewModels
         }
 
 
-        public IncomeViewModel(INavigationService navigationService, IIncomeService incomeService)
+        public IncomeViewModel(INavigationService navigationService, IIncomeService incomeService, IUserAccountService userAccountService)
         {
             if (navigationService == null) throw new ArgumentNullException("navigationService");
             NavigationService = (NavigationService)navigationService;
             IncomeService = incomeService;
+            UserAccountService = userAccountService;
         }
 
 
@@ -84,6 +87,8 @@ namespace OcampoElective2Project.ViewModels
             {
 
                 IncomeService.DeleteIncome(SelectedIncome);
+                User.Money -= SelectedIncome.IncomeMoney;
+                UserAccountService.UpdateUser(User);
                 RefreshIncome();
             }
             else

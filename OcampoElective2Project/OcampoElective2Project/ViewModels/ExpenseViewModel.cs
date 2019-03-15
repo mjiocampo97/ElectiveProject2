@@ -12,6 +12,7 @@ using OcampoElective2Project.Services.ClothesService;
 using OcampoElective2Project.Services.FoodService;
 using OcampoElective2Project.Services.OthersService;
 using OcampoElective2Project.Services.TransportationService;
+using OcampoElective2Project.Services.UserAccountService;
 using Xamarin.Forms;
 
 namespace OcampoElective2Project.ViewModels
@@ -48,9 +49,10 @@ namespace OcampoElective2Project.ViewModels
 
         public IClothesService ClothesService { get; set; }
         public IFoodService FoodService { get; set; }
+        public IUserAccountService UserAccountService { get; set; }
         public IOthersService OthersService { get; set; }
         public ITransportationService TransportationService { get; set; }
-        public ExpenseViewModel(INavigationService navigationService, IClothesService clothesService, IFoodService foodService, IOthersService othersService, ITransportationService transportationService)
+        public ExpenseViewModel(INavigationService navigationService, IClothesService clothesService, IFoodService foodService, IOthersService othersService, ITransportationService transportationService, IUserAccountService userAccountService)
         {
             if (navigationService == null) throw new ArgumentNullException("navigationService");
             NavigationService = (NavigationService)navigationService;
@@ -58,6 +60,7 @@ namespace OcampoElective2Project.ViewModels
             FoodService = foodService;
             OthersService = othersService;
             TransportationService = transportationService;
+            UserAccountService = userAccountService;
 
         }
         public void LoadClothes(UserAccount user)
@@ -74,9 +77,11 @@ namespace OcampoElective2Project.ViewModels
         public void DeleteClothesProc()
         {
             if(SelectedClothes != null)
-            { 
+            {
             ClothesService.DeleteClothes(SelectedClothes);
-            Refresh();
+            User.Money += SelectedClothes.Price;
+            UserAccountService.UpdateUser(User);
+                Refresh();
             }
             else
             {
@@ -155,7 +160,9 @@ namespace OcampoElective2Project.ViewModels
             if (SelectedFood!= null)
             {
                FoodService.DeleteFood(SelectedFood);
-               RefreshFood();
+               User.Money += SelectedFood.Price;
+               UserAccountService.UpdateUser(User);
+                RefreshFood();
             }
             else
             {
@@ -234,6 +241,8 @@ namespace OcampoElective2Project.ViewModels
             if (SelectedOthers != null)
             {
                 OthersService.DeleteOthers(SelectedOthers);
+                User.Money += SelectedOthers.Price;
+                UserAccountService.UpdateUser(User);
                 RefreshOthers();
             }
             else
@@ -308,6 +317,8 @@ namespace OcampoElective2Project.ViewModels
             if (SelectedTransportation != null)
             {
                 TransportationService.DeleteTransportation(SelectedTransportation);
+                User.Money += SelectedTransportation.Price;
+                UserAccountService.UpdateUser(User);
                 RefreshTransportation();
             }
             else
