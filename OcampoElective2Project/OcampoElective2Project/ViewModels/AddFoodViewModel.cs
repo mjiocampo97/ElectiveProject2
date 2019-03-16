@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
@@ -42,6 +43,7 @@ namespace OcampoElective2Project.ViewModels
         }
 
         public ICommand SaveFoodCommand => new RelayCommand(SaveFoodProc);
+        //public ICommand SaveFoodCommand => new RelayCommand(async () => await SaveFoodProc());
         private void SaveFoodProc()
         {
             FoodToAdd.UserId = User.AccountId;
@@ -66,6 +68,7 @@ namespace OcampoElective2Project.ViewModels
                 {
                     
                     UserAccountService.UpdateUser(User, User);
+                 Task.Delay(150);
                     NavigationService.GoBack();
                 }
                 catch (Exception e)
@@ -77,7 +80,7 @@ namespace OcampoElective2Project.ViewModels
             }
             else
             {
-                Application.Current.MainPage.DisplayAlert("Error", "Please try again", "Cancel");
+              Application.Current.MainPage.DisplayAlert("Error", "Please try again", "Cancel");
             }
             App.Locator.ExpenseViewModel.isUpdate = false;
         }

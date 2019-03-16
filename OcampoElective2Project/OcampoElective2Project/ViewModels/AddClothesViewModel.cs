@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
@@ -41,8 +42,9 @@ namespace OcampoElective2Project.ViewModels
             UserAccountService = userAccountService;
 
         }
-        
-        public ICommand SaveClothesCommand => new RelayCommand(SaveClothesProc);
+
+        // public ICommand SaveClothesCommand => new RelayCommand(async() => await SaveClothesProc());
+        public ICommand SaveClothesCommand => new RelayCommand( SaveClothesProc);
 
         private void SaveClothesProc()
         {
@@ -65,12 +67,23 @@ namespace OcampoElective2Project.ViewModels
            
             if (User != null)
             {
-                NavigationService.GoBack();
-                UserAccountService.UpdateUser(User, User);
+                
+                try
+                {
+                    UserAccountService.UpdateUser(User, User);
+                    Task.Delay(150);
+                    NavigationService.GoBack();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+             
             }
             else
             {
-                Application.Current.MainPage.DisplayAlert("Error", "Please try again", "Cancel");
+                 Application.Current.MainPage.DisplayAlert("Error", "Please try again", "Cancel");
             }
             App.Locator.ExpenseViewModel.isUpdate = false;
         }

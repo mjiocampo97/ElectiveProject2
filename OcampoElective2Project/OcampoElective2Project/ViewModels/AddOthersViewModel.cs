@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
@@ -38,7 +39,7 @@ namespace OcampoElective2Project.ViewModels
         }
 
         public ICommand SaveOthersCommand => new RelayCommand(SaveOthersProc);
-
+      //  public ICommand SaveOthersCommand => new RelayCommand(async () => await SaveOthersProc());
         private void SaveOthersProc()
         {
             OthersToAdd.UserId = User.AccountId;
@@ -57,8 +58,10 @@ namespace OcampoElective2Project.ViewModels
                 User.Money -= OthersToAdd.Price;
                
             }
-            NavigationService.GoBack();
+           
             UserAccountService.UpdateUser(User,User);
+            Task.Delay(150);
+            NavigationService.GoBack();
             App.Locator.ExpenseViewModel.isUpdate = false;
         }
 

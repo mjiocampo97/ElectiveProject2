@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -55,7 +56,8 @@ namespace OcampoElective2Project.ViewModels
         }
 
         public ICommand SaveIncomeCommand => new RelayCommand(SaveIncomeProc);
-        private  void SaveIncomeProc()
+        //public ICommand SaveIncomeCommand => new RelayCommand(async () => await SaveIncomeProc());
+        private void SaveIncomeProc()
         {
             IncomeToAdd.UserId = User.AccountId;
             if (App.Locator.IncomeViewModel.isUpdate == true)
@@ -80,11 +82,15 @@ namespace OcampoElective2Project.ViewModels
 
             if (User != null)
             {
-                NavigationService.GoBack();
+               
                 UserAccountService.UpdateUser(User, User);
+              //  await Task.Delay(150);
+                Task.Delay(150);
+                NavigationService.GoBack();
             }
             else
             {
+                //await Application.Current.MainPage.DisplayAlert("Error", "Please try again", "Cancel");
                 Application.Current.MainPage.DisplayAlert("Error", "Please try again", "Cancel");
             }
             App.Locator.IncomeViewModel.isUpdate = false;

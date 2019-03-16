@@ -44,11 +44,11 @@ namespace OcampoElective2Project.ViewModels
 
 
 
-        public ICommand SaveTransportationCommand => new RelayCommand(async() => await SaveTransportationProc());
+        public ICommand SaveTransportationCommand => new RelayCommand(SaveTransportationProc);
         //public ICommand SaveTransportationCommand => new RelayCommand( async () => SaveTransportationProc());
         //private task async  SaveTransportationProc()
         //private async task
-        private  async Task SaveTransportationProc()
+        private  void SaveTransportationProc()
         {
             TransportationToAdd.UserId = User.AccountId;
            
@@ -69,12 +69,14 @@ namespace OcampoElective2Project.ViewModels
             }
             if (User != null)
             {
-                NavigationService.GoBack();
+                
                 UserAccountService.UpdateUser(User, User);
+               Task.Delay(150);
+                NavigationService.GoBack();
             }
             else
             {
-                Application.Current.MainPage.DisplayAlert("Error", "Please try again", "Cancel");
+              Application.Current.MainPage.DisplayAlert("Error", "Please try again", "Cancel");
             }
             App.Locator.ExpenseViewModel.isUpdate = false;
         }
