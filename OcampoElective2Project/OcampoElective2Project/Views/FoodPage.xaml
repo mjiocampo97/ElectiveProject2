@@ -21,8 +21,8 @@
                     </ListView.ItemTemplate>
                 </ListView>
                 <StackLayout Orientation="Horizontal" Margin="7,0">
-                    <Button Text="Add Food" AbsoluteLayout.LayoutBounds=".25,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding AddFoodCommand}" CornerRadius="25" BackgroundColor="#08bce0" WidthRequest="112"></Button>
-                    <Button Text="Delete Food"  AbsoluteLayout.LayoutBounds=".75,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding DeleteFoodCommand}" CornerRadius="25" BackgroundColor="#08bce0" WidthRequest="112"/>
+                    <Button Text="Add" AbsoluteLayout.LayoutBounds=".25,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding AddFoodCommand}" CornerRadius="25" BackgroundColor="#08bce0" WidthRequest="112"></Button>
+                    <Button Text="Delete"  AbsoluteLayout.LayoutBounds=".75,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding DeleteFoodCommand}" CornerRadius="25" BackgroundColor="#08bce0" WidthRequest="112"/>
                     <Button Text="Update" Command="{Binding UpdateFoodCommand}" CornerRadius="25" BackgroundColor="#08bce0" WidthRequest="112"></Button>
                 </StackLayout>
             </StackLayout>

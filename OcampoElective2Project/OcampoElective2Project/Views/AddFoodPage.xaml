@@ -18,7 +18,7 @@
                     </StackLayout>
                 </Grid>
 
-                <Button Text="Save" Command="{Binding SaveFoodCommand}" AbsoluteLayout.LayoutBounds=".5,1,1,.1" AbsoluteLayout.LayoutFlags="All"></Button>
+                <Button Text="Save" Command="{Binding SaveFoodCommand}" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="260" Margin="0,5,0,0" CornerRadius="25" BackgroundColor="#08bce0"></Button>
             </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>
