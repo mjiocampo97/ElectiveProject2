@@ -22,9 +22,9 @@
                 </StackLayout>
                 <StackLayout Grid.Row="1">
                 <Label Text="Username" VerticalOptions="Center" FontSize="12" Margin="2" TextColor="Gray"></Label>
-                    <Entry WidthRequest="260" Text="{Binding Username}" FontSize="18" Margin="2" ></Entry>
+                    <Entry WidthRequest="260" Text="{Binding Username}" FontSize="18" Margin="2" x:Name="UserName"></Entry>
                     <Label Text="Password" VerticalOptions="Center" FontSize="12" Margin="2" TextColor="Gray"></Label>
-                        <Entry WidthRequest="260" IsPassword="True" Text="{Binding Password}" FontSize="18" Margin="2"></Entry>
+                        <Entry WidthRequest="260" IsPassword="True" Text="{Binding Password}" FontSize="18" Margin="2" x:Name="Password"></Entry>
                
                     <StackLayout>
        

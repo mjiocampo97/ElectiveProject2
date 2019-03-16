@@ -30,16 +30,12 @@
                         <Label Text="{Binding User.Money, StringFormat=₱'{0:0}'}"></Label>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Email Address "></Label>
+                        <Label Text="Email Address: "></Label>
                         <Label Text="{Binding User.EmailAddress}"></Label>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Birthdate: "></Label>
                         <Label Text="{Binding User.BirthDate}"></Label>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="Balance:"></Label>
-                        <Label Text="{Binding User.Money, StringFormat=₱'{0:0}'}"></Label>
                     </StackLayout>
                 </StackLayout>
            

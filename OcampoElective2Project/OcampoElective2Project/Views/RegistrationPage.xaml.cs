@@ -28,6 +28,14 @@ namespace OcampoElective2Project.Views
                 .GetInstance<INavigationService>()
                 .CurrentPageKey;
             Debug.WriteLine("Current page key: " + currentPageKeyString);
+
+
+            UserName.Text = "";
+            Password.Text = "";
+            FirstName.Text = "";
+            LastName.Text = "";
+            EmailAddress.Text = "";
+
         }
 
         private void DatePicker_OnDateSelected(object sender, DateChangedEventArgs e)

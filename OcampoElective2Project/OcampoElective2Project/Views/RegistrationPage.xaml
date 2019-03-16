@@ -6,11 +6,11 @@
         <StackLayout BackgroundColor="AliceBlue" HorizontalOptions="FillAndExpand" Margin="2,0">
         
                 <Label Text="First Name" Margin="2" FontSize= "18" HorizontalOptions="Start" VerticalOptions="Center"></Label>
-            <Entry FontSize="18" Margin="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Text="{Binding  UserAccountToAdd.FirstName}"></Entry>
+            <Entry FontSize="18" Margin="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Text="{Binding  UserAccountToAdd.FirstName}" x:Name="FirstName"></Entry>
      
        
                 <Label Text="Last Name" Margin="2,0" FontSize= "18" HorizontalOptions="Start" VerticalOptions="Center"></Label>
-            <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding  UserAccountToAdd.LastName}"></Entry>
+            <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding  UserAccountToAdd.LastName}" x:Name="LastName"></Entry>
         
  
                 <Label Text="Birthday" Margin="2,0" FontSize= "18" HorizontalOptions="Start" VerticalOptions="Center"> </Label>
@@ -18,15 +18,15 @@
 
        
                 <Label Text="Email Address" FontSize= "18" HorizontalOptions="Start" VerticalOptions="Center"></Label>
-            <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding  UserAccountToAdd.EmailAddress}"></Entry>
+            <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding  UserAccountToAdd.EmailAddress}" x:Name="EmailAddress"></Entry>
          
-                <Label Text="Username" FontSize= "18" HorizontalOptions="Start" VerticalOptions="Center"></Label>
-            <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding  UserAccountToAdd.Username}"></Entry>
+            <Label Text="Username" FontSize= "18" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+            <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding  UserAccountToAdd.Username}" x:Name="UserName"></Entry>
          
-                <Label Text="Password" FontSize= "18" HorizontalOptions="Start" VerticalOptions="Center"></Label>
-            <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding  UserAccountToAdd.Password}"></Entry>
-       
-            <Button Text="Register" Command="{Binding Path= RegisterCommand}" FontSize="18"></Button>
+            <Label Text="Password" FontSize= "18" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+            <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding  UserAccountToAdd.Password}" x:Name="Password"></Entry>
+
+            <Button Text="Register" Command="{Binding Path= RegisterCommand}" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="220" Margin="0,5,0,0" CornerRadius="25" BackgroundColor="#08bce0"></Button>
 
         </StackLayout>
     </ContentPage.Content>
