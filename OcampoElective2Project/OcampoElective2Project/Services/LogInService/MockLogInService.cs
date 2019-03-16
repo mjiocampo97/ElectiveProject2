@@ -30,7 +30,7 @@ namespace OcampoElective2Project.Services.LogInService
 
         public UserAccount Check(string username, string password)
         {
-            var user = Users.FirstOrDefault(c => c.Username == username && c.Password == password);
+            var user = _repository.UserAccount.GetAll().FirstOrDefault(c => c.Username == username && c.Password == password);
             return user;
         }
 

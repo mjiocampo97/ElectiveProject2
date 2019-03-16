@@ -6,27 +6,27 @@
         <StackLayout BackgroundColor="AliceBlue" HorizontalOptions="FillAndExpand">
         
                 <Label Text="First Name" Margin="2" FontSize= "18" HorizontalOptions="Start" VerticalOptions="Center"></Label>
-                <Entry FontSize="18" Margin="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="Beige" Text="{Binding UserToRegister.FirstName}"></Entry>
+            <Entry FontSize="18" Margin="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="Beige" Text="{Binding  UserAccountToAdd.FirstName}"></Entry>
      
        
                 <Label Text="Last Name" Margin="2,0" FontSize= "18" HorizontalOptions="Start" VerticalOptions="Center"></Label>
-                <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding UserToRegister.LastName}"></Entry>
+            <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding  UserAccountToAdd.LastName}"></Entry>
         
  
                 <Label Text="Birthday" Margin="2,0" FontSize= "18" HorizontalOptions="Start" VerticalOptions="Center"> </Label>
-            <DatePicker FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BindingContext="{Binding UserToRegister.Birthdate}"></DatePicker>
+            <DatePicker FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BindingContext="{Binding  UserAccountToAdd.Birthdate}"></DatePicker>
 
        
                 <Label Text="Email Address" FontSize= "18" HorizontalOptions="Start" VerticalOptions="Center"></Label>
-            <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BindingContext="{Binding UserToRegister.EmailAddress}"></Entry>
+            <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BindingContext="{Binding  UserAccountToAdd.EmailAddress}"></Entry>
          
                 <Label Text="Username" FontSize= "18" HorizontalOptions="Start" VerticalOptions="Center"></Label>
-                <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding UserToRegister.Username}"></Entry>
+            <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding  UserAccountToAdd.Username}"></Entry>
          
                 <Label Text="Password" FontSize= "18" HorizontalOptions="Start" VerticalOptions="Center"></Label>
-                <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding UserToRegister.Password}"></Entry>
+            <Entry WidthRequest="150" FontSize= "18" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="{Binding  UserAccountToAdd.Password}"></Entry>
        
-            <Button Text="Register" FontSize="18"></Button>
+            <Button Text="Register" Command="{Binding Path= RegisterCommand}" FontSize="18"></Button>
 
         </StackLayout>
     </ContentPage.Content>

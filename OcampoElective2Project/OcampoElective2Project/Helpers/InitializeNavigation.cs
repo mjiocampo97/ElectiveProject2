@@ -58,7 +58,7 @@ namespace OcampoElective2Project.Helpers
                 //connection.DeleteAllAsync<Transportation>();
                 //connection.DeleteAllAsync<UserAccount>();
 
-
+                
                 var food= connection.Table<Food>();
                 var clothes = connection.Table<Clothes>();
                 var others = connection.Table<Others>();
