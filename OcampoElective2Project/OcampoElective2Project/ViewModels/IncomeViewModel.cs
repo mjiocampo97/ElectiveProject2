@@ -88,7 +88,7 @@ namespace OcampoElective2Project.ViewModels
 
                 IncomeService.DeleteIncome(SelectedIncome);
                 User.Money -= SelectedIncome.IncomeMoney;
-                UserAccountService.UpdateUser(User);
+                UserAccountService.UpdateUser(User,User);
                 RefreshIncome();
             }
             else

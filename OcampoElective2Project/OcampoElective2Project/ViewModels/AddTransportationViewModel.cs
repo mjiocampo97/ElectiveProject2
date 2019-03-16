@@ -68,13 +68,13 @@ namespace OcampoElective2Project.ViewModels
             }
             NavigationService.GoBack();
          //  UpdateIncome();
-            //UserAccountService.UpdateUser(User);
+            UserAccountService.UpdateUser(User,User);
             App.Locator.ExpenseViewModel.isUpdate = false;
         }
 
         private void UpdateIncome()
         {
-            UserAccountService.UpdateUser(User);
+        //    UserAccountService.UpdateUser(User);
         }
 
        

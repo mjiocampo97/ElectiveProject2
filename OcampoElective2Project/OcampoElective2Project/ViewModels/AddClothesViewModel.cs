@@ -63,7 +63,7 @@ namespace OcampoElective2Project.ViewModels
               
             }
             NavigationService.GoBack();
-           // UserAccountService.UpdateUser(User);
+           UserAccountService.UpdateUser(User,User);
             App.Locator.ExpenseViewModel.isUpdate = false;
         }
 

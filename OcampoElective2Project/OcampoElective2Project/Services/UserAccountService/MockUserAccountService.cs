@@ -19,7 +19,7 @@ namespace OcampoElective2Project.Services.UserAccountService
         }
       
 
-        public  void UpdateUser(UserAccount newUser)
+        public  void UpdateUser(UserAccount oldUser, UserAccount newUser)
         {
             
             _repository.UserAccount.Update(c => c.AccountId == newUser.AccountId, newUser);

@@ -80,7 +80,7 @@ namespace OcampoElective2Project.ViewModels
             {
             ClothesService.DeleteClothes(SelectedClothes);
             User.Money += SelectedClothes.Price;
-            UserAccountService.UpdateUser(User);
+            UserAccountService.UpdateUser(User, User);
                 Refresh();
             }
             else
@@ -161,7 +161,7 @@ namespace OcampoElective2Project.ViewModels
             {
                FoodService.DeleteFood(SelectedFood);
                User.Money += SelectedFood.Price;
-               UserAccountService.UpdateUser(User);
+               UserAccountService.UpdateUser(User,User);
                 RefreshFood();
             }
             else
@@ -242,7 +242,7 @@ namespace OcampoElective2Project.ViewModels
             {
                 OthersService.DeleteOthers(SelectedOthers);
                 User.Money += SelectedOthers.Price;
-                UserAccountService.UpdateUser(User);
+                UserAccountService.UpdateUser(User,User);
                 RefreshOthers();
             }
             else
@@ -318,7 +318,7 @@ namespace OcampoElective2Project.ViewModels
             {
                 TransportationService.DeleteTransportation(SelectedTransportation);
                 User.Money += SelectedTransportation.Price;
-                UserAccountService.UpdateUser(User);
+                UserAccountService.UpdateUser(User, User);
                 RefreshTransportation();
             }
             else
