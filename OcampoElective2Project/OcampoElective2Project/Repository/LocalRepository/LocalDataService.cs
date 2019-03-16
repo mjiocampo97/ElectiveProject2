@@ -34,7 +34,7 @@ namespace OcampoElective2Project.Repository.LocalRepository
         {
             using (var db = new SQLiteConnection(dbPath))
             {
-               // Task.Delay(150);
+                Task.Delay(150);
                 var objectUpdate = newObject;
                 db.Update(objectUpdate);
             }
