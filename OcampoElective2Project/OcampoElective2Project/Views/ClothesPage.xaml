@@ -20,7 +20,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <StackLayout Orientation="Horizontal" Margin="10,0">
+                <StackLayout Orientation="Horizontal" Margin="7,0">
                     <Button Text="Add" AbsoluteLayout.LayoutBounds=".25,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding AddClothesCommand}" CornerRadius="25" BackgroundColor="#08bce0" WidthRequest="112"></Button>
                     <Button Text="Delete"  AbsoluteLayout.LayoutBounds=".75,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding DeleteClothesCommand}" CornerRadius="25" BackgroundColor="#08bce0" WidthRequest="112"/>
                     <Button Text="Update" Command="{Binding UpdateClothesCommand}" CornerRadius="25" BackgroundColor="#08bce0" WidthRequest="112"></Button>
