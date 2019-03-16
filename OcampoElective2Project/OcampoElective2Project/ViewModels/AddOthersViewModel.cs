@@ -44,13 +44,15 @@ namespace OcampoElective2Project.ViewModels
             OthersToAdd.UserId = User.AccountId;
             if (App.Locator.ExpenseViewModel.isUpdate == true)
             {
+                User.Money += App.Locator.ExpenseViewModel.SelectedOthers.Price;
+                User.Money -= OthersToAdd.Price;
                 OthersToAdd.Id = App.Locator.ExpenseViewModel.SelectedOthers.Id;
                 OthersService.UpdateOthers(App.Locator.ExpenseViewModel.SelectedOthers, OthersToAdd);
   
             }
             else
             {
-
+               
                 OthersService.AddOthers(OthersToAdd);
                 User.Money -= OthersToAdd.Price;
                

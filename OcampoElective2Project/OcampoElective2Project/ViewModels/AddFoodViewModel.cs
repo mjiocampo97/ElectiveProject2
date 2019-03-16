@@ -46,6 +46,8 @@ namespace OcampoElective2Project.ViewModels
             FoodToAdd.UserId = User.AccountId;
             if (App.Locator.ExpenseViewModel.isUpdate == true)
             {
+                User.Money += App.Locator.ExpenseViewModel.SelectedFood.Price;
+                User.Money -= FoodToAdd.Price;
                 FoodToAdd.Id = App.Locator.ExpenseViewModel.SelectedFood.Id;
                 FoodService.UpdateFood(App.Locator.ExpenseViewModel.SelectedFood, FoodToAdd);
                

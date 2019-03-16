@@ -49,6 +49,8 @@ namespace OcampoElective2Project.ViewModels
             ClothesToAdd.UserId = User.AccountId;
             if (App.Locator.ExpenseViewModel.isUpdate == true)
             {
+                User.Money += App.Locator.ExpenseViewModel.SelectedClothes.Price;
+                User.Money -= ClothesToAdd.Price;
                 ClothesToAdd.Id = App.Locator.ExpenseViewModel.SelectedClothes.Id;
                 ClothesService.UpdateClothes(App.Locator.ExpenseViewModel.SelectedClothes, ClothesToAdd);
                

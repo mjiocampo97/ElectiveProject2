@@ -53,6 +53,8 @@ namespace OcampoElective2Project.ViewModels
            
             if (App.Locator.ExpenseViewModel.isUpdate == true)
             {
+                User.Money += App.Locator.ExpenseViewModel.SelectedTransportation.Price;
+                User.Money -= TransportationToAdd.Price;
                 TransportationToAdd.Id = App.Locator.ExpenseViewModel.SelectedTransportation.Id;
                TransportationService.UpdateTransportation(App.Locator.ExpenseViewModel.SelectedTransportation, TransportationToAdd);
             
@@ -67,7 +69,7 @@ namespace OcampoElective2Project.ViewModels
             NavigationService.GoBack();
          //  UpdateIncome();
             //UserAccountService.UpdateUser(User);
-            App.Locator.ClothesViewModel.isUpdate = false;
+            App.Locator.ExpenseViewModel.isUpdate = false;
         }
 
         private void UpdateIncome()
