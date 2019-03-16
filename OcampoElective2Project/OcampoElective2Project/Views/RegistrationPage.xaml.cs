@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CommonServiceLocator;
 using GalaSoft.MvvmLight.Views;
+using OcampoElective2Project.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,7 +14,8 @@ namespace OcampoElective2Project.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RegistrationPage : ContentPage
-	{
+    {
+        private RegistrationViewModel vm;
 		public RegistrationPage ()
 		{
 			InitializeComponent ();
@@ -26,6 +28,12 @@ namespace OcampoElective2Project.Views
                 .GetInstance<INavigationService>()
                 .CurrentPageKey;
             Debug.WriteLine("Current page key: " + currentPageKeyString);
+        }
+
+        private void DatePicker_OnDateSelected(object sender, DateChangedEventArgs e)
+        {
+            vm = App.Locator.RegistrationViewModel;
+            vm.UserAccountToAdd.BirthDate = DateTime.Date.ToShortDateString();
         }
     }
 }

@@ -47,6 +47,7 @@ namespace OcampoElective2Project.ViewModels
                     {
                         RegisterService.AddUserAccount(UserAccountToAdd);
                         Application.Current.MainPage.DisplayAlert("Congratulations", "Registration Successful", "Close");
+                        NavigationService.GoBack();
                     }
                     else
                     {
