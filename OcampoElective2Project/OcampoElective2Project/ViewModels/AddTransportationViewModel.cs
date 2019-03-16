@@ -12,6 +12,7 @@ using OcampoElective2Project.Services;
 using OcampoElective2Project.Services.FoodService;
 using OcampoElective2Project.Services.TransportationService;
 using OcampoElective2Project.Services.UserAccountService;
+using Xamarin.Forms;
 
 namespace OcampoElective2Project.ViewModels
 {
@@ -66,9 +67,15 @@ namespace OcampoElective2Project.ViewModels
                User.Money -= TransportationToAdd.Price;
             
             }
-            NavigationService.GoBack();
-         //  UpdateIncome();
-            UserAccountService.UpdateUser(User,User);
+            if (User != null)
+            {
+                NavigationService.GoBack();
+                UserAccountService.UpdateUser(User, User);
+            }
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Error", "Please try again", "Cancel");
+            }
             App.Locator.ExpenseViewModel.isUpdate = false;
         }
 

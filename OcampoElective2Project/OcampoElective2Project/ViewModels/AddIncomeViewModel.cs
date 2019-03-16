@@ -16,6 +16,7 @@ using OcampoElective2Project.Services.IncomeService;
 using OcampoElective2Project.Services.UserAccountService;
 using OcampoElective2Project.Views;
 using SQLite;
+using Xamarin.Forms;
 
 namespace OcampoElective2Project.ViewModels
 {
@@ -77,9 +78,15 @@ namespace OcampoElective2Project.ViewModels
                 
             }
 
-        
-            NavigationService.GoBack();
-            UserAccountService.UpdateUser(User,User);
+            if (User != null)
+            {
+                NavigationService.GoBack();
+                UserAccountService.UpdateUser(User, User);
+            }
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Error", "Please try again", "Cancel");
+            }
             App.Locator.IncomeViewModel.isUpdate = false;
         }
 
