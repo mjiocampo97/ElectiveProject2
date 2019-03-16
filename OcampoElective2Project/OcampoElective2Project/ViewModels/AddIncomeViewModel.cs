@@ -59,7 +59,8 @@ namespace OcampoElective2Project.ViewModels
             IncomeToAdd.UserId = User.AccountId;
             if (App.Locator.IncomeViewModel.isUpdate == true)
             {
-                
+                User.Money -= App.Locator.IncomeViewModel.SelectedIncome.IncomeMoney;
+                User.Money += IncomeToAdd.IncomeMoney;
                 IncomeToAdd.Id = App.Locator.IncomeViewModel.SelectedIncome.Id;
                 IncomeService.UpdateIncome(App.Locator.IncomeViewModel.SelectedIncome, IncomeToAdd);
                 
@@ -76,7 +77,7 @@ namespace OcampoElective2Project.ViewModels
                 
             }
             NavigationService.GoBack();
-            UserAccountService.UpdateUser(User);
+         //   UserAccountService.UpdateUser(User);
             App.Locator.IncomeViewModel.isUpdate = false;
         }
 
