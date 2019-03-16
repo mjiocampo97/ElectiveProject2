@@ -27,9 +27,9 @@
                         <Entry WidthRequest="260" IsPassword="True" Text="{Binding Password}" FontSize="18" Margin="2"></Entry>
                
                     <StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Button Text="Dont have account? Sign Up" Command="{Binding RegisterCommand}" BorderColor="Transparent" BackgroundColor="Transparent" TextColor="{StaticResource SignUp}" HorizontalOptions="Center" VerticalOptions="Center" Margin="5" FontSize="18"></Button>
-                        </StackLayout>
+       
+                            <Button Text="Dont have account? Sign Up" Command="{Binding RegisterCommand}" BorderColor="Transparent" BackgroundColor="Transparent" TextColor="{StaticResource SignUp}" HorizontalOptions="Center" VerticalOptions="Center"  WidthRequest="300" FontSize="18"></Button>
+       
                         <Button Text="Log In" Command="{Binding LogInCommand}" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="280" Margin="0,5,0,0" CornerRadius="25" BackgroundColor="#08bce0"></Button>
                    
                     </StackLayout>

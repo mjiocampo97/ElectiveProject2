@@ -6,15 +6,15 @@
         <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <Grid>
-                    <StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Name" FontSize="28" VerticalOptions="Center" HorizontalOptions="Center"></Label>
-                            <Entry Text="{Binding Path=FoodToAdd.NameOfFood}"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  FontSize="28" x:Name="NameEntry"></Entry>
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal" >
-                            <Label Text="Price" FontSize="28" VerticalOptions="Center" HorizontalOptions="Center"></Label>
-                            <Entry Text="{Binding Path=FoodToAdd.Price}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" FontSize="28" x:Name="NamePrice" Keyboard="Numeric"></Entry>
-                        </StackLayout>
+                    <StackLayout Padding="8,0">
+
+                            <Label Text="Description" FontSize="12" VerticalOptions="Center" ></Label>
+                            <Entry Text="{Binding Path=FoodToAdd.NameOfFood}"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  FontSize="18" x:Name="NameEntry"></Entry>
+
+
+                        <Label Text="Price" FontSize="12" VerticalOptions="Center" ></Label>
+                            <Entry Text="{Binding Path=FoodToAdd.Price}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" FontSize="18" x:Name="NamePrice" Keyboard="Numeric"></Entry>
+
                     </StackLayout>
                 </Grid>
 

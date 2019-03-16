@@ -20,10 +20,10 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <StackLayout Orientation="Horizontal">
-                <Button Text="Add Clothes" AbsoluteLayout.LayoutBounds=".25,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding AddClothesCommand}" ></Button>
-                <Button Text="Delete Clothes"  AbsoluteLayout.LayoutBounds=".75,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding DeleteClothesCommand}"/>
-                <Button Text="Update" Command="{Binding UpdateClothesCommand}"></Button>
+                <StackLayout Orientation="Horizontal" Margin="10,0">
+                    <Button Text="Add" AbsoluteLayout.LayoutBounds=".25,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding AddClothesCommand}" CornerRadius="25" BackgroundColor="#08bce0" WidthRequest="112"></Button>
+                    <Button Text="Delete"  AbsoluteLayout.LayoutBounds=".75,1,.4,.1" AbsoluteLayout.LayoutFlags="All" Command="{Binding DeleteClothesCommand}" CornerRadius="25" BackgroundColor="#08bce0" WidthRequest="112"/>
+                    <Button Text="Update" Command="{Binding UpdateClothesCommand}" CornerRadius="25" BackgroundColor="#08bce0" WidthRequest="112"></Button>
                 </StackLayout> 
             </StackLayout>
 
