@@ -66,9 +66,9 @@ namespace OcampoElective2Project.ViewModels
             {
                 try
                 {
-                    
+                    System.Threading.Thread.Sleep(100);
                     UserAccountService.UpdateUser(User, User);
-                 Task.Delay(150);
+                    
                     NavigationService.GoBack();
                 }
                 catch (Exception e)

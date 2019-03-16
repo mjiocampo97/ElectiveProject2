@@ -82,7 +82,7 @@ namespace OcampoElective2Project.ViewModels
 
             if (User != null)
             {
-               
+                System.Threading.Thread.Sleep(100);
                 UserAccountService.UpdateUser(User, User);
               //  await Task.Delay(150);
                 Task.Delay(150);

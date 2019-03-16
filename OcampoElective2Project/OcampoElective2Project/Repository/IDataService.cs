@@ -8,7 +8,7 @@ namespace OcampoElective2Project.Repository
 {
     public interface IDataService<T> where T : class 
     {
-        Task Add(T record);
+        void Add(T record);
 
         T Get(Expression<Func<T, bool>> condition);
 

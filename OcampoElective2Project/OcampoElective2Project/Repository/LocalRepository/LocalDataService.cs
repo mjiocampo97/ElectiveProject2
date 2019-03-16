@@ -15,11 +15,11 @@ namespace OcampoElective2Project.Repository.LocalRepository
    
 
 
-        public Task Add(T record)
+        public void Add(T record)
         {
             var db = new SQLiteAsyncConnection(dbPath);
            // db.CreateTableAsync<T>();
-           return db.InsertAsync(record);
+            db.InsertAsync(record);
         }
 
         public T Get(Expression<Func<T, bool>> condition)

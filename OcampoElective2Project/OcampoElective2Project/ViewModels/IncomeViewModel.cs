@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
@@ -76,6 +78,7 @@ namespace OcampoElective2Project.ViewModels
 
         private void AddIncomeProc()
         {
+           
             NavigationService.NavigateTo(ViewModelLocator.AddIncomePage, User, false);
         }
 
