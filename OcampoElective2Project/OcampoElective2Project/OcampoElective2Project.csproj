@@ -8,12 +8,13 @@
     <PackageReference Include="Askaiser.Mobile.Pillar" Version="1.1.0" />
     <PackageReference Include="CommonServiceLocator" Version="2.0.4" />
     <PackageReference Include="DynamicWrapLayout" Version="2017.11.30.2" />
+    <PackageReference Include="Microcharts" Version="0.8.5-pre" />
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
-    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
-    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
-    <PackageReference Include="Xamarin.Forms" Version="3.0.0.446417" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.258-beta" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.1.1.1-beta" />
+    <PackageReference Include="Xam.Plugins.Settings" Version="4.1.0-beta" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.232914-pre6" />
   </ItemGroup>
 
   <ItemGroup>
