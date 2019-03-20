@@ -33,6 +33,7 @@ namespace OcampoElective2Project.Helpers
         public const string IncomePage = "IncomePage";
         public const string ViewExpenseTabbedPage = "ViewExpenseTabbedPage";
         public const string AddIncomePage = "AddIncomePage";
+        public const string ChartPage = "ChartPage";
         public bool IsTestMode { get; set; }
 
         public ViewModelLocator()

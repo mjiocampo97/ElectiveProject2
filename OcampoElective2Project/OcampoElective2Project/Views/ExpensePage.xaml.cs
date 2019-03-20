@@ -23,8 +23,7 @@ namespace OcampoElective2Project.Views
         {
             InitializeComponent();
             ExpenseViewModel = App.Locator.ExpenseViewModel;
-            var test1= new ExpensePage();
-            Children.Add(test1);
+          
         }
 
         public ExpensePage(UserAccount user)
