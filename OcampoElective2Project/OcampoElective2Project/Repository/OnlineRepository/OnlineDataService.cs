@@ -8,7 +8,7 @@ namespace OcampoElective2Project.Repository.OnlineRepository
 {
     public class OnlineDataService<T> : IDataService<T> where T : class, new()
     {
-        public void Add(T record)
+        public Task Add(T record)
         {
             throw new NotImplementedException();
         }

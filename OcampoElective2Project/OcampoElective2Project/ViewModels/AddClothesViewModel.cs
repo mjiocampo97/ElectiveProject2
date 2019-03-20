@@ -64,18 +64,27 @@ namespace OcampoElective2Project.ViewModels
                 User.Money -= ClothesToAdd.Price;
               
             }
-
-            System.Threading.Thread.Sleep(100);
-            UserAccountService.UpdateUser(User, User);
-                  
-                    NavigationService.GoBack();
+           
+            if (User != null)
+            {
                 
-              
+                try
+                {
+                    UserAccountService.UpdateUser(User, User);
+                    Task.Delay(150);
+                    NavigationService.GoBack();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
              
-            
-            
-                 
-            
+            }
+            else
+            {
+                 Application.Current.MainPage.DisplayAlert("Error", "Please try again", "Cancel");
+            }
             App.Locator.ExpenseViewModel.isUpdate = false;
         }
 
